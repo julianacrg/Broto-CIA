@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Funcionarios;
 use Illuminate\Http\Request;
+use Auth;
 
 class FuncionariosController extends Controller
 {
@@ -37,7 +38,7 @@ class FuncionariosController extends Controller
     public function store(Request $request)
     {
       Funcionarios::create($request->all());
-      session()->flash('mensagem', 'Procedimento cadastrado com sucesso!');
+      session()->flash('mensagem', 'Funcionario cadastrado com sucesso!');
 
       return redirect()->route('Funcionarios.index');
     }
@@ -85,8 +86,10 @@ class FuncionariosController extends Controller
      * @param  \App\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Funcionarios $funcionarios)
+    public function destroy(Funcionarios $Funcionario)
     {
-        //
+      $Funcionario->delete();
+      session()->flash('mensagem','Exame excluido com sucesso');
+      return redirect()->route('Funcionarios.index');
     }
 }

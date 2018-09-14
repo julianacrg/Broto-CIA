@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Funcionarios extends Model
 {
-  protected $fillable = [ 'nome', 'cpf'];
+  protected $fillable = [ 'id', 'nome', 'cpf'];
 
 }

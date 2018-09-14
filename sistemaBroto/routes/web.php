@@ -12,6 +12,8 @@
 */
 
 Auth::routes();
-
+Route::get('/home', function () {
+    return view('funcionarios');
+});
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
