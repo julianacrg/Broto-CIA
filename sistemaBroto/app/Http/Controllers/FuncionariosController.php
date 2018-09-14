@@ -72,11 +72,11 @@ class FuncionariosController extends Controller
      * @param  \App\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Funcionarios $funcionarios)
+    public function update(Request $request, Funcionarios $Funcionario)
     {
-      $func->fill($request->all());
-      $func->save();
-      $request->session()->flash('mensagem', 'Exame atualizado com sucesso!');
+      $Funcionario->fill($request->all());
+      $Funcionario->save();
+      $request->session()->flash('mensagem', 'Funcionario atualizado com sucesso!');
       return redirect()->route('Funcionarios.index');
     }
 
@@ -89,7 +89,7 @@ class FuncionariosController extends Controller
     public function destroy(Funcionarios $Funcionario)
     {
       $Funcionario->delete();
-      session()->flash('mensagem','Exame excluido com sucesso');
+      session()->flash('mensagem','Funcionario excluido com sucesso');
       return redirect()->route('Funcionarios.index');
     }
 }
