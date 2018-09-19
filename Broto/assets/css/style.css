@@ -1,0 +1,50 @@
+#BemVindo h2 {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color: rgb(0,50,20);
+	font-family: 
+}
+
+#BemVindo {
+	background-color: rgba(5,5,5,0); 
+}
+
+#logoinicial {
+	margin-top: 5%;
+}
+
+#cm-menu .cm-logo {
+background: url(../img/logo1.png) no-repeat 75px; center transparent;
+height: 55px;
+width: 180px;
+margin-top: 0;
+}
+
+.cm-navbar-primary {
+    color: #fff;
+    background: rgb(0,50,20);
+    border-color: #298A08;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: rgb(0,50,20);
+    border-color: #298A08;
+    line-height: 20px;
+}
+
+.cm-navbar h1, .cm-navbar .breadcrumb {
+    line-height: 56px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.cm-footer {
+    background-color: rgb(0,50,20);
+}
