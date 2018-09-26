@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Set-2018 às 14:43
+-- Generation Time: 26-Set-2018 às 14:58
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `arranjos` (
   `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   `valor` decimal(5,2) DEFAULT NULL,
-  `fotos` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `fotos` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -43,7 +43,9 @@ CREATE TABLE `arranjos` (
 CREATE TABLE `fornecedores` (
   `id` int(11) NOT NULL,
   `nome` varchar(80) NOT NULL,
-  `cpf` varchar(2) NOT NULL
+  `cpf` varchar(2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -172,7 +174,9 @@ CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
   `datas` varchar(20) NOT NULL,
   `fornecedores_id` int(11) DEFAULT NULL,
-  `itens_id` int(11) DEFAULT NULL
+  `itens_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updatedet_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
