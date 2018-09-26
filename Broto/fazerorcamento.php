@@ -1,7 +1,6 @@
 <?php
     include "menu.php";
     include "headerorcamento.php";
-    include "footer.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/small-n-flat.css">
         <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/c3.min.css">
+
         <title>Broto & Cia</title>
     </head>
     <body class="cm-no-transition cm-2-navbar">
@@ -24,163 +24,123 @@
         <div id="global">
            <div class="container-fluid">
                 <div class="panel panel-default">
-                    <div class="panel-body"> <h1 style="margin:10px;">
-                        
-                        <form class="form-horizontal">
-<fieldset>
-
-                               
-                                
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="nome">Evento</label>  
-                                  <div class="col-md-6">
-                                  <input id="nome" name="nome" type="text" placeholder="Nome do Evento" class="form-control input-md">
-                                    
-                                  </div>
+                     
+                        <div class="main-login main-center" id="divform">
+                       
+                          <form id="formulario" class="" method="post" action="#">
+                            
+                             <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Evento</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento"  placeholder="Entre com o nome do Evento"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="nomecliente">Cliente</label>  
-                                  <div class="col-md-6">
-                                  <input id="nomecliente" name="nomecliente" type="text" placeholder="Nome do cliente" class="form-control input-md">
-                                    
-                                  </div>
+
+                            <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Nome</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 80%;" name="name" id="name"  placeholder="Entre com o nome do Cliente"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="local">Local</label>  
-                                  <div class="col-md-3">
-                                  <input id="local" name="local" type="text" placeholder="Local do Evento" class="form-control input-md">
-                                    
-                                  </div>
+                            <div class="form-group">
+                              <label for="email" class="cols-sm-2 control-label">Local</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 60%;" name="local" id="local"  placeholder="Entre com o Local do Evento"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="data">Data</label>  
-                                  <div class="col-md-2">
-                                  <input id="data" name="data" type="text" placeholder="dd/mm/aa" class="form-control input-md">
-                                   
-                                 
-                               
-
-                                  </div>
-                                   <!-- Text input-->
-                                
-                                  <label class="col-md-3 control-label" for="horario">Horário</label>  
-                                  <div class="col-md-2">
-                                  <input id="horario" name="horario" type="text" placeholder="00:00" class="form-control input-md">
-                                    
-                                  </div>
+                               <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Endereço</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 90%;" name="endereco" id="endereco"  placeholder="Entre com o Endereço"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="contato">Contato</label>  
-                                  <div class="col-md-3">
-                                  <input id="contato" name="contato" type="text" placeholder="Telefone de Contato do cliente" class="form-control input-md">
-                                    
-                                  </div>
+                             <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Data</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 30%;" name="data" id="data"  placeholder="Entre com a data do Evento"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Select Basic -->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="Arranjo">Arranjos</label>
-                                  <div class="col-md-3">
-                                    <select id="Arranjo" name="Arranjo" class="form-control">
-                                      <option value="1">Arranjo Pequeno Rosas Vermelhas com Folhagem</option>
-                                      <option value="2">Arranjo Grande Rosas Brancas com Lírios</option>
-                                    </select>
-                                  </div>
-                                  <label class="col-md-2 control-label" for="quantidade">Quantidade</label>  
-                                  <div class="col-md-2">
-                                  <input id="quantidade" name="quantidade" type="text" placeholder="Quantidade de arranjos" class="form-control input-md">
-                                    
-                                  </div>
+                            <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Horario</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-clock-o fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 30%;" name="horario" id="horario"  placeholder="Entre com a hora do Evento"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  
+                            <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Telefone</label>
+                              <div class="cols-sm-5">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="Entre com o Telefone"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                
 
-                                <!-- Multiple Radios -->
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="igreja">Igreja</label>
-                                  <div class="col-md-4">
-                                  <div class="radio">
-                                    <label for="igreja-0">
-                                      <input type="radio" name="igreja" id="igreja-0" value="1" checked="checked">
-                                      Sim
-                                    </label>
-                                    </div>
-                                  <div class="radio">
-                                    <label for="igreja-1">
-                                      <input type="radio" name="igreja" id="igreja-1" value="2">
-                                      Não
-                                    </label>
-                                    </div>
-                                  </div>
+
+                            <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Celular</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 30%;" name="celular" id="cel"  placeholder="Entre com o Celular"/>
                                 </div>
+                              </div>
+                            </div>
 
-                                <!-- Button -->
-                                <div class="form-group">
-                                  <label class="col-md-5 control-label" for="Adicionar"></label>
-                                  <div class="col-md-1">
-                                    <button id="Adicionar" name="Adicionar" class="btn btn-success">Adicionar</button>
-                                    
-                                  </div>
-                                   <label class="col-md-0 control-label" for="Gerar"></label>
-                                  <div class="col-md-4">
-                                    <button id="Gerar" name="Gerar" class="btn btn-primary">Gerar</button>
-                                  </div>
+                             <div class="form-group">
+                              <label for="name" class="cols-sm-2 control-label">Arranjo</label>
+                              <div class="cols-sm-10">
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
+                                  <input type="text" class="form-control" style="max-width: 35%;" name="arranjo" id="cel"  placeholder="Selecione o arranjo"/>
                                 </div>
+                              </div>
+                            </div>
 
-                               
 
-                                </fieldset>
-                                </form>
+                            
 
-                                <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Arranjos</th>
-                                      <th scope="col">Quantidade</th>
-                                      
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Arranjo Pequeno Rosas Vermelhas com Folhagem</td>
-                                      <td>3</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Arranjo Grande Rosas Brancas com Lírios</td>
-                                      <td>2</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Vela Branca</td>
-                                      <td>10</td>
-                                      
-                                    </tr>
-                                  </tbody>
-                                </table>
+                            <div class="form-group ">
+                              <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Fazer Orçamento</a>
+                            </div>
+                            
+                          </form>
+                        </div>
+                      
+                    
 
-                    </h1> </div>
+                     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                    <!-- Include all compiled plugins (below), or include individual files as needed -->
+                    <script src="js/bootstrap.min.js"></script>
+
+                    <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
+                   
                 </div>
             </div>
         </div>
@@ -194,4 +154,5 @@
         <script src="assets/js/lib/c3.min.js"></script>
         <script src="assets/js/dashboard.js"></script>
     </body>
+
 </html>
