@@ -1,0 +1,4 @@
+despesas com origens
+receitas origens
+balanço
+cor rgba(47,135,238,1)
