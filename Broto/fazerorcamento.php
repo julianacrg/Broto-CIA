@@ -111,22 +111,63 @@
                                 </div>
                               </div>
                             </div>
-
-                             <div class="form-group">
-                              <label for="name" class="cols-sm-2 control-label">Arranjo</label>
-                              <div class="cols-sm-10">
-                                <div class="input-group">
-                                  <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
-                                  <input type="text" class="form-control" style="max-width: 35%;" name="arranjo" id="cel"  placeholder="Selecione o arranjo"/>
+                            <div class="row">
+                              <label for="name" class="col-sm-2 control-label">Arranjo</label>
+                            </div>
+                             <div class="row">
+                               <div class="form-group">
+                                  <div class="col-sm-5">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+                                      <select type="text" class="form-control"  name="arranjo" id="cel" /><select>
+                                    </div>   
+                                  </div>
+                                <div class="col-sm-2">
+                                     <div class="form-group">
+                                     
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" style="max-width: 70%;" name="quantidade" id="qtd"  placeholder="Qtd."/>
+                                        </div>
+                                     
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <button id="botaoadd"  class="btn btn-primary">Add</button>
                                 </div>
                               </div>
                             </div>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Arranjo</th>
+                                  <th scope="col">Quantidade</th>
+                                 
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Rosas Brancas com folhagem Médio</td>
+                                  <td>10</td>
+                                  
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Rosas Vermelhas Grande</td>
+                                  <td>7</td>
+                                  
+                                </tr>
+                               
+                              </tbody>
+                            </table>
 
 
                             
 
                             <div class="form-group ">
-                              <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Fazer Orçamento</a>
+                              <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Gerar Orçamento</a>
                             </div>
                             
                           </form>

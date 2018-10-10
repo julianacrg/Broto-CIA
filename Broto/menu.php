@@ -9,7 +9,7 @@
                         <ul class="cm-menu-items">
                             <li class="active"><a href="index.php" class="sf-house">Home</a></li>
                             <li><a href="fazerorcamento.php" class="sf-dashboard">Orçamentos</a></li>
-                            <li><a href="fazercadastro.php" class="sf-notepad">Cadastrar</a></li>
+                            <li><a href="cadastraritens.php" class="sf-notepad">Cadastrar</a></li>
                             
                             <li><a href="login.html" class="sf-lock-open">Fazer Login</a></li>
                         </ul>
