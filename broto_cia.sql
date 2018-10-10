@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Set-2018 às 13:34
+-- Generation Time: 26-Set-2018 às 15:07
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -28,10 +28,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `arranjos` (
   `id` int(10) UNSIGNED NOT NULL,
-  `itens_id` int(11) DEFAULT NULL,
+  `valor` decimal(5,2) DEFAULT NULL,
+  `fotos` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `fornecedores`
+--
+
+CREATE TABLE `fornecedores` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `cpf` varchar(2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -80,6 +95,17 @@ CREATE TABLE `itens` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `itens_has_arranjos`
+--
+
+CREATE TABLE `itens_has_arranjos` (
+  `itens_id` int(11) DEFAULT NULL,
+  `arranjos_id` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `migrations`
 --
 
@@ -120,6 +146,7 @@ CREATE TABLE `orcamentos` (
   `endereco` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `arranjos_id` int(11) DEFAULT NULL,
   `itens_id` int(11) DEFAULT NULL,
+  `valor` decimal(5,2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -139,6 +166,21 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id` int(11) NOT NULL,
+  `datas` varchar(20) NOT NULL,
+  `fornecedores_id` int(11) DEFAULT NULL,
+  `itens_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updatedet_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `relatorios`
 --
 
@@ -146,6 +188,7 @@ CREATE TABLE `relatorios` (
   `id` int(10) UNSIGNED NOT NULL,
   `data` date DEFAULT NULL,
   `funcionarios_id` int(11) DEFAULT NULL,
+  `arranjos_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -181,8 +224,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- Indexes for table `arranjos`
 --
 ALTER TABLE `arranjos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `itens_id` (`itens_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fornecedores`
+--
+ALTER TABLE `fornecedores`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `funcionarios`
@@ -195,6 +243,13 @@ ALTER TABLE `funcionarios`
 --
 ALTER TABLE `itens`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `itens_has_arranjos`
+--
+ALTER TABLE `itens_has_arranjos`
+  ADD KEY `itens_id` (`itens_id`),
+  ADD KEY `arranjos_id` (`arranjos_id`);
 
 --
 -- Indexes for table `migrations`
@@ -215,11 +270,20 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fornecedores_id` (`fornecedores_id`),
+  ADD KEY `itens_id` (`itens_id`);
+
+--
 -- Indexes for table `relatorios`
 --
 ALTER TABLE `relatorios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `funcionarios_id` (`funcionarios_id`);
+  ADD KEY `funcionarios_id` (`funcionarios_id`),
+  ADD KEY `arranjos_id` (`arranjos_id`);
 
 --
 -- Indexes for table `users`
@@ -237,6 +301,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `arranjos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `fornecedores`
+--
+ALTER TABLE `fornecedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `funcionarios`
 --
@@ -257,6 +326,11 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `orcamentos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `relatorios`
 --
