@@ -63,11 +63,13 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="fazercadastro.php">Cadastrar Itens</a></li>
-                            <li><a href="#">Cadastrar Arranjos</a></li>
-                            
+                            <li class="active"><a href="cadastraritens.php">Cadastrar Itens</a></li>
+                            <li><a href="cadastrararranjo.php">Cadastrar Arranjos</a></li>
+                            <li><a href="cadastrarfuncionario.php">Cadastrar Funcionários</a></li>
                         </ul>
+
                     </div>
+
                 </div>
                 <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
                 <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
