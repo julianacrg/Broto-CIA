@@ -14,7 +14,8 @@ class ItensController extends Controller
      */
     public function index()
     {
-        //
+      $It = Itens:: orderBy('nome')->get();
+         return view('itens')->with('Itens',$It);
     }
 
     /**
@@ -35,7 +36,10 @@ class ItensController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Itens::create($request->all());
+      session()->flash('mensagem', 'Item cadastrado com sucesso!');
+
+      return redirect()->route('Itens.index');
     }
 
     /**

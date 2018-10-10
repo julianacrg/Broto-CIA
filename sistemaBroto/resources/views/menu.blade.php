@@ -100,8 +100,8 @@
         <div id='cssmenu'>
         <ul>
            <li><a href={{route('Funcionarios.index')}}><span>Funcionarios</span></a></li>
-             <li class='active has-sub'><a href='FuncionariosController@index'><span>Itens</span></a>
-              <ul>
+             <li><a href={{route('Itens.index')}}><span>Itens</span></a>
+              <!-- <ul>
                  <li class='has-sub'><a href='register'><span>Arranjos</span></a>
                  </li>
                  @if ( Auth::check() )
@@ -111,7 +111,7 @@
                  <li class='has-sub'><a href="#" onclick="funcao1()" value="Exibir Alert"><span>Minha Conta</span></a>
                  </li>
                  @endif
-              </ul>
+              </ul> -->
            </li>
            <li><a href="#"><span>Orçamentos</span></a></li>
 

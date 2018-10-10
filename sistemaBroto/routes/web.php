@@ -17,3 +17,4 @@ Route::get('/home', function () {
 });
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
+Route::resource('/Itens', 'ItensController');

@@ -4,7 +4,7 @@
 
 <div class="row">
 
-<form method="post" action="{{ route('Funcionarios.store') }}">
+<form method="post" action="{{ route('Itens.store') }}">
 
   @csrf
   <div class="col-sm-3"></div>
@@ -12,7 +12,13 @@
         <h2>Inserir Novo Item</h2>
 
           <p>Nome: <input type="text" name="nome"></p>
-          <p>cpf: <input type="text" name="cpf"></p>
+          <p>Categoria: <input type="text" name="categoria"></p>
+          <p>Status: <input type="text" name="status"></p>
+          <p>Quantidade: <input type="text" name="qtd"></p>
+          <p>Preço: <input type="text" name="preco"></p>
+          <p>Descrição: <input type="text" name="descricao"></p>
+          <p>Foto: <input type="text" name="foto"></p>
+
           <input type="submit" name="btnIncluir" value="Incluir">
 
       </div>
@@ -23,19 +29,31 @@
             <tr class="table table-bordered table-striped table-hover table-responsive">
               <th>ID</th>
               <th>Nome</th>
-              <th>CPF</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Quantidade</th>
+              <th>Preço</th>
+              <th>Descrição</th>
+              <th>Foto</th>
               <th>Ações</th>
             </tr>
           </thead>
 
-          @foreach( $Funcionarios as $Funconario )
+          @foreach( $Itens as $Iten )
             <tr class="table-light">
-              <td>{{ $Funconario->id }}</td>
-              <td>{{ $Funconario->nome }}</td>
-              <td>{{ $Funconario->cpf }}</td>
+              <td>{{ $Iten->id }}</td>
+              <td>{{ $Iten->nome }}</td>
+              <td>{{ $Iten->categoria }}</td>
+              <td>{{ $Iten->status }}</td>
+              <td>{{ $Iten->qtd}}</td>
+              <td>{{ $Iten->preco}}</td>
+              <td>{{ $Iten->descricao}}</td>
+              <td>{{ $Iten->foto}}</td>
               <td>
+
+
                 <div class="col-sm-1">
-                    <form method="post" onsubmit="return confirm('Confirma exclusão do Funcionario?');" action="{{ route('Funcionarios.destroy', [$Funconario->id])}}">
+                    <form method="post" onsubmit="return confirm('Confirma exclusão do Funcionario?');" action="{{ route('Itens.destroy', [$Iten->id])}}">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger"type="submit" style="font-size:12px"> <i class="fa fa-trash-o "></i></button>
@@ -46,24 +64,24 @@
             @endforeach
           </table>
       </div>
-      <button class="btn btn-primary"style="font-size:14px" id="myBtn">Editar Funcionario <i class="fa fa-edit"></i></button>
+      <button class="btn btn-primary"style="font-size:14px" id="myBtn">Editar Itens <i class="fa fa-edit"></i></button>
 
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>Edite o Funcionario:</h2>
+            <h2>Edite o Item:</h2>
           </div>
           <div class="modal-body">
-            <form method="post" action="{{ route('Funcionarios.update',$Funconario->id)}}">
+            <form method="post" action="{{ route('Itens.update',$Iten->id)}}">
               @csrf
               @method('PATCH')
-              <p>Funcionario:
-              <select  name="Funcionario->id">
+              <p>Itens:
+              <select  name="Iten->id">
                 <option value="">Selecione</option>
-                @foreach( $Funcionarios as $Funconario )
-                <option value="Funcionario->id"> {{$Funconario->id}}</option>
+                @foreach( $Itens as $Iten )
+                <option value="Iten->id"> {{$Iten->id}}</option>
                 @endforeach
 
               </select></p>
@@ -109,20 +127,4 @@
   </script>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection('conteudo')

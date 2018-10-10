@@ -28,14 +28,14 @@
                 </tr>
               </thead>
 
-              @foreach( $Funcionarios as $Funconario )
+              @foreach( $Funcionarios as $Funcionario )
                 <tr class="table-light">
-                  <td>{{ $Funconario->id }}</td>
-                  <td>{{ $Funconario->nome }}</td>
-                  <td>{{ $Funconario->cpf }}</td>
+                  <td>{{ $Funcionario->id }}</td>
+                  <td>{{ $Funcionario->nome }}</td>
+                  <td>{{ $Funcionario->cpf }}</td>
                   <td>
                     <div class="col-sm-1">
-                        <form method="post" onsubmit="return confirm('Confirma exclusão do Funcionario?');" action="{{ route('Funcionarios.destroy', [$Funconario->id])}}">
+                        <form method="post" onsubmit="return confirm('Confirma exclusão do Funcionario?');" action="{{ route('Funcionarios.destroy', [$Funcionario->id])}}">
                           @csrf
                           @method('DELETE')
                           <button class="btn btn-danger"type="submit" style="font-size:12px"> <i class="fa fa-trash-o "></i></button>
@@ -56,14 +56,14 @@
                 <h2>Edite o Funcionario:</h2>
               </div>
               <div class="modal-body">
-                <form method="post" action="{{ route('Funcionarios.update',$Funconario->id)}}">
+                <form method="post" action="{{ route('Funcionarios.update',$Funcionario->id)}}">
                   @csrf
                   @method('PATCH')
                   <p>Funcionario:
                   <select  name="Funcionario->id">
                     <option value="">Selecione</option>
-                    @foreach( $Funcionarios as $Funconario )
-                    <option value="Funcionario->id"> {{$Funconario->id}}</option>
+                    @foreach( $Funcionarios as $Funcionario )
+                    <option value="Funcionario->id"> {{$Funcionario->id}}</option>
                     @endforeach
 
                   </select></p>
