@@ -64,7 +64,7 @@
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="fazerorcamento.php">Novo Orçamento</a></li>
-                            <li><a href="editarorcamento.php">Editar Orçamento</a></li>
+                            <li><a href="editarorcamento.php">Orçamentos</a></li>
                             
                         </ul>
                     </div>
