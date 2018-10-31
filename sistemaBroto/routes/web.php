@@ -16,8 +16,12 @@ Route::get('/funcionarios', function () {
     return view('funcionarios');
 });
 Route::view('/index', 'index');
-Route::view('/headerorcamento', 'headerorcamento'); // chamar a view no inndex 
+Route::view('/headerorcamento', 'headerorcamento'); // chamar a view no inndex
 Route::view('/fazerorcamento', 'fazerorcamento');
+Route::view('/cadastro', 'headcadastro');
+Route::get('/cadastraArranjo', 'ArranjosController@index');
+
+
 
 
 

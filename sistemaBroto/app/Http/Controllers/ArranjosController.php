@@ -14,7 +14,8 @@ class ArranjosController extends Controller
      */
     public function index()
     {
-        //
+      $arranjos = Arranjos:: orderBy('nome')->get();
+         return view('cadastrarArranjo')->with('Arranjos',$arranjos);
     }
 
     /**
@@ -35,7 +36,10 @@ class ArranjosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Arranjos::create($request->all());
+      session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
+
+      return redirect()->route('cadastrarArranjo.index');
     }
 
     /**
@@ -69,7 +73,10 @@ class ArranjosController extends Controller
      */
     public function update(Request $request, Arranjos $arranjos)
     {
-        //
+      $arranjos->fill($request->all());
+      $arranjos->save();
+      $request->session()->flash('mensagem', 'Arranjos atualizado com sucesso!');
+      return redirect()->route('test.index');
     }
 
     /**
@@ -80,6 +87,8 @@ class ArranjosController extends Controller
      */
     public function destroy(Arranjos $arranjos)
     {
-        //
+      $arranjos->delete();
+      session()->flash('mensagem','Arranjo excluido com sucesso');
+      return redirect()->route('arranjos.index');
     }
 }
