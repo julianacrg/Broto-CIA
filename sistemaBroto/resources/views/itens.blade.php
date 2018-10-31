@@ -53,7 +53,7 @@
 
 
                 <div class="col-sm-1">
-                    <form method="post" onsubmit="return confirm('Confirma exclusão do Funcionario?');" action="{{ route('Itens.destroy', [$Iten->id])}}">
+                    <form method="post" onsubmit="return confirm('Confirma exclusão do Item?');" action="{{ route('Itens.destroy', [$Iten->id])}}">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger"type="submit" style="font-size:12px"> <i class="fa fa-trash-o "></i></button>
