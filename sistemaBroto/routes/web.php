@@ -12,9 +12,16 @@
 */
 
 Auth::routes();
-Route::get('/home', function () {
+Route::get('/funcionarios', function () {
     return view('funcionarios');
 });
+Route::view('/index', 'index');
+Route::view('/headerorcamento', 'headerorcamento');
+Route::view('/fazerorcamento', 'fazerorcamento');
+
+
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');

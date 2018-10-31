@@ -1594,12 +1594,18 @@ textarea.input {
 
 .footer {
   margin: 15px 0px;
+  position:absolute;
+  bottom:0;
+
 }
 
 .footer .footer-header {
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 30px;
+  position:absolute;
+  bottom:0;
+
 }
 
 .footer-logo {

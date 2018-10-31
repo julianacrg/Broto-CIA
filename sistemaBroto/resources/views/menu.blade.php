@@ -4,152 +4,125 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>em construçao</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-clearmin.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/material-design.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/small-n-flat.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 
-    <!-- Google font -->
-    <link href="{{ url('https://fonts.googleapis.com/css?family=Hind:400,700') }}" rel="stylesheet">
-
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-
-
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet"  href="{{ asset('css/slick.css') }}" />
-
-    <link type="text/css" rel="stylesheet"  href="{{ asset('css/pushy.css') }}" />
-    <link type="text/css" rel="stylesheet"  href="{{ asset('css/demo.css') }}" />
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }}" />
-
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
-
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <title>Broto & CIA</title>
     <!-- top Header -->
-		<div id="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<span>Flores flores flores!</span>
-				</div>
-				<div class="pull-right">
-					<ul class="header-top-links">
-						<li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ route('register') }}">Cadastrar</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- /top Header -->
+    <div id="cm-menu">
+              <nav class="cm-navbar cm-navbar-primary">
+                  <div class="cm-flex"><a href="index.php" class="cm-logo"></a></div>
+                  <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+              </nav>
+              <div id="cm-menu-content">
+                  <div id="cm-menu-items-wrapper">
+                      <div id="cm-menu-scroller">
+                          <ul class="cm-menu-items">
+                              <li class="active"><a href="index" class="sf-house">Home</a></li>
+                              <li><a href="headerorcamento" class="sf-dashboard">Orçamentos</a></li>
+                              <li><a href="{{ route('Funcionarios.index') }}" class="sf-dashboard">Orçamentos</a></li>
 
-		<!-- header -->
-		<div id="header">
-			<div class="container">
-				<div class="pull-left">
-					<!-- Logo -->
-					<div class="header-logo">
-						<a class="logo" href="#">
-							<img src="#" alt="imagem da logo" >
-						</a>
-					</div>
-					<!-- /Logo -->
+                              <li><a href="cadastraritens.php" class="sf-notepad">Cadastrar</a></li>
 
-
-				</div>
-				<div class="pull-right">
-					<ul class="header-btns">
-						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-user-o"></i>
-
-								</div>
-								<strong class="text-uppercase"> @if ( Auth::check() )Conta do {{Auth::user()->name}}
-                  @else Deslogado @endif <i class="fa fa-caret-down"></i></strong>
-							</div>
-							<a href="home" class="text-uppercase">Entrar | </a>
-              <a  href="{{ route('logout') }}" onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();"> {{ __('SAIR') }} </a>
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-               @csrf
-               </form>
-							<ul class="custom-menu">
-								<li><a href="home"><i class="fa fa-user-o"></i> Minha conta </a></li>
-								<li><a href="{{ url('/') }}"><i class="fa fa-heart-o"></i> home</a></li>
-
-							</ul>
-						</li>
-						<!-- /Account -->
-
-						<!-- Mobile nav toggle-->
-						<li class="nav-toggle">
-							<button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
-						</li>
-						<!-- / Mobile nav toggle -->
-					</ul>
-				</div>
-			</div>
-			<!-- header -->
-		</div>
-		<!-- container -->
-    <div class="row">
-      <div class="col-sm-3">
-        <div id='cssmenu'>
-        <ul>
-           <li><a href={{route('Funcionarios.index')}}><span>Funcionarios</span></a></li>
-             <li><a href={{route('Itens.index')}}><span>Itens</span></a>
-              <!-- <ul>
-                 <li class='has-sub'><a href='register'><span>Arranjos</span></a>
-                 </li>
-                 @if ( Auth::check() )
-                 <li class='has-sub'><a href=""><span>sei la</span></a>
-                 </li>
-                 @else
-                 <li class='has-sub'><a href="#" onclick="funcao1()" value="Exibir Alert"><span>Minha Conta</span></a>
-                 </li>
-                 @endif
-              </ul> -->
-           </li>
-           <li><a href="#"><span>Orçamentos</span></a></li>
-
-        </ul>
-        </div>
-
-      </div>
-      <div  class="col-md-6">
-
-
-
-        <br><br>
-      </div>
-    </div>
+                              <li><a href="{{ route('login') }}" class="sf-lock-open">Fazer Login</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
   </head>
-  <body>
-    <!-- jQuery Plugins -->
-  	<script src="js/jquery.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<script src="js/slick.min.js"></script>
-  	<script src="js/nouislider.min.js"></script>
-  	<script src="js/jquery.zoom.min.js"></script>
-    <script src="js/pushy.js"></script>
-    <script src="js/pushy.min.js"></script>
-  	<script src="{{ asset('js/pushy.js') }}"></script>
-    <script src="{{ asset('js/pushy..min.js') }}"></script>
-
-    <script>
-    function funcao1()
-    {
-    alert("Efetue Login para Prosseguir");
-
-    }
-    </script>
 
 
-    @yield('conteudo')
 
-   </body>
+    <header id="cm-header">
+                <nav class="cm-navbar cm-navbar-primary">
+                    <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+                    <div class="cm-flex">
+                        <h1>Home</h1>
+                        <form id="cm-search" action="index.php" method="get">
+                            <input type="search" name="q" autocomplete="off" placeholder="Search...">
+                        </form>
+                    </div>
+                    <div class="pull-right">
+                        <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
+                    </div>
+                    <div class="dropdown pull-right">
+                        <button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger">23</span> </button>
+                        <div class="popover cm-popover bottom">
+                            <div class="arrow"></div>
+                            <div class="popover-content">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading text-overflow">
+                                            <i class="fa fa-fw fa-envelope"></i> Nunc volutpat aliquet magna.
+                                        </h4>
+                                        <p class="list-group-item-text text-overflow">Pellentesque tincidunt mollis scelerisque. Praesent vel blandit quam.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <i class="fa fa-fw fa-envelope"></i> Aliquam orci lectus
+                                        </h4>
+                                        <p class="list-group-item-text">Donec quis arcu non risus sagittis</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <i class="fa fa-fw fa-warning"></i> Holy guacamole !
+                                        </h4>
+                                        <p class="list-group-item-text">Best check yo self, you're not looking too good.</p>
+                                    </a>
+                                </div>
+                                <div style="padding:10px"><a class="btn btn-success btn-block" href="#">Show me more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown pull-right">
+                        <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+                        <ul class="dropdown-menu">
+                            <li class="disabled text-center">
+                                <a style="cursor:default;"><strong>John Smith</strong></a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                            </li>
+                            <li>
+                                <a href="login.html"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+<body>
+<div class="cm-header">
+
+</div>
+    <script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="assets/js/jquery.cookie.min.js"></script>
+    <script src="assets/js/fastclick.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/clearmin.min.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/jquery.cookie.min.js"></script>
+    <script src="assets/js/fastclick.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/clearmin.min.js"></script>
+    <script src="assets/js/lib/d3.min.js"></script>
+    <script src="assets/js/lib/c3.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
 </html>
+
+    @yield('conteudo')

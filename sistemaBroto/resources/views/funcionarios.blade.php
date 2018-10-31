@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-    <div class="row">
+    <div class="row"style="margin-top:5%;">
 
     <form method="post" action="{{ route('Funcionarios.store') }}">
 
@@ -110,3 +110,4 @@
 
     </div>
     @endsection('conteudo')
+    
