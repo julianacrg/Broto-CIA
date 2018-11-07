@@ -68,9 +68,9 @@
             <div class="cm-flex">
                 <div class="nav-tabs-container">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="cadastro">Cadastrar Itens</a></li>
-                        <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                        <li><a href="cadastrarfuncionario.php">Cadastrar Funcionários</a></li>
+                        <li><a href="cadastrarItens">Cadastrar Itens</a></li>
+                        <li class="active"><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
+                        <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
                     </ul>
 
                 </div>

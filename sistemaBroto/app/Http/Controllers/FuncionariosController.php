@@ -16,7 +16,7 @@ class FuncionariosController extends Controller
     public function index()
     {
       $func = Funcionarios:: orderBy('nome')->get();
-         return view('funcionarios')->with('Funcionarios',$func);
+         return view('cadastrarFuncionario')->with('Funcionarios',$func);
     }
 
     /**
@@ -26,7 +26,7 @@ class FuncionariosController extends Controller
      */
     public function create()
     {
-        return view ('funcionario');
+        return view ('cadastrarFuncionario');
     }
 
     /**
@@ -40,7 +40,7 @@ class FuncionariosController extends Controller
       Funcionarios::create($request->all());
       session()->flash('mensagem', 'Funcionario cadastrado com sucesso!');
 
-      return redirect()->route('Funcionarios.index');
+      return view('cadastrarFuncionario');
     }
 
     /**
@@ -77,7 +77,7 @@ class FuncionariosController extends Controller
       $Funcionario->fill($request->all());
       $Funcionario->save();
       $request->session()->flash('mensagem', 'Funcionario atualizado com sucesso!');
-      return redirect()->route('Funcionarios.index');
+      return redirect()->route('cadastrarFuncionario');
     }
 
     /**

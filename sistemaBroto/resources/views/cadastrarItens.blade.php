@@ -66,9 +66,9 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="cadastraritens.php">Cadastrar Itens</a></li>
+                            <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
                             <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                            <li><a href="cadastrarfuncionario.php">Cadastrar Funcionários</a></li>
+                            <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
                         </ul>
 
                     </div>
@@ -88,14 +88,14 @@
 
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="#">
-
+                                 <form id="formulario" class="" method="post" action="{{ route('Itens.store') }}">
+                                    @csrf
                                     <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Nome</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nomeitem"  placeholder="Entre com o nome do Item"/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="nome" id="nomeitem"  placeholder="Entre com o nome do Item"/>
                                        </div>
                                      </div>
                                    </div>
@@ -116,7 +116,7 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 20%;" name="quantidade" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="quantidade" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
                                       </div>
                                      </div>
                                    </div>
@@ -126,10 +126,22 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 20%;" name="preco" id="precoitem"  placeholder="Entre com o preço uni."/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o preço uni."/>
                                        </div>
                                      </div>
                                    </div>
+
+
+                                   <div class="form-group">
+                                    <label for="name" class="cols-sm-2 control-label">Foto</label>
+                                    <div class="cols-sm-10">
+                                      <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" style="max-width: 40%;" name="foto" id="fotoitem"  placeholder="Entre com link da foto "/></input>
+                                      </div>
+                                    </div>
+                                   </div>
+
 
                                     <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Descrição</label>
@@ -141,8 +153,10 @@
                                      </div>
                                    </div>
 
+
+
                                  <div class="form-group ">
-                                     <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Cadastrar Item</a>
+                                     <input  target="_blank" type="submit" value="Cadastrar Item" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
 
 

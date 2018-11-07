@@ -27,7 +27,7 @@
                           <ul class="cm-menu-items">
                               <li class="active"><a href="index" class="sf-house">Home</a></li>
                               <li><a href="headerorcamento" class="sf-money">Orçamentos</a></li>
-                              <li><a href="cadastro" class="sf-notepad">Cadastrar</a></li>
+                              <li><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
                               <li><a href="cadastraritens.php" class="sf-post-it">Ativdades</a></li>
                               <li><a href="cadastraritens.php" class="sf-pencil">Pedidos</a></li>
                               <li><a href="cadastraritens.php" class="sf-brick">Peças</a></li>
@@ -121,7 +121,6 @@
     <script src="assets/js/lib/d3.min.js"></script>
     <script src="assets/js/lib/c3.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
-
 
   </body>
   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
