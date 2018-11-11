@@ -107,10 +107,7 @@
                                  <div class="cols-sm-10">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-
-
-                                     <input type="text" class="form-control" style="max-width: 40%;" name="CPF" id="cpffuncionario"  placeholder="xxx.xxx.xxx-xx"/>
-
+                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="cpffuncionario"  placeholder="xxx.xxx.xxx-xx"/>
                                    </div>
                                  </div>
                                </div>

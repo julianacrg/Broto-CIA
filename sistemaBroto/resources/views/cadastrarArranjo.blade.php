@@ -116,8 +116,8 @@
                                      <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                      <select  name="Arranjos->nome" class="form-control">
                                        <option value="">Selecione</option>
-                                       @foreach( $Arranjos as $arranjo )
-                                       <option value="Arranjos->nome"> {{$arranjo->nome}}</option>
+                                       @foreach( $Itens as $Item )
+                                       <option value="Itens->nome"> {{$Item->nome}}</option>
                                        @endforeach
 
                                      </select>                                   </div>

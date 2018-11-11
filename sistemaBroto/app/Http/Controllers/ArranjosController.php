@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Arranjos;
+use App\Itens;
 use Illuminate\Http\Request;
 
 class ArranjosController extends Controller
@@ -15,8 +16,11 @@ class ArranjosController extends Controller
     public function index()
     {
       $arranjos = Arranjos:: orderBy('nome')->get();
-         return view('cadastrarArranjo')->with('Arranjos',$arranjos);
+      $It = Itens:: orderBy('nome')->get();
+         return view('cadastrarArranjo')->with('Arranjos',$arranjos)->with('Itens', $It);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -106,7 +106,7 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="name" id="categoriaitem"  placeholder="Entre com o a categoria do item"/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="categoria" id="categoriaitem"  placeholder="Entre com o a categoria do item"/>
                                        </div>
                                      </div>
                                    </div>
@@ -116,7 +116,7 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="quantidade" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="qtd" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
                                       </div>
                                      </div>
                                    </div>

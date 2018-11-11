@@ -12,9 +12,10 @@
 */
 
 Auth::routes();
-Route::get('/funcionarios', function () {
+Route::get('/cadastraArranjo', function () {
     return view('funcionarios');
 });
+Route::view('/home', 'index');
 Route::view('/index', 'index');
 Route::view('/headerorcamento', 'headerorcamento'); // chamar a view no inndex
 Route::view('/fazerorcamento', 'fazerorcamento');
