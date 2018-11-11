@@ -16,6 +16,7 @@
 
     <title>Broto & CIA</title>
     <!-- top Header -->
+    </head>
     <div id="cm-menu">
               <nav class="cm-navbar cm-navbar-primary">
                   <div class="cm-flex"><a href="index.php" class="cm-logo"></a></div>
@@ -37,7 +38,7 @@
                   </div>
               </div>
           </div>
-  </head>
+
 
 
 
@@ -95,8 +96,11 @@
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
                             </li>
-                            <li>
-                                <a href="login.html"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                            <li>  <form>
+                                <a action="{{ route('logout') }}"><i class="fa fa-fw fa-sign-out" method="POST"></i> Sign out</a>
+
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </div>
