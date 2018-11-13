@@ -27,7 +27,7 @@
                       <div id="cm-menu-scroller">
                           <ul class="cm-menu-items">
                               <li class="active"><a href="index" class="sf-house">Home</a></li>
-                              <li><a href="headerorcamento" class="sf-money">Orçamentos</a></li>
+                              <li><a href="cadastrarOrçamento" class="sf-money">Orçamentos</a></li>
                               <li><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
                               <li><a href="cadastraritens.php" class="sf-post-it">Ativdades</a></li>
                               <li><a href="cadastraritens.php" class="sf-pencil">Pedidos</a></li>

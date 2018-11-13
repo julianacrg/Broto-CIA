@@ -17,11 +17,11 @@ Route::get('/cadastraArranjo', function () {
 });
 Route::view('/home', 'index');
 Route::view('/index', 'index');
-Route::view('/headerorcamento', 'headerorcamento'); // chamar a view no inndex
-Route::view('/fazerorcamento', 'fazerorcamento');
+Route::get('/cadastrarOrçamento', 'OrcamentosController@index'); // chamar a view no inndex
 Route::get('/cadastrarItens', 'ItensController@index');
 Route::get('/cadastraArranjo', 'ArranjosController@index');
 Route::get('/cadastrarFuncionario', 'FuncionariosController@index');
+Route::view('/editarOrcamento', 'editarOrcamento');
 
 
 

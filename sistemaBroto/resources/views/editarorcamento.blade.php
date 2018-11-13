@@ -21,8 +21,8 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="fazerorcamento.php">Novo Orçamento</a></li>
-                            <li><a href="editarorcamento.php">Editar Orçamento</a></li>
+                            <li><a href="cadastrarOrçamento">Novo Orçamento</a></li>
+                            <li class="active"><a href="editarOrcamento">Editar Orçamento</a></li>
 
                         </ul>
                     </div>
@@ -31,8 +31,36 @@
                 <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
         </header>
+      </div>
 
-        </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Quantidade</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Rosas Brancas </td>
+                <td>10</td>
+
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Rosas Vermelhas </td>
+                <td>7</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
 
 @endsection('conteudo')
-@yield('conteudo2')

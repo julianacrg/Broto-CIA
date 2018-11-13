@@ -24,8 +24,8 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="fazerorcamento">Novo Orçamento</a></li>
-                            <li><a href="editarorcamento.php">Editar Orçamento</a></li>
+                            <li class="active"><a href="cadastrarOrçamento">Novo Orçamento</a></li>
+                            <li><a href="editarOrcamento">Editar Orçamento</a></li>
 
                         </ul>
                     </div>
@@ -39,7 +39,6 @@
         <body class="cm-no-transition cm-2-navbar">
 
             <div id="global">
-              // fim do headerorcamento
 
 
                <div class="container-fluid">
@@ -65,7 +64,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="name" id="name"  placeholder="Entre com o nome do Cliente"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="name"  placeholder="Entre com o nome do Cliente"/>
                                     </div>
                                   </div>
                                 </div>
@@ -207,6 +206,6 @@
 
         </body>
 
-        
+
 
 @endsection('conteudo')
