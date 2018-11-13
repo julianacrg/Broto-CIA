@@ -52,20 +52,23 @@
         </div>
       </div>
       <button type="submit" class="btn btn-primary">
-          {{ __('Login') }}
+          {{ __('Entrar') }}
       </button>
 
   <div class="col-xs-6">
     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
+    <div class="col-xs-9">
     <label class="form-check-label" for="remember">
-        {{ __('                  Lembrar-me') }}
+        {{ __('Lembrar-me') }}
     </label>
+    </div>
     </div>
       <div class="col-xs-6">
         <div><br><a class="btn btn-link" href="{{ route('password.request') }}">
             {{ __('Esqueceu sua senha?') }}
-        </a> </div>
+        </a>
+       </div>
         </div>
 
 
