@@ -1,6 +1,6 @@
 @extends('menu')
 @section('conteudo')
-<div class="row">
+
 
 
     <header id="cm-header">
@@ -31,36 +31,52 @@
                 <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
         </header>
-      </div>
+
+        <body class="cm-no-transition cm-2-navbar">
 
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Quantidade</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Rosas Brancas </td>
-                <td>10</td>
-
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Rosas Vermelhas </td>
-                <td>7</td>
-
-              </tr>
-
-            </tbody>
-          </table>
+               <div id="global">
+                  <div class="container-fluid">
+                       <div class="panel panel-default">
+                         <div class="main-login main-center" id="divform">
 
 
+                        </div>
+                        </div>
+                        <table class="table">
+                        <thead>
+                         <tr>
+                           <th scope="col">ID</th>
+                           <th scope="col">Tipo de Evento</th>
+                           <th scope="col">Cliente</th>
+                           <th scope="col">Ação</th>
+
+                         </tr>
+                        </thead>
+                        <tbody>
+                         <tr>
+                           <th scope="row">1</th>
+                           <td>Rosas Brancas </td>
+                           <td>10</td>
+
+                         </tr>
+                         <tr>
+                           <th scope="row">2</th>
+                           <td>Rosas Vermelhas </td>
+                           <td>7</td>
+
+                         </tr>
+
+                        </tbody>
+                        </table>
+
+
+                       </div>
+                       </div>
+                   </div>
+               </div>
+
+           </body>
 
 
 @endsection('conteudo')
