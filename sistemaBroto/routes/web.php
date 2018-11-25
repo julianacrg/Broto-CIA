@@ -31,3 +31,5 @@ Route::get('/editarOrcamento', 'OrcamentosController@create');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');
+
+// obs: linha de comando pra criar um controller novo: php artisan make:controller PhotoController --resource --model=Photo
