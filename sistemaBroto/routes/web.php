@@ -21,7 +21,7 @@ Route::get('/cadastrarOrçamento', 'OrcamentosController@index'); // chamar a vi
 Route::get('/cadastrarItens', 'ItensController@index');
 Route::get('/cadastraArranjo', 'ArranjosController@index');
 Route::get('/cadastrarFuncionario', 'FuncionariosController@index');
-Route::view('/editarOrcamento', 'editarOrcamento');
+Route::get('/editarOrcamento', 'OrcamentosController@create');
 
 
 

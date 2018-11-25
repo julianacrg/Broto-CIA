@@ -25,7 +25,9 @@ class OrcamentosController extends Controller
      */
     public function create()
     {
-        //
+      $orcamentos = Orcamentos:: orderBy('evento')->get();
+         return view('editarOrcamento')->with('Orçamentos',$orcamentos);
+
     }
 
     /**

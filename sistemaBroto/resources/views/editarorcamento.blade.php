@@ -35,16 +35,15 @@
         <body class="cm-no-transition cm-2-navbar">
 
 
-               <div id="global">
-                  <div class="container-fluid">
-                       <div class="panel panel-default">
-                         <div class="main-login main-center" id="divform">
+          <div id="global">
+              <div class="container-fluid">
 
 
-                        </div>
-                        </div>
+                  <div class="panel panel-default">
+                      <div class="panel-body">
                         <table class="table">
                         <thead>
+                          @foreach( $Orçamentos as $o )
                          <tr>
                            <th scope="col">ID</th>
                            <th scope="col">Tipo de Evento</th>
@@ -55,28 +54,26 @@
                         </thead>
                         <tbody>
                          <tr>
-                           <th scope="row">1</th>
-                           <td>Rosas Brancas </td>
+                           <td>{{ $o->id }} </td>
                            <td>10</td>
 
-                         </tr>
-                         <tr>
-                           <th scope="row">2</th>
-                           <td>Rosas Vermelhas </td>
-                           <td>7</td>
+
 
                          </tr>
+                         @endforeach
 
                         </tbody>
                         </table>
 
 
-                       </div>
-                       </div>
-                   </div>
-               </div>
+                        </div>
+                  </div>
 
-           </body>
+
+              </div>
+          </div>
+
+     </body>
 
 
 @endsection('conteudo')
