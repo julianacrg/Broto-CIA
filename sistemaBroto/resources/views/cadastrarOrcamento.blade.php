@@ -46,10 +46,10 @@
 
                             <div class="main-login main-center" id="divform">
 
-                              <form id="formulario" class="" method="post" action="#">
+                              <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
 
                                  <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Evento</label>
+                                  <label for="evento" class="cols-sm-2 control-label">Evento</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
@@ -60,17 +60,17 @@
 
 
                                 <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Nome</label>
+                                  <label for="cliente" class="cols-sm-2 control-label">Cliente</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="name"  placeholder="Entre com o nome do Cliente"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="cliente" id="cliente"  placeholder="Entre com o nome do Cliente"/>
                                     </div>
                                   </div>
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="email" class="cols-sm-2 control-label">Local</label>
+                                  <label for="local" class="cols-sm-2 control-label">Local</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
@@ -80,7 +80,7 @@
                                 </div>
 
                                    <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Endereço</label>
+                                  <label for="endereco" class="cols-sm-2 control-label">Endereço</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -90,31 +90,31 @@
                                 </div>
 
                                  <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Data</label>
+                                  <label for="data" class="cols-sm-2 control-label">Data</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 30%;" name="data" id="data"  placeholder="Entre com a data do Evento"/>
+                                      <input type="date" class="form-control" style="max-width: 30%;" name="data" id="data"  placeholder="Entre com a data do Evento"/>
                                     </div>
                                   </div>
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Horario</label>
+                                  <label for="horario" class="cols-sm-2 control-label">Horario</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-clock-o fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 30%;" name="horario" id="horario"  placeholder="Entre com a hora do Evento"/>
+                                      <input type="time" class="form-control" style="max-width: 30%;" name="horario" id="horario"  placeholder="Entre com a hora do Evento"/>
                                     </div>
                                   </div>
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Telefone</label>
+                                  <label for="telefone" class="cols-sm-2 control-label">Telefone</label>
                                   <div class="cols-sm-5">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="Entre com o Telefone"/>
+                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="XX-XXXXX-XXXX" pattern="^\d{2}-\d{5}-\d{4}$"/>
                                     </div>
                                   </div>
                                 </div>
@@ -122,7 +122,7 @@
 
 
                                 <div class="form-group">
-                                  <label for="name" class="cols-sm-2 control-label">Celular</label>
+                                  <label for="celular" class="cols-sm-2 control-label">Celular</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
@@ -131,7 +131,7 @@
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <label for="name" class="col-sm-2 control-label">Arranjo</label>
+                                  <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
                                 </div>
                                  <div class="row">
                                    <div class="form-group">
@@ -139,6 +139,17 @@
                                         <div class="input-group">
                                           <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                           <select type="text" class="form-control"  name="arranjo" id="cel" /><select>
+                                        </div>
+                                      </div>
+
+
+                                      <div class="form-group">
+                                        <label for="valor" class="cols-sm-2 control-label">Valor</label>
+                                        <div class="cols-sm-10">
+                                          <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" style="max-width: 30%;" name="valor" id="vlor"  placeholder="Entre com o Celular"/>
+                                          </div>
                                         </div>
                                       </div>
                                     <div class="col-sm-2">
@@ -186,7 +197,7 @@
 
 
                                 <div class="form-group ">
-                                  <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Gerar Orçamento</a>
+                                  <a target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></a>
                                 </div>
 
                               </form>

@@ -15,7 +15,7 @@ class OrcamentosController extends Controller
     public function index()
     {
       $orcamentos = Orcamentos:: orderBy('evento')->get();
-         return view('cadastrarOrçamento')->with('Orçamentos',$orcamentos);
+         return view('cadastrarOrcamento')->with('Orçamentos',$orcamentos);
     }
 
     /**
@@ -41,7 +41,7 @@ class OrcamentosController extends Controller
       Orcamentos::create($request->all());
       session()->flash('mensagem', 'Orçamento cadastrado com sucesso!');
 
-      return view('cadastrarOrçamento');
+      return view('cadastrarOrcamento');
     }
 
     /**
@@ -78,7 +78,7 @@ class OrcamentosController extends Controller
       $orcamentos->fill($request->all());
       $orcamentos->save();
       $request->session()->flash('mensagem', 'Orcamentos atualizado com sucesso!');
-      return redirect()->route('cadastrarOrçamento');
+      return redirect()->route('cadastrarOrcamento');
     }
 
     /**
@@ -91,6 +91,6 @@ class OrcamentosController extends Controller
     {
       $orcamentos->delete();
       session()->flash('mensagem','Orcamentos excluido com sucesso');
-      return redirect()->route('cadastrarOrçamento');
+      return redirect()->route('cadastrarOrcamento');
     }
 }
