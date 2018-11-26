@@ -46,8 +46,8 @@
 
                             <div class="main-login main-center" id="divform">
 
-                              <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
-
+                              <form id="formulario" class="" method="post" action="{{route('Orcamentos.store') }}">
+                                @csrf
                                  <div class="form-group">
                                   <label for="evento" class="cols-sm-2 control-label">Evento</label>
                                   <div class="cols-sm-10">

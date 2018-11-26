@@ -21,7 +21,7 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li><a href="cadastrarOrçamento">Novo Orçamento</a></li>
+                            <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                             <li class="active"><a href="editarOrcamento">Editar Orçamento</a></li>
 
                         </ul>
