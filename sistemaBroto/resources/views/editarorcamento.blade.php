@@ -43,7 +43,6 @@
                       <div class="panel-body">
                         <table class="table">
                         <thead>
-                          @foreach( $Orçamentos as $o )
                          <tr>
                            <th scope="col">ID</th>
                            <th scope="col">Tipo de Evento</th>
@@ -53,12 +52,37 @@
                          </tr>
                         </thead>
                         <tbody>
+                          @foreach( $Orçamentos as $o )
                          <tr>
                            <td>{{ $o->id }} </td>
-                           <td>10</td>
+                           <td>{{ $o->evento }} </td>
+                           <td>{{ $o->cliente }} </td>
+                           <td> <button class="btn btn-primary"style="font-size:14px"
+                                  id="myBtn">Editar Funcionario <i class="fa fa-edit"></i></button></td>
+                                  <div id="myModal" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <span class="close">&times;</span>
+                                        <h2>Edite o Orçamentos:</h2>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form method="post" action="{{ route('Orcamentos.update',$o->id)}}">
+                                          @csrf
+                                          @method('PATCH')
+                                          <p>Orçamentos:</p>
 
+                                        <p>Nome: <input type="text" name="nome"></p>
+                                        <p>CPF: <input type="text" name="cpf"></p>
+                                        <input type="submit" name="btnAtualizar" value="Atualizar">
+                                        </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <h3>Edição do Orçamento</h3>
+                                      </div>
+                                    </div>
 
-
+                                  </div>
                          </tr>
                          @endforeach
 
@@ -71,9 +95,42 @@
 
 
               </div>
+
           </div>
 
+
+    </div>
+    <script type="text/javascript">
+
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+
      </body>
+
 
 
 @endsection('conteudo')
