@@ -126,9 +126,15 @@
     <script src="assets/js/lib/c3.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
 
+
+
   </body>
   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
+<section>
+  @yield('conteudo')
+</section>
+<section>
+  @yield('menu')
+</section>
 </html>
-
-    @yield('conteudo')
