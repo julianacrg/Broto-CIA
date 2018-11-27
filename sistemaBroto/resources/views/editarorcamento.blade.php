@@ -3,20 +3,7 @@
 
 
 
-    <header id="cm-header">
-            <nav class="cm-navbar cm-navbar-primary">
-                <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
-                <div class="cm-flex">
-                    <h1>Orçamentos</h1>
-                    <form id="cm-search" action="#" method="#">
-                        <input type="search" name="q" autocomplete="off" placeholder="Search...">
-                    </form>
-                </div>
-                <div class="pull-right">
-                    <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
-                </div>
-
-            </nav>
+<header class="cm-headermenu">          
             <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
