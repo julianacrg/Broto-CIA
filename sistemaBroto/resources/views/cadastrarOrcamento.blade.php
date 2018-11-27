@@ -145,7 +145,6 @@
                                   <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
                                 </div>
                                  <div class="row">
-                                   <!-- <form method="post" action=""> -->
 
                                        <div class="form-group">
                                          <!-- salvando arranjos na tabela arranjos orçamentos -->
@@ -179,12 +178,7 @@
                                           <button id="botaoadd"  class="btn btn-primary">Add</button>
                                         </div>
                                       </div>
-                                    <!-- </form> -->
                                 </div>
-
-
-
-
 
                                 <table class="table">
                                   <thead>

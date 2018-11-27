@@ -58,15 +58,15 @@
                            <td>{{ $o->evento }} </td>
                            <td>{{ $o->cliente }} </td>
                            <td> <button class="btn btn-primary"style="font-size:14px"
-                                  id="myBtn">Editar Funcionario <i class="fa fa-edit"></i></button></td>
+                                  id="myBtn">Editar orçamento <i class="fa fa-edit"></i></button></td>
                                   <div id="myModal" class="modal">
                                     <!-- Modal content -->
-                                    <div class="modal-content">
+                                    <div class="modal-content container-fluid">
                                       <div class="modal-header">
                                         <span class="close">&times;</span>
                                         <h2>Edite o Orçamentos:</h2>
                                       </div>
-                                      <div class="modal-body">
+                                      <div class="modal-body container-fluid">
                                         <form method="post" action="{{ route('Orcamentos.update',$o->id)}}">
                                           @csrf
                                           @method('PATCH')
