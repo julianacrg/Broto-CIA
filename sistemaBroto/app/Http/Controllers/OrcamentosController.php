@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Orcamentos;
+use App\Itens_Orcamentos;
+
 use Illuminate\Http\Request;
 
 class OrcamentosController extends Controller
@@ -15,6 +17,7 @@ class OrcamentosController extends Controller
     public function index()
     {
       $orcamentos = Orcamentos:: orderBy('evento')->get();
+      
          return view('cadastrarOrcamento')->with('Orçamentos',$orcamentos);
     }
 

@@ -130,6 +130,17 @@
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="form-group">
+                                  <label for="valor" class="cols-sm-2 control-label">Valor</label>
+                                  <div class="cols-sm-10">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
+                                      <input type="text" class="form-control" style="max-width: 30%;" name="valor" id="vlor"  placeholder="Entre com o Celular"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                
                                 <div class="row">
                                   <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
                                 </div>
@@ -143,15 +154,7 @@
                                       </div>
 
 
-                                      <div class="form-group">
-                                        <label for="valor" class="cols-sm-2 control-label">Valor</label>
-                                        <div class="cols-sm-10">
-                                          <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
-                                            <input type="text" class="form-control" style="max-width: 30%;" name="valor" id="vlor"  placeholder="Entre com o Celular"/>
-                                          </div>
-                                        </div>
-                                      </div>
+
                                     <div class="col-sm-2">
                                          <div class="form-group">
 

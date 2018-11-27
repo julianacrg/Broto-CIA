@@ -14,7 +14,8 @@ class Itens_orcamentosContrller extends Controller
      */
     public function index()
     {
-        //
+      $Itens_orc = Orcamentos:: orderBy('id_itens_orcamentos')->get();
+
     }
 
     /**
