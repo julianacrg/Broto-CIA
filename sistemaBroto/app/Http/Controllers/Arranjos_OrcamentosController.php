@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Orcamentos;
-use App\Arranjos;
-use App\Itens_Orcamentos;
-
+use App\Arranjo_Orcamentos;
 use Illuminate\Http\Request;
 
-class OrcamentosController extends Controller
+class Arranjos_OrcamentosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +14,7 @@ class OrcamentosController extends Controller
      */
     public function index()
     {
-      $orcamentos = Orcamentos:: orderBy('evento')->get();
-      $arranjos = Arranjos:: orderBy('nome')->get();
-         return view('cadastrarOrcamento')->with('Orçamentos',$orcamentos)->with('Arranjos',$arranjos);
+        //
     }
 
     /**
@@ -29,9 +24,7 @@ class OrcamentosController extends Controller
      */
     public function create()
     {
-      $orcamentos = Orcamentos:: orderBy('evento')->get();
-         return view('editarOrcamento')->with('Orçamentos',$orcamentos);
-
+        //
     }
 
     /**
@@ -45,16 +38,16 @@ class OrcamentosController extends Controller
       Orcamentos::create($request->all());
       session()->flash('mensagem', 'Orçamento cadastrado com sucesso!');
 
-      return view('cadastrarOrcamento');
+      return route("{{route('Orcamentos.index')}}");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Orcamentos  $orcamentos
+     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function show(Orcamentos $orcamentos)
+    public function show(Arranjo_Orcamentos $arranjo_Orcamentos)
     {
         //
     }
@@ -62,10 +55,10 @@ class OrcamentosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Orcamentos  $orcamentos
+     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orcamentos $orcamentos)
+    public function edit(Arranjo_Orcamentos $arranjo_Orcamentos)
     {
         //
     }
@@ -74,27 +67,22 @@ class OrcamentosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Orcamentos  $orcamentos
+     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orcamentos $orcamentos)
+    public function update(Request $request, Arranjo_Orcamentos $arranjo_Orcamentos)
     {
-      $orcamentos->fill($request->all());
-      $orcamentos->save();
-      $request->session()->flash('mensagem', 'Orcamentos atualizado com sucesso!');
-      return redirect()->route('cadastrarOrcamento');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Orcamentos  $orcamentos
+     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orcamentos $orcamentos)
+    public function destroy(Arranjo_Orcamentos $arranjo_Orcamentos)
     {
-      $orcamentos->delete();
-      session()->flash('mensagem','Orcamentos excluido com sucesso');
-      return redirect()->route('cadastrarOrcamento');
+        //
     }
 }

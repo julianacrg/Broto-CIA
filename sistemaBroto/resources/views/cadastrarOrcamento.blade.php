@@ -24,7 +24,7 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="cadastrarOrçamento">Novo Orçamento</a></li>
+                            <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                             <li><a href="editarOrcamento">Editar Orçamento</a></li>
 
                         </ul>
@@ -135,41 +135,57 @@
                                   <label for="valor" class="cols-sm-2 control-label">Valor</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
-                                      <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 30%;" name="valor" id="vlor"  placeholder="Entre com o Celular"/>
+                                      <span class="input-group-addon"><i class="fa fa-money fa" aria-hidden="true"></i></span>
+                                      <input type="text" class="form-control" style="max-width: 30%;" name="valor" id="valor"  placeholder="Entre com o valor"/>
                                     </div>
                                   </div>
                                 </div>
-                                
+
                                 <div class="row">
                                   <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
                                 </div>
                                  <div class="row">
-                                   <div class="form-group">
-                                      <div class="col-sm-5">
-                                        <div class="input-group">
-                                          <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                          <select type="text" class="form-control"  name="arranjo" id="cel" /><select>
-                                        </div>
-                                      </div>
+                                   <!-- <form method="post" action=""> -->
 
-
-
-                                    <div class="col-sm-2">
-                                         <div class="form-group">
+                                       <div class="form-group">
+                                         <!-- salvando arranjos na tabela arranjos orçamentos -->
+                                          <div class="col-sm-5">
 
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" style="max-width: 70%;" name="quantidade" id="qtd"  placeholder="Qtd."/>
-                                            </div>
+                                              <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+                                              <select  name="Arranjos->nome" class="form-control">
+                                                <option value="">Selecione</option>
+                                                @foreach( $Arranjos as $a )
+                                                <option value="Arranjos->nome"> {{$a->nome}}</option>
+                                                @endforeach
 
+                                              </select>
+                                            </div>
+                                          </div>
+
+                                        <div class="col-sm-2">
+                                             <div class="form-group">
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
+                                                    <input type="number" min="1" class="form-control" style="max-width: 70%;" name="qtd" id="qtd"  placeholder="Qtd."/>
+                                                </div>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                      <button id="botaoadd"  class="btn btn-primary">Add</button>
-                                    </div>
-                                  </div>
+                                        <!-- fim da tabela arranjo orçamentos -->
+
+                                        <div class="col-sm-4">
+                                          <button id="botaoadd"  class="btn btn-primary">Add</button>
+                                        </div>
+                                      </div>
+                                    <!-- </form> -->
                                 </div>
+
+
+
+
+
                                 <table class="table">
                                   <thead>
                                     <tr>
@@ -200,7 +216,7 @@
 
 
                                 <div class="form-group ">
-                                  <a target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></a>
+                                  <input target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>

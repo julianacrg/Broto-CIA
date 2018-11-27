@@ -32,5 +32,6 @@ Route::get('/cadastrarFuncionario', 'FuncionariosController@index');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');
+Route::resource('/Arranjo_Orcamentos', 'Arranjos_OrcamentosController');
 
 // obs: linha de comando pra criar um controller novo: php artisan make:controller PhotoController --resource --model=Photo
