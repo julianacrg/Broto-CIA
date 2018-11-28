@@ -27,18 +27,14 @@
                       <div id="cm-menu-scroller">
                           <ul class="cm-menu-items">
                             <!-- Melhorias: dependendo de qual eu clicar quero que a classe active fique ativa -->
-
-
-
                             <div id="Myli">
-
 
                               <li class="contador active"><a href="home" class="sf-house">Home</a></li>
                               <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
-                              <li class="contador"><a href="cadastraritens.php" class="sf-post-it">Ativdades</a></li>
-                              <li class="contador"><a href="cadastraritens.php" class="sf-pencil">Pedidos</a></li>
-                              <li class="contador"><a href="cadastraritens.php" class="sf-brick">Peças</a></li>
+                              <li class="contador"><a href="#" class="sf-post-it">Ativdades</a></li>
+                              <li class="contador"><a href="#" class="sf-pencil">Pedidos</a></li>
+                              <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
                               </div>
 
                               <script type="text/javascript">
