@@ -1,32 +1,24 @@
 @extends('menu')
 
 @section('conteudo')
-
-
-<header class="cm-headermenu">
-                <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
-            <div class="cm-flex">
-                <div class="nav-tabs-container">
-                    <ul class="nav nav-tabs">
-                        <li ><a href="cadastrarItens">Cadastrar Itens</a></li>
-                        <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                        <li class="active"><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
-                    </ul>
-
-                </div>
-
-            </div>
-            <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-            <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
-        </nav>
-    </header>
-
-
     <body class="cm-no-transition cm-2-navbar">
 
-
-           <div id="global">
+       <div id="global">
               <div class="container-fluid">
+
+                <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
+                    <div class="cm-flex">
+                        <div class="nav-tabs-container">
+                            <ul class="nav nav-tabs">
+                                <li ><a href="cadastrarItens">Cadastrar Itens</a></li>
+                                <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
+                                <li class="active"><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                    <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                </nav>
                    <div class="panel panel-default">
 
                            <div class="main-login main-center" id="divform">

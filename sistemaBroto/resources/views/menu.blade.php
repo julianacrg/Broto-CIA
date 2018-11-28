@@ -26,12 +26,37 @@
                   <div id="cm-menu-items-wrapper">
                       <div id="cm-menu-scroller">
                           <ul class="cm-menu-items">
-                              <li class="active"><a href="index" class="sf-house">Home</a></li>
-                              <li><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
-                              <li><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
-                              <li><a href="cadastraritens.php" class="sf-post-it">Ativdades</a></li>
-                              <li><a href="cadastraritens.php" class="sf-pencil">Pedidos</a></li>
-                              <li><a href="cadastraritens.php" class="sf-brick">Peças</a></li>
+                            <!-- Melhorias: dependendo de qual eu clicar quero que a classe active fique ativa -->
+
+
+
+                            <div id="Myli">
+
+
+                              <li class="contador active"><a href="home" class="sf-house">Home</a></li>
+                              <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
+                              <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
+                              <li class="contador"><a href="cadastraritens.php" class="sf-post-it">Ativdades</a></li>
+                              <li class="contador"><a href="cadastraritens.php" class="sf-pencil">Pedidos</a></li>
+                              <li class="contador"><a href="cadastraritens.php" class="sf-brick">Peças</a></li>
+                              </div>
+
+                              <script type="text/javascript">
+                              // Get the container element
+                              var liContainer = document.getElementById("Myli");
+                              // Get all buttons with class="btn" inside the container
+                              var li = liContainer.getElementsByClassName("contador");
+
+                              // Loop through the buttons and add the active class to the current/clicked button
+                              for (var i = 0; i < li.length; i++) {
+                                li[i].addEventListener("click", function() {
+                                  var current = document.getElementsByClassName("active");
+                                  current[0].className = current[0].className.replace(" active", "");
+                                  this.className += " active";
+                                });
+                              }
+
+                              </script>
 
                           </ul>
                       </div>
@@ -64,7 +89,7 @@
                                         <h4 class="list-group-item-heading text-overflow">
                                             <i class="fa fa-fw fa-envelope"></i> Nunc volutpat aliquet magna.
                                         </h4>
-                                        <p class="list-group-item-text text-overflow">Pellentesque tincidunt mollis scelerisque. Praesent vel blandit quam.</p>
+                                        <p class="list-group-item-text text-overflow">Pellentesque.</p>
                                     </a>
                                     <a href="#" class="list-group-item">
                                         <h4 class="list-group-item-heading">
@@ -125,16 +150,16 @@
     <script src="assets/js/lib/d3.min.js"></script>
     <script src="assets/js/lib/c3.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
-  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
 <section>
   @yield('conteudo')
 </section>
+<footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
+
 <section>
-  @yield('menu')
+  @yield('footer')
 </section>
 </html>

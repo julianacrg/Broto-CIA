@@ -16,7 +16,7 @@ Route::get('/cadastraArranjo', function () {
     return view('funcionarios');
 });
 Route::view('/home', 'index');
-Route::view('/index', 'index');
+// Route::view('/index', 'index');
 Route::resource('/Orcamentos', 'OrcamentosController'); // Aqui se passa o model e o controller
 Route::get('/editarOrcamento', 'OrcamentosController@create');
 Route::get('/cadastrarItens', 'ItensController@index');

@@ -2,30 +2,28 @@
 
 @section('conteudo')
 
-    <!-- <header style="margin-top: 3.7%"> -->
-      <header class="cm-headermenu">
-            <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
-                <div class="cm-flex">
-                    <div class="nav-tabs-container">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
-                            <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                            <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
-                        </ul>
 
-                    </div>
-
-                </div>
-                <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
-            </nav>
-        </header>
 
         <body class="cm-no-transition cm-2-navbar">
 
-
                <div id="global">
+
                   <div class="container-fluid">
+                    <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
+                        <div class="cm-flex">
+                            <div class="nav-tabs-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
+                                    <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
+                                    <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                        <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                    </nav>
                        <div class="panel panel-default">
 
                                <div class="main-login main-center" id="divform">
@@ -95,20 +93,12 @@
                                      </div>
                                    </div>
 
-
-
                                  <div class="form-group ">
                                      <input  target="_blank" type="submit" value="Cadastrar Item" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
 
-
                                  </form>
                                </div>
-                          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                           <!-- Include all compiled plugins (below), or include individual files as needed -->
-                           <script src="js/bootstrap.min.js"></script>
-
                        </div>
                    </div>
                </div>

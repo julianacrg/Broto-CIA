@@ -2,29 +2,22 @@
 @section('conteudo')
 
 
-
-<header class="cm-headermenu">          
-            <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
-                <div class="cm-flex">
-                    <div class="nav-tabs-container">
-                        <ul class="nav nav-tabs">
-                            <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                            <li class="active"><a href="editarOrcamento">Editar Orçamento</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
-            </nav>
-        </header>
-
         <body class="cm-no-transition cm-2-navbar">
-
-
           <div id="global">
               <div class="container-fluid">
+                <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
+                    <div class="cm-flex">
+                        <div class="nav-tabs-container">
+                            <ul class="nav nav-tabs">
+                                <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
+                                <li class="active"><a href="editarOrcamento">Editar Orçamento</a></li>
 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                    <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                </nav>
 
                   <div class="panel panel-default">
                       <div class="panel-body">

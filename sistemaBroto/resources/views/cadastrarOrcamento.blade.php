@@ -2,32 +2,25 @@
 
 @section('conteudo')
 
-<div class="row">
 
-
-<header class="cm-headermenu">            
-            <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
-                <div class="cm-flex">
-                    <div class="nav-tabs-container">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                            <li><a href="editarOrcamento">Editar Orçamento</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
-            </nav>
-        </header>
-
-        </div>
         <body class="cm-no-transition cm-2-navbar">
 
             <div id="global">
-
-
                <div class="container-fluid">
+
+                 <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
+                     <div class="cm-flex">
+                         <div class="nav-tabs-container">
+                             <ul class="nav nav-tabs">
+                                 <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
+                                 <li><a href="editarOrcamento">Editar Orçamento</a></li>
+
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                     <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                 </nav>
                     <div class="panel panel-default">
 
                             <div class="main-login main-center" id="divform">
@@ -193,22 +186,12 @@
                                 </table>
 
 
-
-
                                 <div class="form-group ">
                                   <input target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>
                             </div>
-
-
-
-                         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                        <!-- Include all compiled plugins (below), or include individual files as needed -->
-                        <script src="js/bootstrap.min.js"></script>
-
 
                     </div>
                 </div>
