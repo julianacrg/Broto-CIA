@@ -37,22 +37,6 @@
                               <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
                               </div>
 
-                              <script type="text/javascript">
-                              // Get the container element
-                              var liContainer = document.getElementById("Myli");
-                              // Get all buttons with class="btn" inside the container
-                              var li = liContainer.getElementsByClassName("contador");
-
-                              // Loop through the buttons and add the active class to the current/clicked button
-                              for (var i = 0; i < li.length; i++) {
-                                li[i].addEventListener("click", function() {
-                                  var current = document.getElementsByClassName("active");
-                                  current[0].className = current[0].className.replace(" active", "");
-                                  this.className += " active";
-                                });
-                              }
-
-                              </script>
 
                           </ul>
                       </div>
@@ -148,6 +132,25 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    // Get the container element
+    var liContainer = document.getElementById("Myli");
+    // Get all buttons with class="btn" inside the container
+    var li = liContainer.getElementsByClassName("contador");
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+
+  
+    }
+
+    </script>
   </body>
 
 <section>
