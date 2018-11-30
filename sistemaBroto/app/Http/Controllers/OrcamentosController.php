@@ -69,7 +69,7 @@ class OrcamentosController extends Controller
     {
 
      $orcamentos = \App\Orcamentos::find($id);
-       return view('editarOrcamneto',compact('Orcamentos','id'));
+       return view('editarOrcamento',compact('orcamentos','id'))->with('Orçamentos',$orcamentos);
     }
 
     /**

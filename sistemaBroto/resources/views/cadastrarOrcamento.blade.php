@@ -14,7 +14,7 @@
                              <ul class="nav nav-tabs">
                                  <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                                  <li><a href="listarOrcamento">Listar Orçamento</a></li>
-                                 <li><a href="editarorcamento">Editar Orçamento</a></li>
+                                 <li><a href="editarOrcamento">Editar Orçamento</a></li>
 
                              </ul>
                          </div>

@@ -14,7 +14,7 @@
                              <ul class="nav nav-tabs">
                                  <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                                  <li><a href="listarOrcamento">Listar Orçamento</a></li>
-                                 <li class="active"><a href="editarorcamento">Editar Orçamento</a></li>
+                                 <li class="active"><a href="editarOrcamento">Editar Orçamento</a></li>
 
                              </ul>
                          </div>
@@ -28,12 +28,15 @@
 
                               <form id="formulario" class="" method="post" action="{{route('Orcamentos.store') }}">
                                 @csrf
+
                                  <div class="form-group">
                                   <label for="evento" class="cols-sm-2 control-label">Evento</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento"  placeholder="Entre com o nome do Evento"/>
+
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento"  />
+
                                     </div>
                                   </div>
                                 </div>
@@ -44,7 +47,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="cliente" id="cliente"  placeholder="Entre com o nome do Cliente"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="cliente" id="cliente"  value="{{$Orçamentos->cliente}}"/>
                                     </div>
                                   </div>
                                 </div>
