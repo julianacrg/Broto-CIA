@@ -65,11 +65,12 @@ class OrcamentosController extends Controller
      * @param  \App\Orcamentos  $orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit( Orcamentos $id)
+    public function edit(Orcamentos $id)
     {
 
-     $orcamentos = \App\Orcamentos::find($id);
-       return view('editarOrcamento',compact('orcamentos','id'))->with('Orçamentos',$orcamentos);
+      $Orcamentos = Orcamentos::find($id);
+
+       return view('editarOrcamento', compact('Orcamentos'));
     }
 
     /**
