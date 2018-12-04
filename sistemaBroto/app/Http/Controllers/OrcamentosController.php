@@ -30,7 +30,7 @@ class OrcamentosController extends Controller
     public function create()
     {
       $orcamentos = Orcamentos:: orderBy('evento')->get();
-         return view('editarOrcamento')->with('Orçamentos',$orcamentos);
+         return view('listarOrcamento')->with('Orçamentos',$orcamentos);
 
     }
 
@@ -65,9 +65,12 @@ class OrcamentosController extends Controller
      * @param  \App\Orcamentos  $orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orcamentos $orcamentos)
+    public function edit(Orcamentos $id)
     {
-        //
+
+      $Orcamentos = Orcamentos::find($id);
+
+       return view('editarOrcamento', compact('Orcamentos'));
     }
 
     /**

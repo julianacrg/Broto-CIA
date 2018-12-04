@@ -18,11 +18,12 @@ Route::get('/cadastraArranjo', function () {
 Route::view('/home', 'index');
 // Route::view('/index', 'index');
 Route::resource('/Orcamentos', 'OrcamentosController'); // Aqui se passa o model e o controller
-Route::get('/editarOrcamento', 'OrcamentosController@create');
+Route::get('/listarOrcamento', 'OrcamentosController@create');
+Route::get('/editarOrcamento', 'OrcamentosController@edit');
 Route::get('/cadastrarItens', 'ItensController@index');
 Route::get('/cadastraArranjo', 'ArranjosController@index');
 Route::get('/cadastrarFuncionario', 'FuncionariosController@index');
-
+// Route::get('/editarOrcamento', 'FuncionariosController@index');
 
 
 
