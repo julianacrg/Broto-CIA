@@ -29,6 +29,7 @@
                             <!-- Melhorias: dependendo de qual eu clicar quero que a classe active fique ativa -->
                             <div id="Myli">
 
+                              <!-- contador é um elemento que ouve o clique do mouse -->
                               <li class="contador active"><a href="home" class="sf-house">Home</a></li>
                               <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
@@ -38,12 +39,12 @@
                               </div>
 
                               <script type="text/javascript">
-                              // Get the container element
+                              // Capturar os elementos li dento da div Myli
                               var liContainer = document.getElementById("Myli");
-                              // Get all buttons with class="btn" inside the container
+                              // Capturar todos os li com a class="contador" que estiver dentro da div
                               var li = liContainer.getElementsByClassName("contador");
 
-                              // Loop through the buttons and add the active class to the current/clicked button
+                              //passar por todos os li e adicionar o active na class que foi clicada por ultimo
                               for (var i = 0; i < li.length; i++) {
                                 li[i].addEventListener("click", function() {
                                   var current = document.getElementsByClassName("active");

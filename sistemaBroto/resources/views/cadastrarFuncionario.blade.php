@@ -1,6 +1,7 @@
 @extends('menu')
 
 @section('conteudo')
+
     <body class="cm-no-transition cm-2-navbar">
 
        <div id="global">
