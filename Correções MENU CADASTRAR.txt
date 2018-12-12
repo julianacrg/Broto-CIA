@@ -2,6 +2,8 @@ Teste
 
 Menu Cadastrar
 
+-Alterar nome na barra superior (Home para Cadastrar)
+
 -Falta cadastrar fornecedor
 
 Cadastrar Itens
@@ -11,10 +13,12 @@ Em preço, colocar unitário completo
 Campo Categoria como caixa de seleção (venda/aluguel)
 Campo quantidade como numeral
 Campo foto com seleção de arquivo
+Add campo tipo como caixa de seleção
+ (Peça, flor, folhagem, Acessório)
 
 Colocar os campos na seguinte ordem:
 
-Nome*, Preço Unitário*, Categoria*,
+Nome*, Preço Unitário*, Tipo*, Categoria*,
 Quantidade, Foto, Descrição
 
 *campos obrigatórios
@@ -28,10 +32,13 @@ Cadastrar Arranjos
 Nome*
 Categoria (Não Aplica, Mesa, Café da manhã, Corredor)
 Foto
+Colocar um filtro de tipo e 
+a partir dessa escolha preencher a caixa de seleção
+com os itens
 Itens* com quantidade
 
 Tabela de itens deve aparecer apenas cabeçalho 
-se nenhum item foi selecionado
+se nenhum item for selecionado
 
 Cadastrar Funcionário 
 
