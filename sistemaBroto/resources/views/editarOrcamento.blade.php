@@ -57,7 +57,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 60%;" name="local" id="local"  placeholder="Entre com o Local do Evento"/>
+                                      <input type="text" class="form-control" style="max-width: 60%;" name="local" id="local"  placeholder=""/>
                                     </div>
                                   </div>
                                 </div>
