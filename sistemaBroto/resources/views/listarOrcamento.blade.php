@@ -44,7 +44,7 @@
                            <td>{{ $o->data }} </td>
 
                            <td>
-                             <a href="{{action('OrcamentosController@edit', $o['id'])}}" class="btn btn-warning">Edite</a>
+                             <a href="{{route('Orcamentos.edit', $o->id)}}" class="btn btn-warning">Edite</a>
                            </td>
 
                          </tr>

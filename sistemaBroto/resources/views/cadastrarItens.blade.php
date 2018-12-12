@@ -75,14 +75,14 @@
 
 
                                    <div class="form-group">
-                                    <label for="name" class="cols-sm-2 control-label">Foto</label>
+                                    <label for="foto" class="cols-sm-2 control-label">Foto</label>
                                     <div class="cols-sm-10">
                                       <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" style="max-width: 40%;" name="foto" id="fotoitem"  placeholder="Entre com link da foto "/></input>
+                                        <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                        <input type="file" name="foto" class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
                                       </div>
                                     </div>
-                                   </div>
+                                  </div>
 
 
                                     <div class="form-group">
