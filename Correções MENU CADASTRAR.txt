@@ -27,7 +27,7 @@ Exibir mensagens:
 Item cadastrado com sucesso
 Erro! Item NÃO cadastrado
 
-Cadastrar Arranjos
+Cadastrar Arranjos 
 
 Nome*
 Categoria (Não Aplica, Mesa, Café da manhã, Corredor)
