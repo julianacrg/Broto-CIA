@@ -16,6 +16,8 @@
                                     <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
                                     <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
                                     <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
+                                    <li><a href="cadastrarFuncionario">Cadastrar Fornecedor</a></li>
+
                                 </ul>
 
                             </div>
