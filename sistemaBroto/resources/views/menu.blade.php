@@ -38,7 +38,6 @@
                               <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
                               </div>
 
-<<<<<<< HEAD
                               <script type="text/javascript">
                               // Capturar os elementos li dento da div Myli
                               var liContainer = document.getElementById("Myli");
@@ -55,8 +54,6 @@
                               }
 
                               </script>
-=======
->>>>>>> 9b19efd7b39f96cb59201204704828c19f66c690
 
                           </ul>
                       </div>
@@ -167,7 +164,7 @@
         this.className += " active";
       });
 
-  
+
     }
 
     </script>

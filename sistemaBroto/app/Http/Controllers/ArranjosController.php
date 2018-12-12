@@ -43,7 +43,7 @@ class ArranjosController extends Controller
       Arranjos::create($request->all());
       session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
 
-      return redirect()->route('cadastrarArranjo.index');
+      return view('cadastrarArranjo');
     }
 
     /**
