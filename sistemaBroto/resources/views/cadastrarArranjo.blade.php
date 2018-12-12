@@ -37,40 +37,29 @@
                              </div>
                            </div>
 
+                           <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Categoria:</label>
+                            <div class="cols-sm-10">
+                              <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="categoria"  placeholder="Entre com o nome do categoria"/>
+                              </div>
+                            </div>
+                          </div>
+
+                           <div class="form-group">
+                            <label for="foto" class="cols-sm-2 control-label">Foto</label>
+                            <div class="cols-sm-10">
+                              <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                <input type="file" name="arquivos" class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
+                              </div>
+                            </div>
+                          </div>
 
 
 
-                         <div class="row">
-                             <label for="name" class="col-sm-2 control-label">Itens</label>
-                           </div>
-                            <div class="row">
-                              <div class="form-group">
-                                 <div class="col-sm-5">
-                                   <div class="input-group">
-                                     <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                     <select  name="itens->nome" class="form-control">
-                                       <option value="">Selecione</option>
-                                       @foreach( $Itens as $Item )
-                                       <option value="Itens->nome"> {{$Item->nome}}</option>
-                                       @endforeach
 
-                                     </select>                                   </div>
-                                 </div>
-                               <div class="col-sm-2">
-                                    <div class="form-group">
-
-                                       <div class="input-group">
-                                           <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                           <input type="text" class="form-control" style="max-width: 70%;" name="quantidade" id="qtd"  placeholder="Qtd."/>
-                                       </div>
-
-                                   </div>
-                               </div>
-                               <div class="col-sm-4">
-                                 <button id="botaoadd"  class="btn btn-primary">Add</button>
-                               </div>
-                             </div>
-                           </div>
                            <table class="table">
                              <thead>
                                <tr>
