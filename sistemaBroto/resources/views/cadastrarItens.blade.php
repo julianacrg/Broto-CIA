@@ -3,7 +3,6 @@
 @section('conteudo')
 
 
-
         <body class="cm-no-transition cm-2-navbar">
 
                <div id="global">
@@ -16,15 +15,18 @@
                                     <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
                                     <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
                                     <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
-                                    <li><a href="cadastrarFuncionario">Cadastrar Fornecedor</a></li>
+                                    <li><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
 
                                 </ul>
 
                             </div>
 
                         </div>
-                        <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                        <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                       
+                          <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                          <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                          
+                       
                     </nav>
                        <div class="panel panel-default">
 
@@ -64,7 +66,7 @@
                                    </div>
 
                                       <div class="form-group">
-                                     <label for="name" class="cols-sm-2 control-label">Preço Uni.</label>
+                                     <label for="name" class="cols-sm-2 control-label">Preço Unitário</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -73,6 +75,15 @@
                                      </div>
                                    </div>
 
+                                     <div class="form-group">
+                                     <label for="name" class="cols-sm-2 control-label">Tipo</label>
+                                     <div class="cols-sm-10">
+                                       <div class="input-group">
+                                         <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o tipo"/>
+                                       </div>
+                                     </div>
+                                   </div>
 
                                    <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
@@ -96,7 +107,7 @@
                                    </div>
 
                                  <div class="form-group ">
-                                     <input  target="_blank" type="submit" value="Cadastrar Item" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                     <input  target="_blank" type="submit" value="Cadastrar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
 
                                  </form>

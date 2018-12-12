@@ -23,6 +23,8 @@ Route::get('/editarOrcamento', 'OrcamentosController@edit');
 Route::get('/cadastrarItens', 'ItensController@index');
 Route::get('/cadastraArranjo', 'ArranjosController@index');
 Route::get('/cadastrarFuncionario', 'FuncionariosController@index');
+Route::view('/cadastrarFornecedor', 'cadastrarFornecedor');
+
 // Route::get('/editarOrcamento', 'FuncionariosController@index');
 
 
@@ -35,5 +37,6 @@ Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');
 Route::resource('/Arranjo_Orcamentos', 'Arranjos_OrcamentosController');
 Route::resource('/Arranjos', 'ArranjosController');
+Route::resource('/Fornecedores', 'FornecedoresController');
 
 // obs: linha de comando pra criar um controller novo: php artisan make:controller PhotoController --resource --model=Photo

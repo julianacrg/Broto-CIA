@@ -70,3 +70,7 @@ margin-top: 0;
 
 	cursor: pointer;
 }
+
+#botoes {
+float: right;
+}

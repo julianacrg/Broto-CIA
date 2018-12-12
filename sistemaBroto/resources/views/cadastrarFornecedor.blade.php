@@ -13,8 +13,8 @@
                             <ul class="nav nav-tabs">
                                 <li ><a href="cadastrarItens">Cadastrar Itens</a></li>
                                 <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                                <li class="active"><a href="cadastrarFuncionario">Cadastrar Funcionários</a>
-                                <li><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
+                                <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a>
+                                <li class="active"><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
   
                                 </li>
                             </ul>
@@ -40,17 +40,18 @@
                                </div>
 
                                <div class="form-group">
-                                 <label for="name" class="cols-sm-2 control-label">CPF</label>
+                                 <label for="name" class="cols-sm-2 control-label">CNPJ</label>
                                  <div class="cols-sm-10">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="cpffuncionario"  placeholder="xxx.xxx.xxx-xx"/>
+                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="cpffuncionario"  placeholder="xx.xxx.xxx/xxxx-xx
+"/>
                                    </div>
                                  </div>
                                </div>
 
                              <div class="form-group ">
-                                 <input target="_blank" type="submit"  value="Cadastrar Funcionário" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                 <input target="_blank" type="submit"  value="Cadastrar Fornecedor" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                                </div>
 
                              </form>

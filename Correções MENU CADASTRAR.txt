@@ -4,16 +4,16 @@ Menu Cadastrar
 
 -Alterar nome na barra superior (Home para Cadastrar)
 
--Falta cadastrar fornecedor
+-Falta cadastrar fornecedor - ok
 
 Cadastrar Itens
 
 Ajustar ícones
-Em preço, colocar unitário completo
+Em preço, colocar unitário completo - ok
 Campo Categoria como caixa de seleção (venda/aluguel)
 Campo quantidade como numeral
-Campo foto com seleção de arquivo
-Add campo tipo como caixa de seleção
+Campo foto com seleção de arquivo - ok
+Add campo tipo como caixa de seleção 
  (Peça, flor, folhagem, Acessório)
 
 Colocar os campos na seguinte ordem:
