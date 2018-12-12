@@ -1,0 +1,41 @@
+Teste
+
+Menu Cadastrar
+
+-Falta cadastrar fornecedor
+
+Cadastrar Itens
+
+Ajustar ícones
+Em preço, colocar unitário completo
+Campo Categoria como caixa de seleção (venda/aluguel)
+Campo quantidade como numeral
+Campo foto com seleção de arquivo
+
+Colocar os campos na seguinte ordem:
+
+Nome*, Preço Unitário*, Categoria*,
+Quantidade, Foto, Descrição
+
+*campos obrigatórios
+
+Exibir mensagens:
+Item cadastrado com sucesso
+Erro! Item NÃO cadastrado
+
+Cadastrar Arranjos
+
+Nome*
+Categoria (Não Aplica, Mesa, Café da manhã, Corredor)
+Foto
+Itens* com quantidade
+
+Tabela de itens deve aparecer apenas cabeçalho 
+se nenhum item foi selecionado
+
+Cadastrar Funcionário 
+
+Exibir mensagens:
+Item cadastrado com sucesso
+Erro! Item NÃO cadastrado
+
