@@ -38,14 +38,22 @@
                            </div>
 
                            <div class="form-group">
-                            <label for="categoria" class="cols-sm-2 control-label">Categoria:</label>
-                            <div class="cols-sm-10">
-                              <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" style="max-width: 80%;" name="categoria" id="categoria"  placeholder="Entre com o nome do categoria"/>
-                              </div>
-                            </div>
-                          </div>
+
+                             <div class="input-group">
+                               <label for="categoria" class="cols-sm-2 control-label">Categoria:</label>
+                               <div class="cols-sm-10">
+                               <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+                               <select  name="Arranjos->nome" class="form-control">
+                                 <option value="">Selecione</option>
+                                 <option> Mesa</option>
+                                 <option>Cafe da manhã</option>
+                                 <option>Corredor</option>
+                                 <option>Não se Aplica</option>
+
+                               </select>
+                             </div>
+                             </div>
+                           </div>
 
                            <div class="form-group">
                             <label for="foto" class="cols-sm-2 control-label">Foto</label>
@@ -57,9 +65,7 @@
                             </div>
                           </div>
 
-
-
-
+                          
                            <table class="table">
                              <thead>
                                <tr>
