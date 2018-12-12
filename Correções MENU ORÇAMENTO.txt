@@ -1,0 +1,34 @@
+Testes
+
+Orçamento
+
+-Alterar nome na barra superior (Home para Orçamento)
+
+-Retirar o menu editar,
+ está opção estará em ações 
+ (TODA AÇÃO TEM EDITAR E DESATIVAR)
+
+-Alterar icone de endereço
+
+-Mascara de telefone incorreta
+
+Seguir ordem:
+ 
+Campo Evento é uma caixa de seleção 
+ (Casamento, 15 anos, Aniversário, Infantil, Outro)
+
+Cliente*,Telefone,Celular*,
+
+Local, Endereço*, Data*, Horário*
+
+Arranjos (outra tela e colocar filtro de categoria)
+
+Itens (outra tela e colocar filtro de tipo)
+
+
+
+
+
+
+
+
