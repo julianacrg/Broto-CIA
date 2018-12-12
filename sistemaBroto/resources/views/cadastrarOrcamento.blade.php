@@ -94,7 +94,7 @@
                                   <div class="cols-sm-5">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
-                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="XX-XXXXX-XXXX" pattern="^\d{2}-\d{5}-\d{4}$"/>
+                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="XXXXXXXXXXX" pattern="^\d{2}-\d{5}-\d{4}$"/>
                                     </div>
                                   </div>
                                 </div>
