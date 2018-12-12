@@ -26,7 +26,7 @@
                        <div class="main-login main-center" id="divform">
 
                          <form id="formulario" class="" method="post" action="{{route('Arranjos.store')}}">
-
+                           @csrf
                             <div class="form-group">
                              <label for="name" class="cols-sm-2 control-label">Nome</label>
                              <div class="cols-sm-10">
@@ -38,11 +38,11 @@
                            </div>
 
                            <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">Categoria:</label>
+                            <label for="categoria" class="cols-sm-2 control-label">Categoria:</label>
                             <div class="cols-sm-10">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="categoria"  placeholder="Entre com o nome do categoria"/>
+                                <input type="text" class="form-control" style="max-width: 80%;" name="categoria" id="categoria"  placeholder="Entre com o nome do categoria"/>
                               </div>
                             </div>
                           </div>
@@ -52,7 +52,7 @@
                             <div class="cols-sm-10">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                <input type="file" name="arquivos" class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
+                                <input type="file" name="foto" class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
                               </div>
                             </div>
                           </div>
