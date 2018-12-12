@@ -25,7 +25,7 @@
 
                        <div class="main-login main-center" id="divform">
 
-                         <form id="formulario" class="" method="post" action="#">
+                         <form id="formulario" class="" method="post" action="{{route('Arranjos.store')}}">
 
                             <div class="form-group">
                              <label for="name" class="cols-sm-2 control-label">Nome</label>
@@ -90,7 +90,7 @@
 
 
                            <div class="form-group ">
-                             <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Cadastrar Arranjo</a>
+                             <input target="_blank" type="submit"  value="Cadastrar Arranjo" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                            </div>
 
                          </form>
