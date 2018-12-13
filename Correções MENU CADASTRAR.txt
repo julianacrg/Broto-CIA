@@ -10,18 +10,18 @@ Cadastrar Itens
 
 Ajustar ícones
 Em preço, colocar unitário completo - ok
-Campo Categoria como caixa de seleção (venda/aluguel)
-Campo quantidade como numeral
+Campo Categoria como caixa de seleção (venda/aluguel) - ok
+Campo quantidade como numeral - ok
 Campo foto com seleção de arquivo - ok
-Add campo tipo como caixa de seleção 
+Add campo tipo como caixa de seleção - ok
  (Peça, flor, folhagem, Acessório)
 
 Colocar os campos na seguinte ordem:
 
-Nome*, Preço Unitário*, Tipo*, Categoria*,
+Nome*, Preço Unitário*, Tipo*, Categoria*, - ok
 Quantidade, Foto, Descrição
 
-*campos obrigatórios
+*campos obrigatórios  - ok
 
 Exibir mensagens:
 Item cadastrado com sucesso
@@ -30,7 +30,21 @@ Erro! Item NÃO cadastrado
 Cadastrar Arranjos 
 
 Nome*
-Categoria (Não Aplica, Mesa, Café da manhã, Corredor)
+Categoria (
+ARRANJO MESA DE BOLO MAIOR
+ARRANJO MESA DE  BOLO MENOR
+ARRANJOS ALTOS
+ARRANJOS BAIXOS
+ARRANJOS MEDIOS
+ARRANJOS MESA DA FAMILIA
+ARRANJO MESA DE CAFÉ
+ARRANJO MESA DE  PRATO QUENTE
+ARRANJO MESA REGIONAL
+BUQUE DE NOIVA 
+LAPELAS 
+BUQUE DE DAMINHA
+BUQUE PARA JOGAR 
+)
 Foto
 Colocar um filtro de tipo e 
 a partir dessa escolha preencher a caixa de seleção

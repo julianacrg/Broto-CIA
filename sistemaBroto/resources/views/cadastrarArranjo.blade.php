@@ -13,13 +13,15 @@
                             <li><a href="cadastrarItens">Cadastrar Itens</a></li>
                             <li class="active"><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
                             <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
+                            <li><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
+
                         </ul>
 
                     </div>
 
                 </div>
-                <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                          <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
                <div class="panel panel-default">
 
@@ -28,7 +30,7 @@
                          <form id="formulario" class="" method="post" action="{{route('Arranjos.store')}}">
                            @csrf
                             <div class="form-group">
-                             <label for="name" class="cols-sm-2 control-label">Nome</label>
+                             <label for="name" class="cols-sm-2 control-label">Nome *</label>
                              <div class="cols-sm-10">
                                <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
@@ -99,7 +101,7 @@
                            <div class="form-group ">
                              <input target="_blank" type="submit"  value="Cadastrar Arranjo" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                            </div>
-
+                           <label>* Campos obrigatórios</label>
                          </form>
                          <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 

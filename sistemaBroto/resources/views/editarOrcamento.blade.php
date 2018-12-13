@@ -19,8 +19,8 @@
                              </ul>
                          </div>
                      </div>
-                     <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                     <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                     <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                          <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
                  </nav>
                     <div class="panel panel-default">
 
@@ -66,7 +66,7 @@
                                   <label for="endereco" class="cols-sm-2 control-label">Endereço</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
-                                      <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                      <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
                                       <input type="text" class="form-control" style="max-width: 90%;" name="endereco" id="endereco"  placeholder="Entre com o Endereço"/>
                                     </div>
                                   </div>
