@@ -4,7 +4,7 @@ Orçamento
 
 -Alterar nome na barra superior (Home para Orçamento)
 
--Retirar o menu editar,
+-Retirar o menu editar, 
  está opção estará em ações 
  (TODA AÇÃO TEM EDITAR E DESATIVAR)
 
