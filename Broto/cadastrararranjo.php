@@ -18,16 +18,16 @@
         <title>Broto & Cia</title>
     </head>
  <body class="cm-no-transition cm-2-navbar">
-      
-    
+
+
         <div id="global">
            <div class="container-fluid">
                 <div class="panel panel-default">
-                     
+
                         <div class="main-login main-center" id="divform">
-                       
+
                           <form id="formulario" class="" method="post" action="#">
-                            
+
                              <div class="form-group">
                               <label for="name" class="cols-sm-2 control-label">Nome</label>
                               <div class="cols-sm-10">
@@ -39,7 +39,7 @@
                             </div>
 
 
-                        
+
 
                           <div class="row">
                               <label for="name" class="col-sm-2 control-label">Itens</label>
@@ -50,16 +50,16 @@
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                       <select type="text" class="form-control"  name="itens" id="itensarranjo" /><select>
-                                    </div>   
+                                    </div>
                                   </div>
                                 <div class="col-sm-2">
                                      <div class="form-group">
-                                     
+
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
                                             <input type="text" class="form-control" style="max-width: 70%;" name="quantidade" id="qtd"  placeholder="Qtd."/>
                                         </div>
-                                     
+
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -67,13 +67,14 @@
                                 </div>
                               </div>
                             </div>
+                            <button type="button"  href="cadastrarItensArranjos" name="button">Teste</button>
                             <table class="table">
                               <thead>
                                 <tr>
                                   <th scope="col">#</th>
                                   <th scope="col">Item</th>
                                   <th scope="col">Quantidade</th>
-                                 
+
                                 </tr>
                               </thead>
                               <tbody>
@@ -81,29 +82,29 @@
                                   <th scope="row">1</th>
                                   <td>Rosas Brancas </td>
                                   <td>10</td>
-                                  
+
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
                                   <td>Rosas Vermelhas </td>
                                   <td>7</td>
-                                  
+
                                 </tr>
-                               
+
                               </tbody>
                             </table>
 
 
-                            
+
 
                             <div class="form-group ">
                               <a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Cadastrar Arranjo</a>
                             </div>
-                            
+
                           </form>
                         </div>
-                      
-                    
+
+
 
                      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -111,7 +112,7 @@
                     <script src="js/bootstrap.min.js"></script>
 
                     <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
-                   
+
                 </div>
             </div>
         </div>

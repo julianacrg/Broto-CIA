@@ -43,12 +43,12 @@
                                <label for="categoria" class="cols-sm-2 control-label">Categoria:</label>
                                <div class="cols-sm-10">
                                <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                               <select  name="Arranjos->nome" class="form-control">
+                               <select  name="categoria" class="form-control">
                                  <option value="">Selecione</option>
-                                 <option> Mesa</option>
-                                 <option>Cafe da manhã</option>
-                                 <option>Corredor</option>
-                                 <option>Não se Aplica</option>
+                                 <option value="Mesa"> Mesa</option>
+                                 <option value="Cafe da Manhã">Cafe da manhã</option>
+                                 <option value="Corredor">Corredor</option>
+                                 <option value="Nâo se aplica">Não se Aplica</option>
 
                                </select>
                              </div>
@@ -65,6 +65,7 @@
                             </div>
                           </div>
 
+                          <button type="button"  href="cadastrarItensArranjos" name="button">Teste</button>
 
                            <table class="table">
                              <thead>

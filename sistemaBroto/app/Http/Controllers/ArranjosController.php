@@ -42,8 +42,11 @@ class ArranjosController extends Controller
     {
       Arranjos::create($request->all());
       session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
+      $id = Arranjos::find($request->get('id'));
+      $It = Itens:: orderBy('nome')->get();
 
-      return view('cadastrarArranjo');
+
+      return view('cadastrarItensArranjos')->with(compact('Arranjos'))->with('Itens', $It);
     }
 
     /**

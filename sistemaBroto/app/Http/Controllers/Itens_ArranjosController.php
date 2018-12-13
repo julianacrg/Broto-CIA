@@ -14,7 +14,7 @@ class Itens_ArranjosController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,8 @@ class Itens_ArranjosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Itens_Arranjos::create($request->all());
+      session()->flash('mensagem', 'Itens do araanjo cadastrado com sucesso!');
     }
 
     /**
