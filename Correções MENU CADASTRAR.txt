@@ -30,7 +30,21 @@ Erro! Item NÃO cadastrado
 Cadastrar Arranjos 
 
 Nome*
-Categoria (Não Aplica, Mesa, Café da manhã, Corredor)
+Categoria (
+ARRANJO MESA DE BOLO MAIOR
+ARRANJO MESA DE  BOLO MENOR
+ARRANJOS ALTOS
+ARRANJOS BAIXOS
+ARRANJOS MEDIOS
+ARRANJOS MESA DA FAMILIA
+ARRANJO MESA DE CAFÉ
+ARRANJO MESA DE  PRATO QUENTE
+ARRANJO MESA REGIONAL
+BUQUE DE NOIVA 
+LAPELAS 
+BUQUE DE DAMINHA
+BUQUE PARA JOGAR 
+)
 Foto
 Colocar um filtro de tipo e 
 a partir dessa escolha preencher a caixa de seleção
