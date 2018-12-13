@@ -10,18 +10,18 @@ Cadastrar Itens
 
 Ajustar ícones
 Em preço, colocar unitário completo - ok
-Campo Categoria como caixa de seleção (venda/aluguel) - ok
+Campo Categoria como caixa de seleção (venda/aluguel)
 Campo quantidade como numeral - ok
 Campo foto com seleção de arquivo - ok
-Add campo tipo como caixa de seleção - ok
+Add campo tipo como caixa de seleção 
  (Peça, flor, folhagem, Acessório)
 
 Colocar os campos na seguinte ordem:
 
-Nome*, Preço Unitário*, Tipo*, Categoria*, - ok
+Nome*, Preço Unitário*, Tipo*, Categoria*,
 Quantidade, Foto, Descrição
 
-*campos obrigatórios  - ok
+*campos obrigatórios
 
 Exibir mensagens:
 Item cadastrado com sucesso
