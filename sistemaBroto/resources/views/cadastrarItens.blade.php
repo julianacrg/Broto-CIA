@@ -35,7 +35,7 @@
                                  <form id="formulario" class="" method="post" action="{{ route('Itens.store') }}">
                                     @csrf
                                     <div class="form-group">
-                                     <label for="name" class="cols-sm-2 control-label">Nome</label>
+                                     <label for="name" class="cols-sm-2 control-label">Nome *</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
@@ -44,29 +44,8 @@
                                      </div>
                                    </div>
 
-
-                                   <div class="form-group">
-                                     <label for="name" class="cols-sm-2 control-label">Categoria</label>
-                                     <div class="cols-sm-10">
-                                       <div class="input-group">
-                                         <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="categoria" id="categoriaitem"  placeholder="Entre com o a categoria do item"/>
-                                       </div>
-                                     </div>
-                                   </div>
-
-                                   <div class="form-group">
-                                     <label for="email" class="cols-sm-2 control-label">Quantidade</label>
-                                     <div class="cols-sm-10">
-                                       <div class="input-group">
-                                         <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="qtd" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
-                                      </div>
-                                     </div>
-                                   </div>
-
-                                      <div class="form-group">
-                                     <label for="name" class="cols-sm-2 control-label">Preço Unitário</label>
+                                       <div class="form-group">
+                                     <label for="name" class="cols-sm-2 control-label">Preço Unitário *</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -75,10 +54,8 @@
                                      </div>
                                    </div>
 
-                                  
-
-                                  <div class="form-group">
-                                    <label for="foto" class="cols-sm-2 control-label">Tipo</label>
+                                      <div class="form-group">
+                                    <label for="foto" class="cols-sm-2 control-label">Tipo *</label>
                                     <div class="cols-sm-10">
                                       <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
@@ -91,6 +68,38 @@
                                       </div>
                                     </div>
                                   </div>
+
+
+                                 <div class="form-group">
+                                    <label for="foto" class="cols-sm-2 control-label">Categoria *</label>
+                                    <div class="cols-sm-10">
+                                      <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                        <select  name="Arranjos->nome" class="form-control" style="max-width: 40%">
+                                           <option value="">Venda</option>
+                                           <option> Aluguel</option>
+                                           
+
+                                         </select>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                   <div class="form-group">
+                                     <label for="email" class="cols-sm-2 control-label">Quantidade</label>
+                                     <div class="cols-sm-10">
+                                       <div class="input-group">
+                                         <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="qtd" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
+                                      </div>
+                                     </div>
+                                   </div>
+
+                                  
+
+                                  
+
+                            
 
                                    <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
@@ -116,6 +125,8 @@
                                  <div class="form-group ">
                                      <input  target="_blank" type="submit" value="Cadastrar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
+
+                                   <label>* Campos obrigatórios</label>
 
                                  </form>
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
