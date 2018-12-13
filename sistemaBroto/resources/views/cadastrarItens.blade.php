@@ -75,15 +75,22 @@
                                      </div>
                                    </div>
 
-                                     <div class="form-group">
-                                     <label for="name" class="cols-sm-2 control-label">Tipo</label>
-                                     <div class="cols-sm-10">
-                                       <div class="input-group">
-                                         <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o tipo"/>
-                                       </div>
-                                     </div>
-                                   </div>
+                                  
+
+                                  <div class="form-group">
+                                    <label for="foto" class="cols-sm-2 control-label">Tipo</label>
+                                    <div class="cols-sm-10">
+                                      <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                        <select  name="Arranjos->nome" class="form-control" style="max-width: 40%;">
+                                       <option value="">Peça</option>
+                                       <option>Flor</option>
+                                       <option>Folhagem</option>
+                                       <option>Acessório</option>
+                                     </select>
+                                      </div>
+                                    </div>
+                                  </div>
 
                                    <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
