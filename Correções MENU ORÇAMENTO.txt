@@ -4,28 +4,28 @@ Orçamento
 
 -Alterar nome na barra superior (Home para Orçamento)
 
--Retirar o menu editar, 
+-Retirar o menu editar,    - ok
  está opção estará em ações 
  (TODA AÇÃO TEM EDITAR E DESATIVAR)
 
--Alterar icone de endereço
+-Alterar icone de endereço - ok
 
--Mascara de telefone incorreta
+-Mascara de telefone incorreta - ok
 
--Adiconar no menu superior lista de contratos
+-Adiconar no menu superior lista de contratos - ok
 
--Adicionar botão Adicionar Igreja
+-Adicionar botão Adicionar Igreja - ok
 
 Seguir ordem:
  
 Campo Evento é uma caixa de seleção 
- (Casamento, 15 anos, Aniversário, Infantil, Outro)
+ (Casamento, 15 anos, Aniversário, Infantil, Outro)  - ok
 
-Cliente*,Telefone,Celular*,
+Cliente*,Telefone,Celular*, - ok
 
-Local, Endereço*, Data*, Horário*
+Local, Endereço*, Data*, Horário*  - ok
 
-Arranjos (outra tela e colocar filtro de categoria)
+Arranjos (outra tela e colocar filtro de categoria) 
 
 Itens (outra tela e colocar filtro de tipo)
 
