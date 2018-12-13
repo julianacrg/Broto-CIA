@@ -15,7 +15,7 @@
                                 <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
                                 <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a>
                                 <li class="active"><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
-  
+
                                 </li>
                             </ul>
                         </div>
@@ -55,13 +55,8 @@
                                </div>
 
                              </form>
+                             
                            </div>
-
-                        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                       <!-- Include all compiled plugins (below), or include individual files as needed -->
-                       <script src="js/bootstrap.min.js"></script>
-
                        <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                    </div>

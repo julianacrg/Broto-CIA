@@ -22,11 +22,11 @@
                             </div>
 
                         </div>
-                       
+
                           <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
-                          
-                       
+
+
                     </nav>
                        <div class="panel panel-default">
 
@@ -111,6 +111,8 @@
                                    </div>
 
                                  </form>
+                                 <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
+
                                </div>
                        </div>
                    </div>
