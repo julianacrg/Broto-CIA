@@ -12,6 +12,10 @@ Orçamento
 
 -Mascara de telefone incorreta
 
+-Adiconar no menu superior lista de contratos
+
+-Adicionar botão Adicionar Igreja
+
 Seguir ordem:
  
 Campo Evento é uma caixa de seleção 
