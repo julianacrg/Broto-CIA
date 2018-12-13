@@ -11,13 +11,13 @@
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                                 <li class="active"><a href="listarOrcamento">Listar Orçamento</a></li>
-                                <li><a href="editarorcamento">Editar Orçamento</a></li>
+                                <li><a href="editarOrcamento">Editar Orçamento</a></li>
 
                             </ul>
                         </div>
                     </div>
-                    <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
-                    <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+                    <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                          <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
                 </nav>
 
                   <div class="panel panel-default">
