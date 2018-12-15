@@ -30,6 +30,11 @@
                     </nav>
                        <div class="panel panel-default">
 
+                         @if(Session::has('message'))
+                           <div class="alert alert-success">
+                             {{Session::get('message')}}
+                           </div>
+                         @endif
                                <div class="main-login main-center" id="divform">
 
                                  <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
@@ -82,16 +87,16 @@
                                      </thead>
                                      <tbody>
                                       <tr>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td> </td>
+                                        @foreach($Tabela as $a)
+                                        <td>{{$a->tipo}} </td>
+                                        <td>{{$a->valor}} </td>
+                                        <td>{{$a->nome}} </td>
+
 
                                         <td>
                                           <a class="btn btn-danger">Exluir</a>
                                         </td>
-
+                                        @endforeach
                                       </tr>
 
 

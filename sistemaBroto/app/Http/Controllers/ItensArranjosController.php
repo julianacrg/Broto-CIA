@@ -6,6 +6,7 @@ use App\ItensArranjos;
 use Illuminate\Http\Request;
 use App\Arranjos;
 use App\Itens;
+use Auth;
 
 
 class ItensArranjosController extends Controller
@@ -42,8 +43,12 @@ class ItensArranjosController extends Controller
 
       $ultimo = Arranjos:: all()->last();
       $It = Itens:: orderBy('nome')->get();
-      session()->flash('mensagem', 'Itens do araanjo cadastrado com sucesso!');
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
+
+      // dd($tabela);
+
+
+      session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
+      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tabela', $tabela);
     }
 
     /**

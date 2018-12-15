@@ -35,7 +35,7 @@
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
 
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento" value="{{$Orcamentos->evento}}"/>
 
                                     </div>
                                   </div>

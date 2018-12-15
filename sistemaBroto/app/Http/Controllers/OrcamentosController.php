@@ -68,12 +68,11 @@ class OrcamentosController extends Controller
      * @param  \App\Orcamentos  $orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orcamentos $id)
+    public function edit($id)
     {
-      // $testes = Test::where('user_id', '=', Auth::user()->id)->orderBy('date','desc')->get();
-
-      dd($Orcamentos);
-       return view('editarOrcamento')->with('Orcamentos', $Orcamentos);
+       $Orca= Orcamentos::find($id);
+       // dd($Orca);
+       return view('editarOrcamento')->with('Orcamentos', $Orca);
     }
 
     /**
