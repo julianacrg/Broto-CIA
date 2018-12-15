@@ -32,9 +32,14 @@
 
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{ route('Itens_Arranjos.store') }}">
+                                 <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
                                     @csrf
-                                    <input name="arranjos_id" value="1"> </input>
+                                    <div class="form-group">
+                                      <div class="input-group">
+                                        <input type="hidden" name="arranjos_id" value="{{$Arranjos->id}}"> </input>
+                                      </div>
+
+                                    </div>
 
                                     <div class="form-group">
                                        <div class="col-sm-5">
@@ -68,11 +73,9 @@
                                      <table class="table table-bordered table-striped table-hover table-responsive">
                                      <thead>
                                       <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Cliente</th>
-                                        <th scope="col">Tipo de Evento</th>
-                                        <th scope="col">Local</th>
-                                        <th scope="col">Data</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Preço</th>
                                         <th scope="col">Ação</th>
 
                                       </tr>

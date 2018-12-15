@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Orcamentos;
 use App\Arranjos;
+use App\Itens;
 use App\Itens_Orcamentos;
+use Auth;
+
 
 use Illuminate\Http\Request;
 
@@ -67,10 +70,10 @@ class OrcamentosController extends Controller
      */
     public function edit(Orcamentos $id)
     {
+      // $testes = Test::where('user_id', '=', Auth::user()->id)->orderBy('date','desc')->get();
 
-      $Orcamentos = Orcamentos::find($id);
-
-       return view('editarOrcamento', compact('Orcamentos'));
+      dd($Orcamentos);
+       return view('editarOrcamento')->with('Orcamentos', $Orcamentos);
     }
 
     /**

@@ -36,7 +36,7 @@ Route::resource('/Itens', 'ItensController');
 Route::resource('/Arranjo_Orcamentos', 'Arranjos_OrcamentosController');
 Route::resource('/Arranjos', 'ArranjosController');
 Route::resource('/Fornecedores', 'FornecedoresController');
-Route::resource('/Itens_Arranjos', 'Itens_ArranjosController');
+Route::resource('/ItensArranjos', 'ItensArranjosController');
 
 
 // obs: linha de comando pra criar um controller novo: php artisan make:controller PhotoController --resource --model=Photo

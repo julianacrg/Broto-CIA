@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\ItensArranjos;
+use Illuminate\Http\Request;
 use App\Arranjos;
 use App\Itens;
-use Illuminate\Http\Request;
 
-class ArranjosController extends Controller
+
+class ItensArranjosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +17,8 @@ class ArranjosController extends Controller
      */
     public function index()
     {
-      $arranjos = Arranjos:: orderBy('nome')->get();
-      $It = Itens:: orderBy('nome')->get();
-         return view('cadastrarArranjo')->with('Arranjos',$arranjos)->with('Itens', $It);
+        //
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -40,26 +38,21 @@ class ArranjosController extends Controller
      */
     public function store(Request $request)
     {
-      Arranjos::create($request->all());
-      session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
+      ItensArranjos::create($request->all());
 
-
-      $It = Itens:: orderBy('nome')->get();
       $ultimo = Arranjos:: all()->last();
-
+      $It = Itens:: orderBy('nome')->get();
+      session()->flash('mensagem', 'Itens do araanjo cadastrado com sucesso!');
       return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
-
-
-      // return view('cadastrarItensArranjos')->with(compact('Arranjos'))->with('Itens', $It);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Arranjos  $arranjos
+     * @param  \App\ItensArranjos  $itensArranjos
      * @return \Illuminate\Http\Response
      */
-    public function show(Arranjos $arranjos)
+    public function show(ItensArranjos $itensArranjos)
     {
         //
     }
@@ -67,10 +60,10 @@ class ArranjosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Arranjos  $arranjos
+     * @param  \App\ItensArranjos  $itensArranjos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Arranjos $arranjos)
+    public function edit(ItensArranjos $itensArranjos)
     {
         //
     }
@@ -79,27 +72,22 @@ class ArranjosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Arranjos  $arranjos
+     * @param  \App\ItensArranjos  $itensArranjos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Arranjos $arranjos)
+    public function update(Request $request, ItensArranjos $itensArranjos)
     {
-      $arranjos->fill($request->all());
-      $arranjos->save();
-      $request->session()->flash('mensagem', 'Arranjos atualizado com sucesso!');
-      return redirect()->route('test.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Arranjos  $arranjos
+     * @param  \App\ItensArranjos  $itensArranjos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Arranjos $arranjos)
+    public function destroy(ItensArranjos $itensArranjos)
     {
-      $arranjos->delete();
-      session()->flash('mensagem','Arranjo excluido com sucesso');
-      return redirect()->route('arranjos.index');
+        //
     }
 }

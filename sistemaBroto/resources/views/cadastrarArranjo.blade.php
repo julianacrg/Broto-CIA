@@ -24,6 +24,11 @@
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
                <div class="panel panel-default">
+                 @if(Session::has('message'))
+                   <div class="alert alert-success">
+                     {{Session::get('message')}}
+                   </div>
+                 @endif
 
                        <div class="main-login main-center" id="divform">
 
@@ -66,8 +71,6 @@
                               </div>
                             </div>
                           </div>
-
-                          <button type="button"  href="cadastrarItensArranjos" name="button">Teste</button>
 
                            <table class="table">
                              <thead>
