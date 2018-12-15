@@ -6,13 +6,13 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-clearmin.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/roboto.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/material-design.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/small-n-flat.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-clearmin.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/roboto.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/material-design.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/small-n-flat.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/c3.min.css')}}">
 
     <title>Broto & CIA</title>
     <!-- top Header -->
@@ -138,23 +138,24 @@
 <div class="cm-header">
 
 </div>
-    <script src="assets/js/lib/jquery-2.1.3.min.js"></script>
-    <script src="assets/js/jquery.mousewheel.min.js"></script>
-    <script src="assets/js/jquery.cookie.min.js"></script>
-    <script src="assets/js/fastclick.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/clearmin.min.js"></script>
-    <script src="assets/js/home.js"></script>
-    <script src="assets/js/jquery.cookie.min.js"></script>
-    <script src="assets/js/fastclick.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/clearmin.min.js"></script>
-    <script src="assets/js/lib/d3.min.js"></script>
-    <script src="assets/js/lib/c3.min.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/js/lib/jquery-2.1.3.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.mousewheel.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.cookie.min.js')}}"></script>
+    <script src="{{asset('assets/js/fastclick.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/clearmin.min.js')}}"></script>
+    <script src="{{asset('assets/js/demo/home.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.cookie.min.js')}}"></script>
+    <script src="{{asset('assets/js/fastclick.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/clearmin.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/d3.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/c3.min.js')}}"></script>
+    <script src="{{asset('assets/js/demo/dashboard.js')}}"></script>
+    <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript">
+
 
     // Get the container element
     var liContainer = document.getElementById("Myli");
