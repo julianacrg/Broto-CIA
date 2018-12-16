@@ -26,7 +26,7 @@
 
                             <div class="main-login main-center" id="divform">
 
-                              <form id="formulario" class="" method="post" action="{{route('Orcamentos.store') }}">
+                              <form id="formulario" class="" method="post" action="{{route('Orcamentos.update',$Orcamentos->id) }}">
                                 @csrf
 
                                  <div class="form-group">
@@ -47,7 +47,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="cliente" id="cliente"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="cliente" id="cliente" value="{{$Orcamentos->cliente}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -57,7 +57,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 60%;" name="local" id="local"  placeholder=""/>
+                                      <input type="text" class="form-control" style="max-width: 60%;" name="local" id="local"  value="{{$Orcamentos->local}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -67,7 +67,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 90%;" name="endereco" id="endereco"  placeholder="Entre com o Endereço"/>
+                                      <input type="text" class="form-control" style="max-width: 90%;" name="endereco" id="endereco"  value="{{$Orcamentos->endereco}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -77,7 +77,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                      <input type="date" class="form-control" style="max-width: 30%;" name="data" id="data"  placeholder="Entre com a data do Evento"/>
+                                      <input type="date" class="form-control" style="max-width: 30%;" name="data" id="data"  value="{{$Orcamentos->data}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -87,7 +87,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-clock-o fa" aria-hidden="true"></i></span>
-                                      <input type="time" class="form-control" style="max-width: 30%;" name="horario" id="horario"  placeholder="Entre com a hora do Evento"/>
+                                      <input type="time" class="form-control" style="max-width: 30%;" name="horario" id="horario" value="{{$Orcamentos->horario}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -97,7 +97,7 @@
                                   <div class="cols-sm-5">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
-                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="XX-XXXXX-XXXX" pattern="^\d{2}-\d{5}-\d{4}$"/>
+                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone" value="{{$Orcamentos->telefone}}" pattern="^\d{2}-\d{5}-\d{4}$"/>
                                     </div>
                                   </div>
                                 </div>
@@ -109,17 +109,12 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-phone-square fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 30%;" name="celular" id="cel"  placeholder="Entre com o Celular"/>
+                                      <input type="text" class="form-control" style="max-width: 30%;" name="celular" id="cel"  value="{{$Orcamentos->celular}}"/>
                                     </div>
                                   </div>
                                 </div>
 
-                                <div class="row">
-                                  <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
-                                </div>
-                                 <div class="row">
-
-                                </div>
+                              
 
                                 <table class="table">
                                   <thead>
@@ -159,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </body>
 
 

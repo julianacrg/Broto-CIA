@@ -17,7 +17,7 @@
                                  <li><a href="listarOrcamento">Listar Orçamento</a></li>
                                  <li><a href="listarOrcamento">Lista de Contatos</a></li>
 
-                                 
+
 
                              </ul>
                          </div>
@@ -36,12 +36,12 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                      <select  name="Arranjos->nome" class="form-control" style="max-width: 80%;">
+                                      <select  name="evento" class="form-control" style="max-width: 80%;">
                                        <option value="">Casamento</option>
-                                       <option>15 Anos</option>
-                                       <option>Aniversário</option>
-                                       <option>Infantil</option>
-                                       <option>Outros</option>
+                                       <option value="15 anos">15 Anos</option>
+                                       <option value="Aniversário">Aniversário</option>
+                                       <option value="Infantil">Infantil</option>
+                                       <option value="Outros">Outros</option>
                                      </select>
                                     </div>
                                   </div>
@@ -63,7 +63,7 @@
                                   <div class="cols-sm-5">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
-                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="(xx)xxxx xxxx" pattern="^\d{2}-\d{5}-\d{4}$"/>
+                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone"  placeholder="(xx)xxxx xxxx" pattern="^\d{2}\d{5}\d{4}$"/>
                                     </div>
                                   </div>
                                 </div>
@@ -78,7 +78,7 @@
                                       <input type="text" class="form-control" style="max-width: 30%;" name="celular" id="cel"  placeholder="(xx)x xxxx xxxx"/>
                                     </div>
                                   </div>
-                                </div> 
+                                </div>
 
                                 <div class="form-group">
                                   <label for="local" class="cols-sm-2 control-label">Local</label>
@@ -120,7 +120,7 @@
                                   </div>
                                 </div>
 
-                               
+
 
                                 <div class="row">
                                   <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
@@ -172,7 +172,7 @@
 
                                 </div>
 
-                                <label>* Campos Obrigatórios</label> 
+                                <label>* Campos Obrigatórios</label>
                                 <table class="table">
                                   <thead>
                                     <tr>
