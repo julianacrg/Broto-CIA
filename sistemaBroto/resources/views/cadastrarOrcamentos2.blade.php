@@ -34,7 +34,7 @@
                          @endif
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
+                                 <form id="formulario" class="" method="post" action="{{ route('ItensOrcamentos.store') }}">
                                     @csrf
                                     <div class="form-group">
                                       <div class="input-group">
@@ -80,7 +80,7 @@
 
                                  </form>
 
-                                 <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
+                                 <form id="formulario" class="" method="post" action="{{ route('ArranjosOrcamentos.store') }}">
                                     @csrf
 
                                     <div class="form-group">

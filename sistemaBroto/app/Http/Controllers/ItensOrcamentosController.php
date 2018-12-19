@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\ItensOrcamentos;
 use Illuminate\Http\Request;
-
+use App\Orcamentos;
+use App\Arranjos;
+use App\Itens;
+use Auth;
 class ItensOrcamentosController extends Controller
 {
     /**
@@ -35,7 +38,13 @@ class ItensOrcamentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $It = Itens:: orderBy('nome')->get();
+      $arranjos = Arranjos:: orderBy('nome')->get();
+      $ultimo = Orcamentos:: all()->last();
+
+      ItensOrcamentos::create($request->all());
+      session()->flash('mensagem', 'Cadastrado com sucesso!')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
+      return view('cadastrarOrcamentos2');
     }
 
     /**

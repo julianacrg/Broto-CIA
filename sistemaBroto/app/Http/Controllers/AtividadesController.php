@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Arranjo_Orcamentos;
+use App\Atividades;
 use Illuminate\Http\Request;
 
-class Arranjos_OrcamentosController extends Controller
+class AtividadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,19 +35,16 @@ class Arranjos_OrcamentosController extends Controller
      */
     public function store(Request $request)
     {
-      Orcamentos::create($request->all());
-      session()->flash('mensagem', 'Orçamento cadastrado com sucesso!');
-
-      return route("{{route('Orcamentos.index')}}");
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
+     * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function show(Arranjo_Orcamentos $arranjo_Orcamentos)
+    public function show(Atividades $atividades)
     {
         //
     }
@@ -55,10 +52,10 @@ class Arranjos_OrcamentosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
+     * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function edit(Arranjo_Orcamentos $arranjo_Orcamentos)
+    public function edit(Atividades $atividades)
     {
         //
     }
@@ -67,10 +64,10 @@ class Arranjos_OrcamentosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
+     * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Arranjo_Orcamentos $arranjo_Orcamentos)
+    public function update(Request $request, Atividades $atividades)
     {
         //
     }
@@ -78,10 +75,10 @@ class Arranjos_OrcamentosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Arranjo_Orcamentos  $arranjo_Orcamentos
+     * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Arranjo_Orcamentos $arranjo_Orcamentos)
+    public function destroy(Atividades $atividades)
     {
         //
     }
