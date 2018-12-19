@@ -49,8 +49,7 @@ class ArranjosController extends Controller
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Arranjos:: all()->last();
 
-
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tabela', $tabela);
+      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
 
 
       // return view('cadastrarItensArranjos')->with(compact('Arranjos'))->with('Itens', $It);

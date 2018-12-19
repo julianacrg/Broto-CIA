@@ -37,7 +37,8 @@
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
                                       <select  name="evento" class="form-control" style="max-width: 80%;">
-                                       <option value="">Casamento</option>
+                                       <option value="">Selecione</option>
+                                       <option value="Casamento">Casamento</option>
                                        <option value="15 anos">15 Anos</option>
                                        <option value="Aniversário">Aniversário</option>
                                        <option value="Infantil">Infantil</option>
@@ -127,8 +128,7 @@
                                 </div>
                                  <div class="row">
 
-                                       <div class="form-group">
-                                         <!-- salvando arranjos na tabela arranjos orçamentos -->
+                                       <!-- <div class="form-group">
                                           <div class="col-sm-4">
 
                                             <div class="input-group">
@@ -136,7 +136,7 @@
                                               <select  name="Arranjos->nome" class="form-control">
                                                 <option value="">Selecione</option>
                                                 @foreach( $Arranjos as $a )
-                                                <option value="Arranjos->nome"> {{$a->nome}}</option>
+                                                <option value="a->nome"> {{$a->nome}}</option>
                                                 @endforeach
 
                                               </select>
@@ -154,9 +154,6 @@
                                             </div>
                                         </div>
 
-
-                                        <!-- fim da tabela arranjo orçamentos -->
-
                                         <div class="col-sm-2">
                                           <button id="botaoadd"  class="btn btn-primary">Add</button>
                                         </div>
@@ -164,16 +161,12 @@
                                         <div class="col-sm-2">
                                           <button id="botaoadd"  class="btn btn-primary">Adicionar Igreja</button>
                                         </div>
-
-
-                                      </div>
-
-
+                                      </div> -->
 
                                 </div>
 
                                 <label>* Campos Obrigatórios</label>
-                                <table class="table">
+                                <!-- <table class="table">
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
@@ -197,7 +190,7 @@
                                     </tr>
 
                                   </tbody>
-                                </table>
+                                </table> -->
 
 
                                 <div class="form-group ">

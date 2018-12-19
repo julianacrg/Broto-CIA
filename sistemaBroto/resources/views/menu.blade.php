@@ -19,7 +19,7 @@
     </head>
     <div id="cm-menu">
               <nav class="cm-navbar cm-navbar-primary">
-                  <div class="cm-flex"><a href="index.php" class="cm-logo"></a></div>
+                  <div class="cm-flex"><a href="home" class="cm-logo"></a></div>
                   <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
               </nav>
               <div id="cm-menu-content">
@@ -154,6 +154,7 @@
     <script src="{{asset('assets/js/demo/dashboard.js')}}"></script>
     <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="http://unpkg.com/vue"></script>
     <script type="text/javascript">
 
 

@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ItensArranjos;
+use App\ItensOrcamentos;
 use Illuminate\Http\Request;
-use App\Arranjos;
-use App\Itens;
-use Auth;
 
-
-class ItensArranjosController extends Controller
+class ItensOrcamentosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,21 +35,16 @@ class ItensArranjosController extends Controller
      */
     public function store(Request $request)
     {
-      ItensArranjos::create($request->all());
-      session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
-      $ultimo = Arranjos:: all()->last();
-      $It = Itens:: orderBy('nome')->get();
-
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\ItensArranjos  $itensArranjos
+     * @param  \App\ItensOrcamentos  $itensOrcamentos
      * @return \Illuminate\Http\Response
      */
-    public function show(ItensArranjos $itensArranjos)
+    public function show(ItensOrcamentos $itensOrcamentos)
     {
         //
     }
@@ -61,10 +52,10 @@ class ItensArranjosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ItensArranjos  $itensArranjos
+     * @param  \App\ItensOrcamentos  $itensOrcamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(ItensArranjos $itensArranjos)
+    public function edit(ItensOrcamentos $itensOrcamentos)
     {
         //
     }
@@ -73,10 +64,10 @@ class ItensArranjosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ItensArranjos  $itensArranjos
+     * @param  \App\ItensOrcamentos  $itensOrcamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ItensArranjos $itensArranjos)
+    public function update(Request $request, ItensOrcamentos $itensOrcamentos)
     {
         //
     }
@@ -84,10 +75,10 @@ class ItensArranjosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ItensArranjos  $itensArranjos
+     * @param  \App\ItensOrcamentos  $itensOrcamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItensArranjos $itensArranjos)
+    public function destroy(ItensOrcamentos $itensOrcamentos)
     {
         //
     }

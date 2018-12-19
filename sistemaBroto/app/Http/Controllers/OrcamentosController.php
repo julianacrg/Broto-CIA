@@ -46,9 +46,14 @@ class OrcamentosController extends Controller
     public function store(Request $request)
     {
       Orcamentos::create($request->all());
-      session()->flash('mensagem', 'Orçamento cadastrado com sucesso!');
+      session()->flash('mensagem', 'Cadastrado com sucesso!');
 
-      return view('cadastrarOrcamento');
+
+      $It = Itens:: orderBy('nome')->get();
+      $arranjos = Arranjos:: orderBy('nome')->get();
+      $ultimo = Orcamentos:: all()->last();
+
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
     }
 
     /**

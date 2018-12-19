@@ -12,7 +12,7 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                  <h2 align="center">Cadastrar item para o arranjo  {{$Arranjos->nome}}</h2>
+                                  <h2 align="center">Cadastrar Arranjo para o Orçamento  {{$Orcamentos->cliente}}</h2>
 
                                 </ul>
 
@@ -34,11 +34,11 @@
                          @endif
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
+                                 <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
                                     @csrf
                                     <div class="form-group">
                                       <div class="input-group">
-                                        <input type="hidden" name="arranjos_id" v-model="arranjos" value="{{$Arranjos->id}}"> </input>
+                                        <input type="hidden" name="orcamentos_id" value="{{$Orcamentos->id}}"> </input>
                                       </div>
 
                                     </div>
@@ -68,45 +68,66 @@
                                          </div>
                                      </div>
                                      <div class="col-sm-4">
-                                       <button @click="persist" id="botaoadd"  class="btn btn-primary">Add</button>
+                                       <button id="botaoadd"  class="btn btn-primary">Add</button>
                                      </div>
-
-
-                                     <table class="table table-bordered table-striped table-hover table-responsive">
-                                     <thead>
-                                      <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Preço</th>
-                                        <th scope="col">Ação</th>
-
-                                      </tr>
-                                     </thead>
-                                     <tbody>
-                                      <tr>
-
-                                        <td></td>
-                                        <td> </td>
-                                        <td> </td>
-
-
-                                        <td>
-                                          <a class="btn btn-danger">Exluir</a>
-                                        </td>
-
-                                      </tr>
-
-
-                                     </tbody>
-                                     </table>
-
                                    </div>
+
+
 
                                  <div class="form-group ">
                                      <input  target="_blank" type="submit" value="Adicionar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
 
                                  </form>
+
+                                 <form id="formulario" class="" method="post" action="{{ route('Orcamentos.store') }}">
+                                    @csrf
+
+                                    <div class="form-group">
+                                       <div class="col-sm-5">
+                                         <div class="input-group">
+                                           <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+                                           <select type="text" class="form-control"  name="arranjos_id"  />
+                                           @foreach($Arranjos as $e)
+
+                                           <option value="{{$e->id}}">{{ $e->nome }}</option>
+
+                                           @endforeach
+                                           <select>
+
+                                         </div>
+                                       </div>
+                                     <div class="col-sm-2">
+                                          <div class="form-group">
+
+                                             <div class="input-group">
+                                                 <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
+                                                 <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_itens" v-model="qtd_itens" id="qtd"  placeholder="Qtd."/>
+                                             </div>
+
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-4">
+                                       <button id="botaoadd"  class="btn btn-primary">Add</button>
+                                     </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <input  target="_blank" type="submit" value="Adicionar Arranjo" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
+                                      </div>
+                                  </form>
+
+
+
+
+
+
+
+
+
+
+
+
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                                </div>
