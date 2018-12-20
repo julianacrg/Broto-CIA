@@ -121,14 +121,9 @@
                                   </div>
                                 </div>
 
+                                 <!-- <div class="row">
 
-
-                                <div class="row">
-                                  <label for="arranjo" class="col-sm-2 control-label">Arranjo</label>
-                                </div>
-                                 <div class="row">
-
-                                       <!-- <div class="form-group">
+                                       <div class="form-group">
                                           <div class="col-sm-4">
 
                                             <div class="input-group">
@@ -161,9 +156,9 @@
                                         <div class="col-sm-2">
                                           <button id="botaoadd"  class="btn btn-primary">Adicionar Igreja</button>
                                         </div>
-                                      </div> -->
+                                      </div>
 
-                                </div>
+                                </div> -->
 
                                 <label>* Campos Obrigatórios</label>
                                 <!-- <table class="table">

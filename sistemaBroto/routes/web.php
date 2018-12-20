@@ -33,7 +33,6 @@ Route::view('/cadastrarItensArranjos', 'cadastrarItensArranjos');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');
-Route::resource('/Arranjo_Orcamentos', 'Arranjos_OrcamentosController');
 Route::resource('/Arranjos', 'ArranjosController');
 Route::resource('/Fornecedores', 'FornecedoresController');
 Route::resource('/ItensArranjos', 'ItensArranjosController');

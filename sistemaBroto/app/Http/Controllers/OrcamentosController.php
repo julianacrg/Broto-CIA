@@ -86,8 +86,10 @@ class OrcamentosController extends Controller
      * @param  \App\Orcamentos  $orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orcamentos $orcamentos)
+    public function update(Request $request, $orcamentos)
     {
+
+      $orcamentos = Orcamentos::findOrFail($orcamentos);
       $orcamentos->fill($request->all());
       $orcamentos->save();
       $request->session()->flash('mensagem', 'Orcamentos atualizado com sucesso!');

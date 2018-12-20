@@ -26,20 +26,25 @@
 
                             <div class="main-login main-center" id="divform">
 
-                              <form id="formulario" class="" method="post" action="{{route('Orcamentos.update',$Orcamentos->id) }}">
+                              <form id="formulario" method="post" action="{{route('Orcamentos.update', $Orcamentos->id) }}">
                                 @csrf
-
-                                 <div class="form-group">
-                                  <label for="evento" class="cols-sm-2 control-label">Evento</label>
-                                  <div class="cols-sm-10">
-                                    <div class="input-group">
-                                      <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="evento" id="evento" value="{{$Orcamentos->evento}}"/>
-
-                                    </div>
-                                  </div>
-                                </div>
+                                @method('PATCH')
+                                <div class="form-group">
+                                 <label for="evento" class="cols-sm-2 control-label">Evento *</label>
+                                 <div class="cols-sm-10">
+                                   <div class="input-group">
+                                     <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
+                                     <select  name="evento" class="form-control" style="max-width: 80%;">
+                                      <option value="{{$Orcamentos->evento}}">{{$Orcamentos->evento}}</option>
+                                      <option value="Casamento">Casamento</option>
+                                      <option value="15 anos">15 Anos</option>
+                                      <option value="Aniversário">Aniversário</option>
+                                      <option value="Infantil">Infantil</option>
+                                      <option value="Outros">Outros</option>
+                                    </select>
+                                   </div>
+                                 </div>
+                               </div>
 
 
                                 <div class="form-group">
@@ -97,7 +102,7 @@
                                   <div class="cols-sm-5">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-fax fa" aria-hidden="true"></i></span>
-                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone" value="{{$Orcamentos->telefone}}" pattern="^\d{2}-\d{5}-\d{4}$"/>
+                                      <input type="tel" class="form-control" style="max-width: 30%;" name="telefone" id="telefone" value="{{$Orcamentos->telefone}}" pattern="^\d{2}\d{5}\d{4}$"/>
                                     </div>
                                   </div>
                                 </div>
@@ -114,7 +119,7 @@
                                   </div>
                                 </div>
 
-                              
+
 
                                 <table class="table">
                                   <thead>
