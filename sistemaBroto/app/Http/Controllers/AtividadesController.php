@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Atividades;
+use App\Funcionarios;
+use App\Arranjos;
 use Illuminate\Http\Request;
 
 class AtividadesController extends Controller
@@ -14,7 +16,9 @@ class AtividadesController extends Controller
      */
     public function index()
     {
-        //
+      $funcionario = Funcionarios:: orderBy('nome')->get();
+      $arranjos = Arranjos:: orderBy('nome')->get();
+         return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arranjos);
     }
 
     /**

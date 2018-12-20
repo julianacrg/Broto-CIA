@@ -31,6 +31,7 @@ Route::view('/cadastrarItensArranjos', 'cadastrarItensArranjos');
 
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::resource('/Atividades', 'AtividadesController');
 Route::resource('/Funcionarios', 'FuncionariosController');
 Route::resource('/Itens', 'ItensController');
 Route::resource('/Arranjos', 'ArranjosController');

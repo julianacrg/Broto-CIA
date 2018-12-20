@@ -18,6 +18,11 @@
     <!-- top Header -->
     </head>
     <div id="cm-menu">
+        @if(Session::has('message'))
+          <div class="alert alert-success">
+            {{Session::get('message')}}
+          </div>
+        @endif
               <nav class="cm-navbar cm-navbar-primary">
                   <div class="cm-flex"><a href="home" class="cm-logo"></a></div>
                   <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
@@ -34,7 +39,7 @@
                               <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
                               <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
-                              <li class="contador"><a href="#" class="sf-post-it">Ativdades</a></li>
+                              <li class="contador"><a href="{{route('Atividades.index')}}" class="sf-post-it">Ativdades</a></li>
                               <li class="contador"><a href="#" class="sf-pencil">Pedidos</a></li>
                               <li class="contador"><a href="#" class="sf-layers">Itens</a></li>
                               <li class="contador"><a href="#" class="sf-flower">Arranjos</a></li>
