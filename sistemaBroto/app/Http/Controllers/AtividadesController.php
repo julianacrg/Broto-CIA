@@ -28,7 +28,9 @@ class AtividadesController extends Controller
      */
     public function create()
     {
-        //
+        $valortotal = Funcionarios::join('atividades', 'atividades.funcionarios_id', '=','funcionarios.id' )->get()
+        ->select('atividades.*')->get();
+        return view('listarAtividades')->with( 'valortotal', $valortotal);
     }
 
     /**

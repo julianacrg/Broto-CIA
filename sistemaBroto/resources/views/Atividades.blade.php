@@ -11,7 +11,7 @@
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="cadastraArranjo">Cadastrar Atividades</a></li>
-                            <li><a href="cadastrarFuncionario">Listar Atividades</a></li>
+                            <li><a href="{{route('Atividades.create')}}">Listar Atividades</a></li>
                         </ul>
 
                     </div>
