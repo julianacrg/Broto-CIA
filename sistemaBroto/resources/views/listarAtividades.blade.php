@@ -22,8 +22,39 @@
 
                   <div class="panel panel-default">
 
-                  {{-- {{json_encode($arr[1]->nome)}} --}}
-                  {{$arr[0]->nome}}
+                    <table class="table table-bordered table-striped table-hover table-responsive">
+                    <thead>
+                     <tr>
+                       <th scope="col">#</th>
+                       <th scope="col">Funcionario</th>
+                       <th scope="col">Arranjo</th>
+                       <th scope="col">Data</th>
+                       <th scope="col">Ação</th>
+
+                     </tr>
+                    </thead>
+                    <tbody>
+
+                      @foreach( $atv as $o )
+
+
+
+                     <tr>
+                       <td>{{ $o->id }} </td>
+                       <td>{{ $func[$a++]->nome }} </td>
+                       <td>{{ $arr[1]->nome }} </td>
+                       <td>{{ $o->data }} </td>
+
+                       <td>
+
+                       </td>
+
+                     </tr>
+
+                     @endforeach
+
+                    </tbody>
+                    </table>
                   </div>
                   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 

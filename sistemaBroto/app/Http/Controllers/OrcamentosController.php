@@ -62,14 +62,14 @@ class OrcamentosController extends Controller
 
       $It = Itens:: orderBy('nome')->get();
       $arranjos = Arranjos:: orderBy('nome')->get();
-      $ultimo = Orcamentos:: all()->last();
+
 
       if($validacao->fails()){
         return redirect()->back()->withErrors($validacao)->withInput();
       }else {
         Orcamentos::create($request->all());
       }
-
+      $ultimo = Orcamentos:: all()->last();
 
       return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
     }

@@ -1,0 +1,11 @@
+para traduzir o laravel segui os passos em: 
+https://github.com/lucascudo/laravel-5.7-pt-BR-localization
+
+pq?
+
+para que os erros de validaçoes do formulario aparece em portugues, como o git nao manda isso por repositorio
+tem que fazer em cada localhost
+
+tem como o git fazer o git mndar isso?
+
+sim, mas tem coisa mais importante para resolver

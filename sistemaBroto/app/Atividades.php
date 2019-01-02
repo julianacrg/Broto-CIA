@@ -10,12 +10,4 @@ class Atividades extends Model
 
 
 
-
-      public function arranjo(){
-        return $this->hasMany('App\Arranjos');
-      }
-
-
-
-
 }
