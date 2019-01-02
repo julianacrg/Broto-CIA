@@ -47,7 +47,7 @@
                                        <div class="col-sm-5">
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select type="text" class="form-control"  name="itens_id" v-model="itens_id" id="itensarranjo" />
+                                           <select type="text" class="form-control"  name="itens_id" id="itensarranjo" />
                                            @foreach($Itens as $e)
 
                                            <option value="{{$e->id}}">{{ $e->nome }}</option>
@@ -83,6 +83,10 @@
                                  <form id="formulario" class="" method="post" action="{{ route('ArranjosOrcamentos.store') }}">
                                     @csrf
 
+                                    <div class="input-group">
+                                      <input type="hidden" name="orcamentos_id" value="{{$Orcamentos->id}}"> </input>
+                                    </div>
+
                                     <div class="form-group">
                                        <div class="col-sm-5">
                                          <div class="input-group">
@@ -102,7 +106,7 @@
 
                                              <div class="input-group">
                                                  <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                                 <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_itens" v-model="qtd_itens" id="qtd"  placeholder="Qtd."/>
+                                                 <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_arranjos" placeholder="Qtd."/>
                                              </div>
 
                                          </div>

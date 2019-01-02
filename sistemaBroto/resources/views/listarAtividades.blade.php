@@ -10,7 +10,7 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Atividades.index')}}">Nova Atividade</a></li>
-                                <li class="active"><a href="listarAtividade">Listar Orçamento</a></li>
+                                <li class="active"><a href="{{route('Atividades.create')}}">Listar Orçamento</a></li>
 
 
                             </ul>
@@ -21,7 +21,9 @@
                 </nav>
 
                   <div class="panel panel-default">
-                    {{$valortotal->nome}}
+
+                  {{-- {{json_encode($arr[1]->nome)}} --}}
+                  {{$arr[0]->nome}}
                   </div>
                   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 

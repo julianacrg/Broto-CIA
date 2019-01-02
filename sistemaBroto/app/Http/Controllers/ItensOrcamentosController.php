@@ -43,8 +43,14 @@ class ItensOrcamentosController extends Controller
       $ultimo = Orcamentos:: all()->last();
 
       ItensOrcamentos::create($request->all());
-      session()->flash('mensagem', 'Cadastrado com sucesso!')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
-      return view('cadastrarOrcamentos2');
+      session()->flash('mensagem', 'Cadastrado com sucesso!');
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
+
+      if ($request->fails()) {
+        return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)
+                        ->withErrors($request)
+                        ->withInput();
+        }
     }
 
     /**

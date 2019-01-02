@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="container ">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Broto & CIA') }}
                 </a>
@@ -31,15 +31,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
+              </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -68,7 +70,7 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+
         </nav>
 
         <main class="py-4">

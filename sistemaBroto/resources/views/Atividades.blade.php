@@ -10,7 +10,7 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="cadastraArranjo">Cadastrar Atividades</a></li>
+                            <li class="active"><a href="{{route('Atividades.index')}}">Cadastrar Atividades</a></li>
                             <li><a href="{{route('Atividades.create')}}">Listar Atividades</a></li>
                         </ul>
 
@@ -66,11 +66,11 @@
 
                                <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                 <select  name="arranjos_orcamentos_id" class="form-control">
+                                 <select  type="text"  name="arranjos_orcamentos_id" class="form-control">
                                    <option value="">Selecione um Arranjos</option>
                                    @foreach( $Arranjos as $a )
 
-                                   <option value="a->id"> {{$a->nome}}</option>
+                                   <option value="{{$a->id}}"> {{$a->nome}}</option>
                                    @endforeach
 
                                  </select>

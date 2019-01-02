@@ -8,6 +8,7 @@ use App\Itens;
 use Auth;
 
 
+
 use Illuminate\Http\Request;
 
 class OrcamentosController extends Controller
@@ -44,13 +45,31 @@ class OrcamentosController extends Controller
      */
     public function store(Request $request)
     {
-      Orcamentos::create($request->all());
-      session()->flash('mensagem', 'Cadastrado com sucesso!');
+
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "evento" => "required",
+        "cliente" => "required",
+        "data" => "required",
+        "endereco" => "required",
+        "horario" => "required",
+        "celular" => "required",
+      ]);
+
+
 
 
       $It = Itens:: orderBy('nome')->get();
       $arranjos = Arranjos:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
+
+      if($validacao->fails()){
+        return redirect()->back()->withErrors($validacao)->withInput();
+      }else {
+        Orcamentos::create($request->all());
+      }
+
 
       return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
     }

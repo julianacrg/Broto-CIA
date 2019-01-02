@@ -43,8 +43,8 @@ class ArranjosOrcamentosController extends Controller
       $ultimo = Orcamentos:: all()->last();
 
       ArranjosOrcamentos::create($request->all());
-      session()->flash('mensagem', 'Cadastrado com sucesso!')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
-      return view('cadastrarOrcamentos2');
+      session()->flash('mensagem', 'Cadastrado com sucesso!');
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
     }
 
     /**

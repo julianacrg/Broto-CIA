@@ -7,6 +7,14 @@
         <body class="cm-no-transition cm-2-navbar">
 
             <div id="global">
+              @if($errors->all())
+                <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  @foreach ($errors->all() as $key => $value)
+                    <li><strong>{{$value}}</strong></li>
+                  @endforeach
+                </div>
+              @endif
                <div class="container-fluid">
 
                  <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">

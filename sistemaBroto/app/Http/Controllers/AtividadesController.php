@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use App\Atividades;
 use App\Funcionarios;
 use App\Arranjos;
+use App\arranjosOrcamentos;
 use Illuminate\Http\Request;
 
 class AtividadesController extends Controller
@@ -17,8 +19,11 @@ class AtividadesController extends Controller
     public function index()
     {
       $funcionario = Funcionarios:: orderBy('nome')->get();
-      $arranjos = Arranjos:: orderBy('nome')->get();
-         return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arranjos);
+      $arr = DB::table('arranjos')
+      ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
+      ->select('arranjos.nome', 'arranjos.id')->get();
+         return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arr);
+
     }
 
     /**
@@ -28,9 +33,14 @@ class AtividadesController extends Controller
      */
     public function create()
     {
-        $valortotal = Funcionarios::join('atividades', 'atividades.funcionarios_id', '=','funcionarios.id' )->get()
-        ->select('atividades.*')->get();
-        return view('listarAtividades')->with( 'valortotal', $valortotal);
+
+
+        $arr = DB::table('arranjos')
+        ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
+        ->select('arranjos.nome', 'arranjos.id')->get();
+// dd($arr);
+        return view('listarAtividades',compact('arr'));
+
     }
 
     /**
@@ -41,7 +51,12 @@ class AtividadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $funcionario = Funcionarios:: orderBy('nome')->get();
+      $arranjos = Arranjos:: orderBy('nome')->get();
+      Atividades::create($request->all());
+      session()->flash('mensagem', 'Item cadastrado com sucesso!');
+
+      return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arranjos);
     }
 
     /**
