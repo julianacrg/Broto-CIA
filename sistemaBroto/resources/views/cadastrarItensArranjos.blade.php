@@ -68,13 +68,14 @@
                                          </div>
                                      </div>
                                      <div class="col-sm-4">
-                                       <button @click="persist" id="botaoadd"  class="btn btn-primary">Add</button>
+                                       <button id="botaoadd"  class="btn btn-primary">Add</button>
                                      </div>
 
 
                                      <table class="table table-bordered table-striped table-hover table-responsive">
                                      <thead>
                                       <tr>
+
                                         <th scope="col">Nome</th>
                                         <th scope="col">Tipo</th>
                                         <th scope="col">Preço</th>
@@ -83,11 +84,12 @@
                                       </tr>
                                      </thead>
                                      <tbody>
+                                       @foreach($Tb as $e)
                                       <tr>
 
-                                        <td></td>
-                                        <td> </td>
-                                        <td> </td>
+                                        <td>{{$e->nome}}</td>
+                                        <td>{{$e->tipo}} </td>
+                                        <td>{{$e->preco}} </td>
 
 
                                         <td>
@@ -95,7 +97,7 @@
                                         </td>
 
                                       </tr>
-
+                                    @endforeach
 
                                      </tbody>
                                      </table>

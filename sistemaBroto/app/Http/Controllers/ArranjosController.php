@@ -7,6 +7,7 @@ use App\Itens;
 use Illuminate\Http\Request;
 use App\ItensArranjos;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class ArranjosController extends Controller
 {
@@ -48,8 +49,12 @@ class ArranjosController extends Controller
 
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Arranjos:: all()->last();
+      $itens= DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
+      ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
+      ->select('itens.nome', 'itens.preco', 'itens.tipo')->get();
 
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
+
+      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
 
 
       // return view('cadastrarItensArranjos')->with(compact('Arranjos'))->with('Itens', $It);

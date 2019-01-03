@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Arranjos;
 use App\Itens;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class ItensArranjosController extends Controller
@@ -43,8 +44,14 @@ class ItensArranjosController extends Controller
       session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
       $ultimo = Arranjos:: all()->last();
       $It = Itens:: orderBy('nome')->get();
+      // $ultimo1 = ItensArranjos:: all()->last();
 
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It);
+
+      $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
+      ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
+      ->select('itens.nome', 'itens.preco', 'itens.tipo')->get();
+
+      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
     }
 
     /**
