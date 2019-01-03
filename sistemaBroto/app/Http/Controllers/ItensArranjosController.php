@@ -49,8 +49,9 @@ class ItensArranjosController extends Controller
 
       $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
       ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
-      ->select('itens.nome', 'itens.preco', 'itens.tipo')->get();
+      ->select('itens.*', 'itens_arranjos.id_itens_arranjos')->get();
 
+      // dd($itens);
       return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
     }
 
@@ -94,8 +95,20 @@ class ItensArranjosController extends Controller
      * @param  \App\ItensArranjos  $itensArranjos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItensArranjos $itensArranjos)
+    public function destroy($itensArranjos)
     {
-        //
+
+        $task = ItensArranjos::where('id_itens_arranjos','=',$itensArranjos);
+        $task->delete();
+
+        $ultimo = Arranjos:: all()->last();
+        $It = Itens:: orderBy('nome')->get();
+        // $ultimo1 = ItensArranjos:: all()->last();
+
+
+        $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
+        ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
+        ->select('itens.*', 'itens_arranjos.id_itens_arranjos')->get();
+        return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
     }
 }

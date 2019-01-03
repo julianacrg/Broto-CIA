@@ -68,47 +68,52 @@
                                          </div>
                                      </div>
                                      <div class="col-sm-4">
-                                       <button id="botaoadd"  class="btn btn-primary">Add</button>
+                                       <button  class="btn btn-primary">Add</button>
                                      </div>
 
-
-                                     <table class="table table-bordered table-striped table-hover table-responsive">
-                                     <thead>
-                                      <tr>
-
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Preço</th>
-                                        <th scope="col">Ação</th>
-
-                                      </tr>
-                                     </thead>
-                                     <tbody>
-                                       @foreach($Tb as $e)
-                                      <tr>
-
-                                        <td>{{$e->nome}}</td>
-                                        <td>{{$e->tipo}} </td>
-                                        <td>{{$e->preco}} </td>
-
-
-                                        <td>
-                                          <a class="btn btn-danger">Exluir</a>
-                                        </td>
-
-                                      </tr>
-                                    @endforeach
-
-                                     </tbody>
-                                     </table>
-
                                    </div>
 
-                                 <div class="form-group ">
-                                     <input  target="_blank" type="submit" value="Adicionar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
-                                   </div>
+                                 {{-- <div class="form-group ">
+                                     <input  type="submit" value="Adicionar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
+                                   </div> --}}
 
                                  </form>
+
+                                 <table class="table table-bordered table-striped table-hover table-responsive">
+                                 <thead>
+                                  <tr>
+
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Ação</th>
+
+                                  </tr>
+                                 </thead>
+                                 <tbody>
+                                   @foreach($Tb as $e)
+                                  <tr>
+
+                                    <td>{{$e->nome}}</td>
+                                    <td>{{$e->tipo}} </td>
+                                    <td>{{$e->preco}} </td>
+
+
+                                    <td>
+                                      <div class="">
+
+                                      <form method="post" onsubmit="return confirm('Confirma exclusão do Procedimento?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger"type="submit" style="font-size:12px"> <i class="fa fa-trash-o "></i></button>
+                                      </form>
+                                      </div>
+                                      </td>
+                                  </tr>
+                                @endforeach
+
+                                 </tbody>
+                                 </table>
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                                </div>

@@ -59,11 +59,12 @@
                                     <div class="cols-sm-10">
                                       <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                        <select  name="Arranjos->nome" class="form-control" style="max-width: 40%;">
-                                       <option value="">Peça</option>
-                                       <option>Flor</option>
-                                       <option>Folhagem</option>
-                                       <option>Acessório</option>
+                                        <select  name="tipo" class="form-control" style="max-width: 40%;">
+                                       <option >Selecione um tipo: </option>
+                                       <option value="Peça">Peça</option>
+                                       <option value="Flor">Flor</option>
+                                       <option value="Folhagem" >Folhagem</option>
+                                       <option value="Acessório">Acessório</option>
                                      </select>
                                       </div>
                                     </div>
@@ -75,10 +76,11 @@
                                     <div class="cols-sm-10">
                                       <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-database fa" aria-hidden="true"></i></span>
-                                        <select  name="Arranjos->nome" class="form-control" style="max-width: 40%">
-                                           <option value="">Venda</option>
-                                           <option> Aluguel</option>
-                                           
+                                        <select  name="categoria" class="form-control" style="max-width: 40%">
+                                           <option>Selecione</option>
+                                           <option value="Venda">Venda</option>
+                                           <option value="Aluguel"> Aluguel</option>
+
 
                                          </select>
                                       </div>
@@ -95,11 +97,11 @@
                                      </div>
                                    </div>
 
-                                  
 
-                                  
 
-                            
+
+
+
 
                                    <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
