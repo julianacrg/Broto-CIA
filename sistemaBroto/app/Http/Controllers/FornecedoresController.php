@@ -35,7 +35,8 @@ class FornecedoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Fornecedores::create($request->all());
+      return view('cadastrarFornecedor');
     }
 
     /**

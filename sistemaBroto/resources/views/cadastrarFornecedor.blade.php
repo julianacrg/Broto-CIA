@@ -27,7 +27,7 @@
 
                            <div class="main-login main-center" id="divform">
 
-                             <form id="formulario"  method="post" action="{{route('Funcionarios.store')}}">
+                             <form id="formulario"  method="post" action="{{route('Fornecedores.store')}}">
                                @csrf
                                 <div class="form-group">
                                  <label for="name" class="cols-sm-2 control-label">Nome</label>
@@ -55,7 +55,7 @@
                                </div>
 
                              </form>
-                             
+
                            </div>
                        <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 

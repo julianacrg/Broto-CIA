@@ -49,7 +49,7 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-dollar fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o preço uni."/>
+                                         <input type="number" min="0" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o preço uni."/>
                                        </div>
                                      </div>
                                    </div>
@@ -92,7 +92,7 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="qtd" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
+                                         <input type="number" min="0" class="form-control" style="max-width: 40%;" name="qtd" id="quantidadeitem"  placeholder="Entre com a quantidade de itens"/>
                                       </div>
                                      </div>
                                    </div>

@@ -7,7 +7,7 @@
 
                <div id="global">
 
-                  <div class="container-fluid">
+                  <div class="container-fluid" >
                     <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
@@ -32,7 +32,7 @@
                              {{Session::get('message')}}
                            </div>
                          @endif
-                               <div class="main-login main-center" id="divform">
+                               <div class="main-login main-center" id="divform" >
 
                                  <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
                                     @csrf
@@ -79,7 +79,8 @@
 
                                  </form>
 
-                                 <table class="table table-bordered table-striped table-hover table-responsive">
+
+                                 <table class="table table-bordered table-striped table-hover table-responsive table-bordered " >
                                  <thead>
                                   <tr>
 
@@ -97,11 +98,8 @@
                                     <td>{{$e->nome}}</td>
                                     <td>{{$e->tipo}} </td>
                                     <td>{{$e->preco}} </td>
-
-
                                     <td>
                                       <div class="">
-
                                       <form method="post" onsubmit="return confirm('Confirma exclusão do Procedimento?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
                                         @csrf
                                         @method('DELETE')
@@ -114,41 +112,14 @@
 
                                  </tbody>
                                  </table>
+
+
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
-                               </div>
+
                        </div>
                    </div>
                </div>
-
-               <!-- <script type="text/javascript">
-
-                               var global = new Vue({
-                  el: '#global',
-                  data: {
-                    arranjos: '',
-                    itens_id: '',
-                    qtd_itens:''
-
-
-                  },
-                  mounted () {
-                    if (localStorage.arranjos) this.arranjos = localStorage.arranjos;
-                    if (localStorage.itens_id) this.itens_id = localStorage.itens_id;
-                    if (localStorage.qtd_itens) this.qtd_itens = localStorage.qtd_itens;
-                  },
-                    methods: {
-                          persist () {
-                            localStorage.arranjos = this.arranjos;
-                            localStorage.itens_id = this.itens_id;
-                            localStorage.qtd_itens = this.qtd_itens;
-                            console.log('teste');
-                          }
-                        }
-                  })
-
-               </script> -->
-
            </body>
 
 @endsection('conteudo')

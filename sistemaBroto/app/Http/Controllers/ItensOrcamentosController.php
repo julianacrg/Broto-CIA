@@ -8,6 +8,7 @@ use App\Orcamentos;
 use App\Arranjos;
 use App\Itens;
 use Auth;
+use Illuminate\Support\Facades\DB;
 class ItensOrcamentosController extends Controller
 {
     /**
@@ -43,11 +44,24 @@ class ItensOrcamentosController extends Controller
       $ultimo = Orcamentos:: all()->last();
 
       ItensOrcamentos::create($request->all());
+
+      $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')
+      ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
+      ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
+
+      $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
+      ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
+      ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+
+
+
+
       session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem1', $ultItem1)->with('ultItem', $ultItem);
 
       if ($request->fails()) {
-        return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)
+        return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem1', $ultItem1)
+                        ->with('ultItem', $ultItem)
                         ->withErrors($request)
                         ->withInput();
         }

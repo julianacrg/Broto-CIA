@@ -12,7 +12,7 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                  <h2 align="center">Cadastrar Arranjo para o Orçamento  {{$Orcamentos->cliente}}</h2>
+                                  <h2 align="center">Cadastrar Arranjo para o Orçamento do clinte  {{$Orcamentos->cliente}}</h2>
 
                                 </ul>
 
@@ -27,11 +27,7 @@
                     </nav>
                        <div class="panel panel-default">
 
-                         @if(Session::has('message'))
-                           <div class="alert alert-success">
-                             {{Session::get('message')}}
-                           </div>
-                         @endif
+
                                <div class="main-login main-center" id="divform">
 
                                  <form id="formulario" class="" method="post" action="{{ route('ItensOrcamentos.store') }}">
@@ -48,6 +44,7 @@
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                            <select type="text" class="form-control"  name="itens_id" id="itensarranjo" />
+                                           <option>Selecione um Item</option>
                                            @foreach($Itens as $e)
 
                                            <option value="{{$e->id}}">{{ $e->nome }}</option>
@@ -71,58 +68,106 @@
                                        <button id="botaoadd"  class="btn btn-primary">Add</button>
                                      </div>
                                    </div>
-
-
-
                                  <div class="form-group ">
                                      <input  target="_blank" type="submit" value="Adicionar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
                                    </div>
 
                                  </form>
 
-                                 <form id="formulario" class="" method="post" action="{{ route('ArranjosOrcamentos.store') }}">
-                                    @csrf
+                                  <table class="table table-bordered table-striped table-hover table-responsive">
+                                       <thead>
+                                          <tr>
+                                              <th scope="col">Nome</th>
+                                              <th scope="col">Tipo</th>
+                                              <th scope="col">Quantidade</th>
+                                          </tr>
+                                       </thead>
 
-                                    <div class="input-group">
-                                      <input type="hidden" name="orcamentos_id" value="{{$Orcamentos->id}}"> </input>
-                                    </div>
+                                             <tbody>
+                                               @foreach( $ultItem as $o )
+                                              <tr>
+                                                <td>{{ $o->nome }} </td>
+                                                <td>{{ $o->tipo }} </td>
+                                                <td>{{ $o->qtd_itens }} </td>
+                                                <td>
+                                                </td>
 
-                                    <div class="form-group">
-                                       <div class="col-sm-5">
-                                         <div class="input-group">
-                                           <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select type="text" class="form-control"  name="arranjos_id"  />
-                                           @foreach($Arranjos as $e)
+                                              </tr>
+                                              @endforeach
 
-                                           <option value="{{$e->id}}">{{ $e->nome }}</option>
+                                             </tbody>
 
-                                           @endforeach
-                                           <select>
+                                 </table>
+                                 <div class="panel panel-default">
+                                       <form id="formulario" class="" method="post" action="{{ route('ArranjosOrcamentos.store') }}">
+                                          @csrf
 
-                                         </div>
-                                       </div>
-                                     <div class="col-sm-2">
+                                          <div class="input-group">
+                                            <input type="hidden" name="orcamentos_id" value="{{$Orcamentos->id}}"> </input>
+                                          </div>
+
                                           <div class="form-group">
+                                             <div class="col-sm-5">
+                                               <div class="input-group">
+                                                 <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+                                                 <select type="text" class="form-control"  name="arranjos_id"  />
+                                                 <option>Selecione um Arranjo</option>
+                                                 @foreach($Arranjos as $e)
 
-                                             <div class="input-group">
-                                                 <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                                 <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_arranjos" placeholder="Qtd."/>
+                                                 <option value="{{$e->id}}">{{ $e->nome }}</option>
+
+                                                 @endforeach
+                                                 <select>
+
+                                               </div>
                                              </div>
+                                           <div class="col-sm-2">
+                                                <div class="form-group">
 
-                                         </div>
-                                     </div>
-                                     <div class="col-sm-4">
-                                       <button id="botaoadd"  class="btn btn-primary">Add</button>
-                                     </div>
-                                    </div>
+                                                   <div class="input-group">
+                                                       <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
+                                                       <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_arranjos" placeholder="Qtd."/>
+                                                   </div>
 
-                                    <div class="form-group ">
-                                        <input  target="_blank" type="submit" value="Adicionar Arranjo" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
-                                      </div>
-                                  </form>
+                                               </div>
+                                           </div>
+                                           <div class="col-sm-4">
+                                             <button id="botaoadd"  class="btn btn-primary">Add</button>
+                                           </div>
+                                          </div>
+
+                                          <div class="form-group ">
+                                              <input  target="_blank" type="submit" value="Adicionar Arranjo" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
+                                            </div>
+                                        </form>
 
 
+                                        <table class="table table-bordered table-striped table-hover table-responsive">
+                                             <thead>
+                                                <tr>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Quantidade</th>
+                                                </tr>
+                                             </thead>
 
+                                                   <tbody>
+                                                     @foreach( $ultItem1 as $o )
+                                                    <tr>
+                                                      <td>{{ $o->nome }} </td>
+                                                      <td>{{ $o->valor }} </td>
+                                                      <td>{{ $o->qtd_arranjos }} </td>
+                                                      <td>
+                                                      </td>
+
+                                                    </tr>
+                                                    @endforeach
+
+                                                   </tbody>
+
+                                       </table>
+                                  
+                                </div>
 
 
 
@@ -138,34 +183,6 @@
                        </div>
                    </div>
                </div>
-
-               <!-- <script type="text/javascript">
-
-                               var global = new Vue({
-                  el: '#global',
-                  data: {
-                    arranjos: '',
-                    itens_id: '',
-                    qtd_itens:''
-
-
-                  },
-                  mounted () {
-                    if (localStorage.arranjos) this.arranjos = localStorage.arranjos;
-                    if (localStorage.itens_id) this.itens_id = localStorage.itens_id;
-                    if (localStorage.qtd_itens) this.qtd_itens = localStorage.qtd_itens;
-                  },
-                    methods: {
-                          persist () {
-                            localStorage.arranjos = this.arranjos;
-                            localStorage.itens_id = this.itens_id;
-                            localStorage.qtd_itens = this.qtd_itens;
-                            console.log('teste');
-                          }
-                        }
-                  })
-
-               </script> -->
 
            </body>
 
