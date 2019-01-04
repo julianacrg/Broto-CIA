@@ -133,7 +133,7 @@
                                 <label>* Campos Obrigatórios</label>
 
                                 <div class="form-group ">
-                                  <input target="_blank" type="submit" id="button" value= "Cadastrar Orçamento(1/3)" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                  <input target="_blank" type="submit" id="button" value= "Cadastrar Orçamento(1/3)->" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>
