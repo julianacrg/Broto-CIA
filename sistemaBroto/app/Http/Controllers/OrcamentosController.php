@@ -33,7 +33,7 @@ class OrcamentosController extends Controller
     public function create()
     {
 
-      $orcamentos = Orcamentos::where('orcamentos.status', '=', 1)->orderBy('evento')->get();
+      $orcamentos = Orcamentos::where('orcamentos.status', '=', 1)->orderBy('evento')->paginate(10);
          return view('listarOrcamento')->with('Orcamentos',$orcamentos);
 
 
