@@ -10,8 +10,9 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                <li class="active"><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
-                                <li><a href="{{route('Orcamentos.show',$Orcamentos[1]->id)}}">Listar Orçamento Apagados</a></li>
+                                <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
+                                <li class="active"><a href="#">Listar Orçamento Apagados</a></li>
+
 
 
                             </ul>
@@ -37,7 +38,7 @@
                             </thead>
 
                             <tbody>
-                              @foreach( $Orcamentos as $o )
+                              @foreach( $Orçamentos as $o )
                              <tr>
                                <td>{{ $o->id }} </td>
                                <td>{{ $o->cliente }} </td>
@@ -49,10 +50,10 @@
                                  <a href="{{route('Orcamentos.edit', $o->id)}}" class="btn btn-warning">Edite</a>
 
                                  <div class="">
-                                 <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Orcamentos.destroy',[$o->id])}}">
+                                 <form method="post" onsubmit="return confirm('Confirmar Restauração ?');" action="{{ route('Orcamentos.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
-                                   <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
+                                   <button class="btn btn-primary"type="submit" style="font-size:12px">Restaurar</button>
                                  </form>
                                  </div>
                                </td>

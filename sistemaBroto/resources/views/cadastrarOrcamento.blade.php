@@ -22,7 +22,7 @@
                          <div class="nav-tabs-container">
                              <ul class="nav nav-tabs">
                                  <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                 <li><a href="listarOrcamento">Listar Orçamento</a></li>
+                                 <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
                                  <li><a href="listarOrcamento">Lista de Contatos</a></li>
 
 
@@ -129,81 +129,18 @@
                                   </div>
                                 </div>
 
-                                 <!-- <div class="row">
-
-                                       <div class="form-group">
-                                          <div class="col-sm-4">
-
-                                            <div class="input-group">
-                                              <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                              <select  name="Arranjos->nome" class="form-control">
-                                                <option value="">Selecione</option>
-                                                @foreach( $Arranjos as $a )
-                                                <option value="a->nome"> {{$a->nome}}</option>
-                                                @endforeach
-
-                                              </select>
-                                            </div>
-                                          </div>
-
-                                        <div class="col-sm-2">
-                                             <div class="form-group">
-
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                                    <input type="number" min="1" class="form-control" style="max-width: 70%;" name="qtd" id="qtd"  placeholder="Qtd."/>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-2">
-                                          <button id="botaoadd"  class="btn btn-primary">Add</button>
-                                        </div>
-
-                                        <div class="col-sm-2">
-                                          <button id="botaoadd"  class="btn btn-primary">Adicionar Igreja</button>
-                                        </div>
-                                      </div>
-
-                                </div> -->
 
                                 <label>* Campos Obrigatórios</label>
-                                <!-- <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Arranjo</th>
-                                      <th scope="col">Quantidade</th>
-
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Rosas Brancas com folhagem Médio</td>
-                                      <td>10</td>
-
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Rosas Vermelhas Grande</td>
-                                      <td>7</td>
-
-                                    </tr>
-
-                                  </tbody>
-                                </table> -->
-
 
                                 <div class="form-group ">
-                                  <input target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                  <input target="_blank" type="submit" id="button" value= "Cadastrar Orçamento(1/3)" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>
+
                               <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
-                            </div>
+                        </div>
 
                     </div>
 

@@ -40,27 +40,19 @@ class ItensOrcamentosController extends Controller
     public function store(Request $request)
     {
       $It = Itens:: orderBy('nome')->get();
-      $arranjos = Arranjos:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
 
       ItensOrcamentos::create($request->all());
-
-      $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')
-      ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
-      ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
 
       $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
       ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
       ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
 
-
-
-
       session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem1', $ultItem1)->with('ultItem', $ultItem);
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)->with('ultItem', $ultItem);
 
       if ($request->fails()) {
-        return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem1', $ultItem1)
+        return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)
                         ->with('ultItem', $ultItem)
                         ->withErrors($request)
                         ->withInput();
@@ -107,8 +99,16 @@ class ItensOrcamentosController extends Controller
      * @param  \App\ItensOrcamentos  $itensOrcamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItensOrcamentos $itensOrcamentos)
+    public function destroy($itensOrcamentos)
     {
-        //
+      $task = ItensOrcamentos::where('id_itens_orcamentos','=',$itensOrcamentos);
+      $task->delete();
+
+      $It = Itens:: orderBy('nome')->get();
+      $ultimo = Orcamentos:: all()->last();
+      $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
+      ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
+      ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)->with('ultItem', $ultItem);
     }
 }

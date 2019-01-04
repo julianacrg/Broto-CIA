@@ -6,8 +6,8 @@ use App\Orcamentos;
 use App\Arranjos;
 use App\Itens;
 use Auth;
-
-
+use App\ArranjosOrcamentos;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -32,10 +32,14 @@ class OrcamentosController extends Controller
      */
     public function create()
     {
-      $orcamentos = Orcamentos:: orderBy('evento')->get();
-         return view('listarOrcamento')->with('Orçamentos',$orcamentos);
+
+      $orcamentos = Orcamentos::where('orcamentos.status', '=', 1)->orderBy('evento')->get();
+         return view('listarOrcamento')->with('Orcamentos',$orcamentos);
+
+
 
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -71,7 +75,13 @@ class OrcamentosController extends Controller
       }
       $ultimo = Orcamentos:: all()->last();
 
-      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It);
+      $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
+      ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
+      ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+
+
+      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('ultItem', $ultItem)
+      ->with('Itens', $It);
     }
 
     /**
@@ -82,7 +92,8 @@ class OrcamentosController extends Controller
      */
     public function show(Orcamentos $orcamentos)
     {
-        //
+      $orcamentos = Orcamentos::where('orcamentos.status', '=', 0)->orderBy('evento')->get();
+          return view('listarOrcamentoApagados')->with('Orçamentos',$orcamentos);
     }
 
     /**
@@ -121,10 +132,20 @@ class OrcamentosController extends Controller
      * @param  \App\Orcamentos  $orcamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orcamentos $orcamentos)
+    public function destroy($orcamentos)
     {
-      $orcamentos->delete();
+
+      $task = Orcamentos::findOrFail($orcamentos);
+      if ($task->status == 1) {
+        $task->status = 0;
+      }else {
+        $task->status = 1;
+      }
+
+
+      $task->save();
+
       session()->flash('mensagem','Orcamentos excluido com sucesso');
-      return redirect()->route('cadastrarOrcamento');
+      return redirect()->route('Orcamentos.create');
     }
 }
