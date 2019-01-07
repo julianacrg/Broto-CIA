@@ -1,0 +1,11 @@
+Login
+
+Ao fazer o registro é direcionado para o sistema
+
+Dessa forma qualquer pessoa pode se registrar
+
+Haverá um registro pré cadastrado no banco para o administrador
+
+No menu configurações o adm poderá criar novos acessos
+
+

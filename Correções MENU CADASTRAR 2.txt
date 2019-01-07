@@ -1,0 +1,63 @@
+Teste 2
+
+Menu Cadastrar
+
+-Alterar nome na barra superior (Home para Cadastrar)
+
+
+Cadastrar Item
+
+-Campo Preço Unitário como dinheiro (ex. 22,00)
+
+-Exibir mensagens:
+	Item cadastrado com sucesso
+	Erro! Item NÃO cadastrado
+
+-Colocar campo obrigatório antes do botão cadastrar e no singular
+
+
+Cadastrar Arranjos 
+
+Nome*
+
+Categoria* (
+ARRANJO MESA DE BOLO MAIOR
+ARRANJO MESA DE  BOLO MENOR
+ARRANJOS ALTOS
+ARRANJOS BAIXOS
+ARRANJOS MEDIOS
+ARRANJOS MESA DA FAMILIA
+ARRANJO MESA DE CAFÉ
+ARRANJO MESA DE  PRATO QUENTE
+ARRANJO MESA REGIONAL
+BUQUE DE NOIVA 
+LAPELAS 
+BUQUE DE DAMINHA
+BUQUE PARA JOGAR 
+)
+Foto
+
+-Falta campo de seleção de itens
+Esse campo deve ser preenchido de acordo com o filtro, 
+caso nada seja selecionado exibir todos os itens
+
+Colocar um filtro de tipo de item e 
+a partir dessa escolha preencher a caixa de seleção
+com os itens
+
+Itens* com quantidade
+
+Tabela de itens deve aparecer apenas cabeçalho 
+se nenhum item for selecionado
+
+-Exibir mensagens:
+	Item cadastrado com sucesso
+	Erro! Item NÃO cadastrado
+
+Cadastrar Funcionário e Fornecedor 
+
+-Verificar cpf e cnpj, mínimo de caracter 
+
+-Exibir mensagens:
+	Item cadastrado com sucesso
+	Erro! Item NÃO cadastrado
