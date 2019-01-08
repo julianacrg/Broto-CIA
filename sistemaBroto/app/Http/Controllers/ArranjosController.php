@@ -46,7 +46,7 @@ class ArranjosController extends Controller
       Arranjos::create($request->all());
       session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
 
-
+  
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Arranjos:: all()->last();
       $itens= DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
