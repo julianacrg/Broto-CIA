@@ -50,7 +50,7 @@
                                        <div class="col-sm-5">
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select  class="form-control meuselect"  name="itens_id" />
+                                           <select  class="meuselect" style="width: 80%"  name="itens_id" />
                                            <option>Selecione um Item</option>
                                            @foreach($Itens as $e)
 

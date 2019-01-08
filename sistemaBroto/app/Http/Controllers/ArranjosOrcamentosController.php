@@ -107,7 +107,7 @@ class ArranjosOrcamentosController extends Controller
     {
       $task = ArranjosOrcamentos::where('id_arranjos_orcamentos','=',$arranjosOrcamentos);
       $task->delete();
-
+      session()->flash('mensagem', 'Excluido com sucesso!');
       $arranjos = Arranjos:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
       $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')

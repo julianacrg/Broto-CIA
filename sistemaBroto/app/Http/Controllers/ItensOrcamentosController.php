@@ -103,7 +103,7 @@ class ItensOrcamentosController extends Controller
     {
       $task = ItensOrcamentos::where('id_itens_orcamentos','=',$itensOrcamentos);
       $task->delete();
-
+      session()->flash('mensagem', 'Excluido com sucesso!');
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
       $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')

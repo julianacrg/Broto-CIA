@@ -47,8 +47,10 @@
                                           <div class="form-group">
                                              <div class="col-sm-5">
                                                <div class="input-group">
-                                                 <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                                 <select  class="form-control meuselect"  name="arranjos_id"  />
+                                                 <span class="input-group-addon "><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
+
+
+                                                 <select class="meuselect" style="width: 80%" name="arranjos_id"  />
                                                  <option>Selecione um Arranjo</option>
                                                  @foreach($Arranjos as $e)
 
