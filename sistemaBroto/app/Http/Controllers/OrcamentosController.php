@@ -123,7 +123,7 @@ class OrcamentosController extends Controller
       $orcamentos->fill($request->all());
       $orcamentos->save();
       $request->session()->flash('mensagem', 'Orcamentos atualizado com sucesso!');
-      return redirect()->route('Orcamentos.index');
+      return redirect()->route('Orcamentos.create');
     }
 
     /**

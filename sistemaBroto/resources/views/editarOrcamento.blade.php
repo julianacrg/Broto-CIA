@@ -119,37 +119,8 @@
                                   </div>
                                 </div>
 
-
-
-                                <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Arranjo</th>
-                                      <th scope="col">Quantidade</th>
-
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Rosas Brancas com folhagem Médio</td>
-                                      <td>10</td>
-
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Rosas Vermelhas Grande</td>
-                                      <td>7</td>
-
-                                    </tr>
-
-                                  </tbody>
-                                </table>
-
-
                                 <div class="form-group ">
-                                  <input target="_blank" type="submit" id="button" value= "Gerar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                  <input type="submit" id="button" value= "Editar Orçamento" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>
