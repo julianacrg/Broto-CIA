@@ -104,6 +104,7 @@ class ItensArranjosController extends Controller
         $ultimo = Arranjos:: all()->last();
         $It = Itens:: orderBy('nome')->get();
         // $ultimo1 = ItensArranjos:: all()->last();
+        session()->flash('mensagem', 'Itens do arranjo deletado com sucesso!');
 
 
         $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')

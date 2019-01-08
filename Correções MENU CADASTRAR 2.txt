@@ -9,7 +9,7 @@ Cadastrar Item
 
 -Campo Preço Unitário como dinheiro (ex. 22,00)
 
--Exibir mensagens:
+-Exibir mensagens: ok
 	Item cadastrado com sucesso
 	Erro! Item NÃO cadastrado
 
@@ -18,7 +18,7 @@ Cadastrar Item
 
 Cadastrar Arranjos 
 
-Nome*
+Nome* ok
 
 Categoria* (
 ARRANJO MESA DE BOLO MAIOR

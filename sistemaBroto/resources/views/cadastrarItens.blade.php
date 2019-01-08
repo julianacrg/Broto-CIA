@@ -6,16 +6,23 @@
         <body class="cm-no-transition cm-2-navbar">
 
                <div id="global">
-
+                 @if($errors->all())
+                   <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     @foreach ($errors->all() as $key => $value)
+                       <li><strong>{{$value}}</strong></li>
+                     @endforeach
+                   </div>
+                 @endif
                   <div class="container-fluid">
                     <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="cadastrarItens">Cadastrar Itens</a></li>
-                                    <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                                    <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a></li>
-                                    <li><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
+                                    <li class="active"><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
+                                    <li><a href="{{ route('Arranjos.index') }}">Cadastrar Arranjos</a></li>
+                                    <li><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a></li>
+                                    <li><a href="{{ route('Fornecedores.index') }}">Cadastrar Fornecedor</a></li>
 
                                 </ul>
 
@@ -26,9 +33,15 @@
                           <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
 
-
                     </nav>
                        <div class="panel panel-default">
+                         @if(session()->has('mensagem'))
+                           <div class="alert alert-success alert-dismissible text-center" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                             {{session()->get('mensagem')}}
+                           </div>
+                          @endif
 
                                <div class="main-login main-center" id="divform">
 

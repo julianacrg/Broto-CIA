@@ -26,7 +26,13 @@
 
                     </nav>
                        <div class="panel panel-default">
+                         @if(Session::has('mensagem'))
 
+                           <div class="alert alert-success alert-dismissible text-center" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                             {{Session::get('mensagem')}}
+                           </div>
+                         @endif
 
                                <div class="main-login main-center" id="divform">
 
@@ -107,6 +113,7 @@
 
 
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
+                                 <button type="button" class="btn btn-primary btn-lg btn-block login-button" onclick="window.location.href='{{route('Orcamentos.index')}}'"  name="button">Finalizar/Cadastar outro Orçamento</button>
 
                                </div>
                        </div>

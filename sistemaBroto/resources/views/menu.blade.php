@@ -146,23 +146,32 @@
 </div>
     <script src="{{asset('assets/js/lib/jquery-2.1.3.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.mousewheel.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.cookie.min.js')}}"></script>
+
     <script src="{{asset('assets/js/fastclick.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/clearmin.min.js')}}"></script>
     <script src="{{asset('assets/js/demo/home.js')}}"></script>
     <script src="{{asset('assets/js/jquery.cookie.min.js')}}"></script>
     <script src="{{asset('assets/js/fastclick.min.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/clearmin.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/d3.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/c3.min.js')}}"></script>
     <script src="{{asset('assets/js/demo/dashboard.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.cookie.min.js')}}"></script>
     <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="http://unpkg.com/vue"></script>
-    <script type="text/javascript">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/pushy.js') }}"></script>
+    <script src="{{ asset('assets/js/pushy.min.js') }}"></script>
 
+
+
+
+
+
+
+    <script type="text/javascript">
 
     // Get the container element
     var liContainer = document.getElementById("Myli");

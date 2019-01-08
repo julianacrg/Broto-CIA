@@ -27,11 +27,13 @@
                     </nav>
                        <div class="panel panel-default">
 
-                         @if(Session::has('message'))
-                           <div class="alert alert-success">
-                             {{Session::get('message')}}
+                         @if(session()->has('mensagem'))
+                           <div class="alert alert-success alert-dismissible text-center" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                             
+                             {{session()->get('mensagem')}}
                            </div>
-                         @endif
+                          @endif
                                <div class="main-login main-center" id="divform" >
 
                                  <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
@@ -103,7 +105,7 @@
                                       <form method="post" onsubmit="return confirm('Confirma exclusão do Procedimento?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger"type="submit" style="font-size:12px"> <i class="fa fa-trash-o "></i></button>
+                                        <button class="btn btn-danger"type="submit" style="font-size:12px">Deletar</button>
                                       </form>
                                       </div>
                                       </td>
@@ -113,7 +115,7 @@
                                  </tbody>
                                  </table>
 
-
+<button type="button" class="btn btn-primary btn-lg btn-block login-button" onclick="window.location.href='{{route('Arranjos.index')}}'"  name="button">Finalizar/cadastar outro Arranjo</button>
                                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
 

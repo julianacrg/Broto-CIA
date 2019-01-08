@@ -24,9 +24,20 @@
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
                <div class="panel panel-default">
-                 @if(Session::has('message'))
-                   <div class="alert alert-success">
-                     {{Session::get('message')}}
+                 @if(Session::has('mensagem'))
+
+                   <div class="alert alert-success alert-dismissible text-center" role="alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                     {{Session::get('mensagem')}}
+                   </div>
+                 @endif
+                 @if($errors->all())
+                   <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     @foreach ($errors->all() as $key => $value)
+                       <li><strong>{{$value}}</strong></li>
+                     @endforeach
                    </div>
                  @endif
 
@@ -52,11 +63,20 @@
                                <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                <select  name="categoria" class="form-control">
                                  <option value="">Selecione</option>
-                                 <option value="Mesa"> Mesa</option>
-                                 <option value="Cafe da Manhã">Cafe da manhã</option>
-                                 <option value="Corredor">Corredor</option>
-                                 <option value="Nâo se aplica">Não se Aplica</option>
-
+                                 <option value="ARRANJO MESA DE BOLO MAIOR"> ARRANJO MESA DE BOLO MAIOR</option>
+                                 <option value="ARRANJO MESA DE BOLO MENOR"> ARRANJO MESA DE BOLO MENOR</option>
+                                 <option value="ARRANJOS ALTOS"> ARRANJOS ALTOS</option>
+                                 <option value="ARRANJOS BAIXOS"> ARRANJOS BAIXOS</option>
+                                 <option value="ARRANJOS MEDIOS"> ARRANJOS MEDIOS</option>
+                                 <option value="ARRANJOS MESA DA FAMILIA"> ARRANJOS MESA DA FAMILIA</option>
+                                 <option value="ARRANJO MESA DE CAFÉ"> ARRANJO MESA DE CAFÉ</option>
+                                 <option value="ARRANJO MESA DE  PRATO QUENTE"> ARRANJO MESA DE  PRATO QUENTE</option>
+                                 <option value="ARRANJO MESA REGIONAL"> ARRANJO MESA REGIONAL</option>
+                                 <option value="BUQUE DE NOIVA"> BUQUE DE NOIVA</option>
+                                 <option value="LAPELAS"> LAPELAS</option>
+                                 <option value="BUQUE DE DAMINHA"> BUQUE DE DAMINHA</option>
+                                 <option value="BUQUE PARA JOGAR">BUQUE PARA JOGAR</option>
+                                 <option value="N">Não se Aplica</option>
                                </select>
                              </div>
                              </div>

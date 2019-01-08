@@ -36,6 +36,8 @@ class FornecedoresController extends Controller
     public function store(Request $request)
     {
       Fornecedores::create($request->all());
+      session()->flash('mensagem', 'Fornecedor Cadastrado com sucesso!');
+
       return view('cadastrarFornecedor');
     }
 

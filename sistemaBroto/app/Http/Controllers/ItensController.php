@@ -36,6 +36,23 @@ class ItensController extends Controller
      */
     public function store(Request $request)
     {
+
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "nome" => "required",
+        "preco" => "required",
+        "tipo" => "required",
+        "categoria" => "required",
+        "horario" => "required",
+
+      ]);
+      if($validacao->fails()){
+        return redirect()->back()->withErrors($validacao)->withInput();
+      }else {
+        Itens::create($request->all());
+      }
+
       Itens::create($request->all());
       session()->flash('mensagem', 'Item cadastrado com sucesso!');
 

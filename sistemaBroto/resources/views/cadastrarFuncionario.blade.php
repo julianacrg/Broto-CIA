@@ -11,10 +11,10 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li ><a href="cadastrarItens">Cadastrar Itens</a></li>
-                                <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                                <li class="active"><a href="cadastrarFuncionario">Cadastrar Funcionários</a>
-                                <li><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
+                                <li ><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
+                                <li><a href="{{ route('Arranjos.index') }}">Cadastrar Arranjos</a></li>
+                                <li class="active"><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
+                                <li><a href="{{ route('Fornecedores.index') }}">Cadastrar Fornecedor</a></li>
 
                                 </li>
                             </ul>
@@ -24,7 +24,13 @@
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
                 </nav>
                    <div class="panel panel-default">
+                     @if(session()->has('mensagem'))
+                       <div class="alert alert-success alert-dismissible text-center" role="alert">
+                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+                         {{session()->get('mensagem')}}
+                       </div>
+                      @endif
                            <div class="main-login main-center" id="divform">
 
                              <form id="formulario"  method="post" action="{{route('Funcionarios.store')}}">
@@ -56,7 +62,7 @@
                              </form>
                            </div>
 
-                  
+
                        <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                    </div>

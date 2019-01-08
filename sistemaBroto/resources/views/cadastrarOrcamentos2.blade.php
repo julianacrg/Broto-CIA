@@ -26,7 +26,14 @@
 
                     </nav>
                        <div class="panel panel-default">
+                         @if(Session::has('mensagem'))
 
+                           <div class="alert alert-success alert-dismissible text-center" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                             {{Session::get('mensagem')}}
+                           </div>
+                         @endif
 
                                <div class="main-login main-center" id="divform">
 

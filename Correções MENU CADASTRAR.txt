@@ -27,12 +27,12 @@ Exibir mensagens:
 Item cadastrado com sucesso
 Erro! Item NÃO cadastrado
 
-Cadastrar Arranjos 
+Cadastrar Arranjos  ok-> 08/01/19
 
 Nome*
 Categoria (
 ARRANJO MESA DE BOLO MAIOR
-ARRANJO MESA DE  BOLO MENOR
+ARRANJO MESA DE BOLO MENOR
 ARRANJOS ALTOS
 ARRANJOS BAIXOS
 ARRANJOS MEDIOS
@@ -45,7 +45,8 @@ LAPELAS
 BUQUE DE DAMINHA
 BUQUE PARA JOGAR 
 )
-Foto
+Foto -> nao entendi ????
+
 Colocar um filtro de tipo e 
 a partir dessa escolha preencher a caixa de seleção
 com os itens
@@ -54,9 +55,9 @@ Itens* com quantidade
 Tabela de itens deve aparecer apenas cabeçalho 
 se nenhum item for selecionado
 
-Cadastrar Funcionário 
+Cadastrar Funcionário ok 08/01/19
 
 Exibir mensagens:
-Item cadastrado com sucesso
-Erro! Item NÃO cadastrado
+Item cadastrado com sucesso -> ok 08/01/19
+Erro! Item NÃO cadastrado -> ok 08/01/19
 

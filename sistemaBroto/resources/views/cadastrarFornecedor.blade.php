@@ -11,10 +11,10 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li ><a href="cadastrarItens">Cadastrar Itens</a></li>
-                                <li><a href="cadastraArranjo">Cadastrar Arranjos</a></li>
-                                <li><a href="cadastrarFuncionario">Cadastrar Funcionários</a>
-                                <li class="active"><a href="cadastrarFornecedor">Cadastrar Fornecedor</a></li>
+                                <li ><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
+                                <li><a href="{{ route('Arranjos.index') }}">Cadastrar Arranjos</a></li>
+                                <li><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
+                                <li class="active"><a href="{{ route('Fornecedores.index') }}">Cadastrar Fornecedor</a></li>
 
                                 </li>
                             </ul>
@@ -24,6 +24,13 @@
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
                 </nav>
                    <div class="panel panel-default">
+                     @if(session()->has('mensagem'))
+                       <div class="alert alert-success alert-dismissible text-center" role="alert">
+                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                         {{session()->get('mensagem')}}
+                       </div>
+                      @endif
 
                            <div class="main-login main-center" id="divform">
 

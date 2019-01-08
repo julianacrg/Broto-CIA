@@ -26,7 +26,7 @@ class ArranjosOrcamentosController extends Controller
       ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
       ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
 
-      return view('cadastrarOrcamentos3')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem1', $ultItem1);
+      return view('cadastrarOrcamentos3')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('Itens', $It)->with('ultItem', $ultItem1);
     }
 
 
