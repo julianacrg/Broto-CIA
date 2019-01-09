@@ -17,7 +17,7 @@
               @endif
               @if(Session::has('mensagem'))
 
-                <div class="alert alert-success alert-dismissible text-center" role="alert">
+                <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   {{Session::get('mensagem')}}
                 </div>
@@ -154,7 +154,15 @@
                 </div>
 
             </div>
+              <script type="text/javascript">
+              setTimeout(function () {
+                   document.getElementById("time").style.display = "none";
+                 }, 3000);
+                 function hide(){
+                 document.getElementById("tinme").style.display = "none";
+                 }
 
+              </script>
         </body>
 
 

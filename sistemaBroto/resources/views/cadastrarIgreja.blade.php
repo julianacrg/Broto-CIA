@@ -8,7 +8,7 @@
 
             <div id="global">
               @if($errors->all())
-                <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                <div id="time" class="alert alert-danger alert-dismissible text-center" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   @foreach ($errors->all() as $key => $value)
                     <li><strong>{{$value}}</strong></li>
@@ -110,7 +110,15 @@
                 </div>
 
             </div>
+            <script type="text/javascript">
+            setTimeout(function () {
+                 document.getElementById("time").style.display = "none";
+               }, 3000);
+               function hide(){
+               document.getElementById("tinme").style.display = "none";
+               }
 
+            </script>
         </body>
 
 

@@ -26,7 +26,7 @@
                <div class="panel panel-default">
                  @if(Session::has('mensagem'))
 
-                   <div class="alert alert-success alert-dismissible text-center" role="alert">
+                   <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
                      {{Session::get('mensagem')}}
@@ -119,8 +119,6 @@
                            </table>
 
 
-
-
                            <div class="form-group ">
                              <input target="_blank" type="submit"  value="Cadastrar Arranjo" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                            </div>
@@ -130,19 +128,19 @@
 
                        </div>
 
-
-
-                    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                   <!-- Include all compiled plugins (below), or include individual files as needed -->
-                   <script src="js/bootstrap.min.js"></script>
-
-                   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
+                  <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                </div>
            </div>
        </div>
-
+       <script type="text/javascript">
+       setTimeout(function () {
+            document.getElementById("time").style.display = "none";
+          }, 3000);
+          function hide(){
+          document.getElementById("tinme").style.display = "none";
+          }
+       </script>
    </body>
 
 @endsection('conteudo')

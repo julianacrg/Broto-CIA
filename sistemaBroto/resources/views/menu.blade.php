@@ -36,7 +36,7 @@
                             <div id="Myli">
 
                               <!-- contador é um elemento que ouve o clique do mouse -->
-                              <li class="contador active"><a href="home" class="sf-house">Home</a></li>
+                              <li class="contador active"><a href="{{route('home')}}" class="sf-house">Home</a></li>
                               <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
                               <li class="contador"><a href="#" class="sf-brick">Peças</a></li>

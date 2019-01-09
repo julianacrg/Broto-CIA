@@ -20,10 +20,10 @@
                 <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
-               <div class="panel panel-default">
-                 @if(Session::has('message'))
+               <div id="time" class="panel panel-default">
+                 @if(Session::has('mensagem'))
                    <div class="alert alert-success">
-                     {{Session::get('message')}}
+                     {{Session::get('mensagem')}}
                    </div>
                  @endif
 
@@ -130,7 +130,14 @@
                </div>
            </div>
        </div>
-
+       <script type="text/javascript">
+       setTimeout(function () {
+            document.getElementById("time").style.display = "none";
+          }, 3000);
+          function hide(){
+          document.getElementById("tinme").style.display = "none";
+          }
+       </script>
    </body>
 
 @endsection('conteudo')
