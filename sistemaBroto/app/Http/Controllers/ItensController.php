@@ -44,7 +44,7 @@ class ItensController extends Controller
         "preco" => "required",
         "tipo" => "required",
         "categoria" => "required",
-        "horario" => "required",
+        
 
       ]);
       if($validacao->fails()){

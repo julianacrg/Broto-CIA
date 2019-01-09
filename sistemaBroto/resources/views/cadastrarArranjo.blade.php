@@ -56,30 +56,29 @@
                            </div>
 
                            <div class="form-group">
-
+                            <label for="categoria" class="cols-sm-2 control-label">Categoria: *</label>
+                            <div class="cols-sm-10">
                              <div class="input-group">
-                               <label for="categoria" class="cols-sm-2 control-label">Categoria:</label>
-                               <div class="cols-sm-10">
                                <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                               <select  name="categoria" class="form-control">
-                                 <option value="">Selecione</option>
-                                 <option value="ARRANJO MESA DE BOLO MAIOR"> ARRANJO MESA DE BOLO MAIOR</option>
-                                 <option value="ARRANJO MESA DE BOLO MENOR"> ARRANJO MESA DE BOLO MENOR</option>
-                                 <option value="ARRANJOS ALTOS"> ARRANJOS ALTOS</option>
-                                 <option value="ARRANJOS BAIXOS"> ARRANJOS BAIXOS</option>
-                                 <option value="ARRANJOS MEDIOS"> ARRANJOS MEDIOS</option>
-                                 <option value="ARRANJOS MESA DA FAMILIA"> ARRANJOS MESA DA FAMILIA</option>
-                                 <option value="ARRANJO MESA DE CAFÉ"> ARRANJO MESA DE CAFÉ</option>
-                                 <option value="ARRANJO MESA DE  PRATO QUENTE"> ARRANJO MESA DE  PRATO QUENTE</option>
-                                 <option value="ARRANJO MESA REGIONAL"> ARRANJO MESA REGIONAL</option>
-                                 <option value="BUQUE DE NOIVA"> BUQUE DE NOIVA</option>
-                                 <option value="LAPELAS"> LAPELAS</option>
-                                 <option value="BUQUE DE DAMINHA"> BUQUE DE DAMINHA</option>
-                                 <option value="BUQUE PARA JOGAR">BUQUE PARA JOGAR</option>
-                                 <option value="N">Não se Aplica</option>
-                               </select>
+                                 <select  name="categoria" class="form-control">
+                                   <option value="">Selecione</option>
+                                   <option value="ARRANJO MESA DE BOLO MAIOR"> ARRANJO MESA DE BOLO MAIOR</option>
+                                   <option value="ARRANJO MESA DE BOLO MENOR"> ARRANJO MESA DE BOLO MENOR</option>
+                                   <option value="ARRANJOS ALTOS"> ARRANJOS ALTOS</option>
+                                   <option value="ARRANJOS BAIXOS"> ARRANJOS BAIXOS</option>
+                                   <option value="ARRANJOS MEDIOS"> ARRANJOS MEDIOS</option>
+                                   <option value="ARRANJOS MESA DA FAMILIA"> ARRANJOS MESA DA FAMILIA</option>
+                                   <option value="ARRANJO MESA DE CAFÉ"> ARRANJO MESA DE CAFÉ</option>
+                                   <option value="ARRANJO MESA DE  PRATO QUENTE"> ARRANJO MESA DE  PRATO QUENTE</option>
+                                   <option value="ARRANJO MESA REGIONAL"> ARRANJO MESA REGIONAL</option>
+                                   <option value="BUQUE DE NOIVA"> BUQUE DE NOIVA</option>
+                                   <option value="LAPELAS"> LAPELAS</option>
+                                   <option value="BUQUE DE DAMINHA"> BUQUE DE DAMINHA</option>
+                                   <option value="BUQUE PARA JOGAR">BUQUE PARA JOGAR</option>
+                                   <option value="N">NÃO SE APLICA</option>
+                                 </select>
                              </div>
-                             </div>
+                            </div>
                            </div>
 
                            <div class="form-group">
@@ -91,32 +90,6 @@
                               </div>
                             </div>
                           </div>
-
-                           <table class="table">
-                             <thead>
-                               <tr>
-                                 <th scope="col">#</th>
-                                 <th scope="col">Item</th>
-                                 <th scope="col">Quantidade</th>
-
-                               </tr>
-                             </thead>
-                             <tbody>
-                               <tr>
-                                 <th scope="row">1</th>
-                                 <td>Rosas Brancas </td>
-                                 <td>10</td>
-
-                               </tr>
-                               <tr>
-                                 <th scope="row">2</th>
-                                 <td>Rosas Vermelhas </td>
-                                 <td>7</td>
-
-                               </tr>
-
-                             </tbody>
-                           </table>
 
 
                            <div class="form-group ">

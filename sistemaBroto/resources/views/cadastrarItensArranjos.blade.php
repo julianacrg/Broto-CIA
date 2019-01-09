@@ -7,6 +7,7 @@
 
                <div id="global">
 
+
                   <div class="container-fluid" >
                     <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                         <div class="cm-flex">
@@ -49,7 +50,7 @@
                                        <div class="col-sm-5">
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select type="text" class="form-control"  name="itens_id" v-model="itens_id" id="itensarranjo" />
+                                           <select class="meuselect" style="width: 80%"  name="itens_id" v-model="itens_id" id="itensarranjo" />
                                            @foreach($Itens as $e)
 
                                            <option value="{{$e->id}}">{{ $e->nome }}</option>
@@ -102,7 +103,7 @@
                                     <td>{{$e->preco}} </td>
                                     <td>
                                       <div class="">
-                                      <form method="post" onsubmit="return confirm('Confirma exclusão do Procedimento?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
+                                      <form method="post" onsubmit="return confirm('Confirmar exclusão?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger"type="submit" style="font-size:12px">Deletar</button>
@@ -124,6 +125,10 @@
                </div>
 
                <script type="text/javascript">
+
+               $(document).ready(function() {
+                $(".meuselect").select2();
+               });
 
                setTimeout(function () {
                     document.getElementById("time").style.display = "none";

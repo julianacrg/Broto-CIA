@@ -30,7 +30,7 @@
                              <ul class="nav nav-tabs">
                                  <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
                                  <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
-                                 <li><a href="listarOrcamento">Lista de Contatos</a></li>
+                                 <li><a href="{{route('Orcamentos.show',1)}}">LISTAR ORÇAMENTO APAGADOS</a></li>
 
 
 
