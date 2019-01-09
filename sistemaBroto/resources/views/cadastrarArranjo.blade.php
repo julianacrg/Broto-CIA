@@ -33,7 +33,7 @@
                    </div>
                  @endif
                  @if($errors->all())
-                   <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                   <div id="time" class="alert alert-danger alert-dismissible text-center" role="alert">
                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      @foreach ($errors->all() as $key => $value)
                        <li><strong>{{$value}}</strong></li>

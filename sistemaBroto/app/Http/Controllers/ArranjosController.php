@@ -43,10 +43,26 @@ class ArranjosController extends Controller
      */
     public function store(Request $request)
     {
-      Arranjos::create($request->all());
+
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "nome" => "required",
+        "categoria" => "required",
+        ]);
+
+
+        if($validacao->fails()){
+          return redirect()->back()->withErrors($validacao)->withInput();
+        }else {
+          Arranjos::create($request->all());
+        }
+
+
+
       session()->flash('mensagem', 'Arranjo cadastrado com sucesso!');
 
-  
+
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Arranjos:: all()->last();
       $itens= DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')

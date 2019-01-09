@@ -32,12 +32,8 @@ class OrcamentosController extends Controller
      */
     public function create()
     {
-
       $orcamentos = Orcamentos::where('orcamentos.status', '=', 1)->orderBy('evento')->paginate(10);
          return view('listarOrcamento')->with('Orcamentos',$orcamentos);
-
-
-
     }
 
 
@@ -60,9 +56,6 @@ class OrcamentosController extends Controller
         "horario" => "required",
         "celular" => "required",
       ]);
-
-
-
 
       $It = Itens:: orderBy('nome')->get();
       $arranjos = Arranjos:: orderBy('nome')->get();

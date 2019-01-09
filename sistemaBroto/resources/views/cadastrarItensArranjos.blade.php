@@ -7,7 +7,6 @@
 
                <div id="global">
 
-
                   <div class="container-fluid" >
                     <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                         <div class="cm-flex">
@@ -65,7 +64,7 @@
 
                                              <div class="input-group">
                                                  <span class="input-group-addon"><i class="fa fa-plus-square fa" aria-hidden="true"></i></span>
-                                                 <input  type="number" class="form-control" style="max-width: 70%;" name="qtd_itens" v-model="qtd_itens" id="qtd"  placeholder="Qtd."/>
+                                                 <input  min="1" type="number" class="form-control" style="max-width: 70%;" name="qtd_itens" v-model="qtd_itens" id="qtd"  placeholder="Qtd."/>
                                              </div>
 
                                          </div>
@@ -90,6 +89,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Preço</th>
+                                    <th scope="col">Quantidade</th>
                                     <th scope="col">Ação</th>
 
                                   </tr>
@@ -101,6 +101,7 @@
                                     <td>{{$e->nome}}</td>
                                     <td>{{$e->tipo}} </td>
                                     <td>{{$e->preco}} </td>
+                                    <td>{{$e->qtd_itens}} </td>
                                     <td>
                                       <div class="">
                                       <form method="post" onsubmit="return confirm('Confirmar exclusão?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">

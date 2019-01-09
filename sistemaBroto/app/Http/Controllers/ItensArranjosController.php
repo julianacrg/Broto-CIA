@@ -44,14 +44,11 @@ class ItensArranjosController extends Controller
       session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
       $ultimo = Arranjos:: all()->last();
       $It = Itens:: orderBy('nome')->get();
-      // $ultimo1 = ItensArranjos:: all()->last();
-
 
       $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
       ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
-      ->select('itens.*', 'itens_arranjos.id_itens_arranjos')->get();
+      ->select('itens.*', 'itens_arranjos.id_itens_arranjos','itens_arranjos.qtd_itens')->get();
 
-      // dd($itens);
       return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
     }
 
