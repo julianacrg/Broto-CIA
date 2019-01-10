@@ -32,7 +32,8 @@ class ArranjosController extends Controller
      */
     public function create()
     {
-        //
+      $arranjos = Arranjos::where('arranjos.status', '=', 1)->orderBy('nome')->paginate(10);
+         return view('listarArranjo')->with('Arranjos',$arranjos);
     }
 
     /**
@@ -84,7 +85,8 @@ class ArranjosController extends Controller
      */
     public function show(Arranjos $arranjos)
     {
-        //
+      $arranjos = Arranjos::where('arranjos.status', '=', 0)->orderBy('nome')->paginate(10);
+          return view('listarArranjoApagados')->with('Arranjos',$arranjos);
     }
 
     /**
@@ -93,9 +95,12 @@ class ArranjosController extends Controller
      * @param  \App\Arranjos  $arranjos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Arranjos $arranjos)
+    public function edit($id)
     {
-        //
+      $Orca= Arranjos::find($id);
+
+
+      return view('editarArranjo')->with('Arranjos', $Orca);
     }
 
     /**
@@ -105,12 +110,13 @@ class ArranjosController extends Controller
      * @param  \App\Arranjos  $arranjos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Arranjos $arranjos)
+    public function update(Request $request, $arranjos)
     {
+      $arranjos = Arranjos::findOrFail($arranjos);
       $arranjos->fill($request->all());
       $arranjos->save();
       $request->session()->flash('mensagem', 'Arranjos atualizado com sucesso!');
-      return redirect()->route('test.index');
+      return redirect()->route('Arranjos.create');
     }
 
     /**
@@ -119,10 +125,19 @@ class ArranjosController extends Controller
      * @param  \App\Arranjos  $arranjos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Arranjos $arranjos)
+    public function destroy($arranjos)
     {
-      $arranjos->delete();
+      $task = Arranjos::findOrFail($arranjos);
+      if ($task->status == 1) {
+        $task->status = 0;
+      }else {
+        $task->status = 1;
+      }
+
+
+      $task->save();
+
       session()->flash('mensagem','Arranjo excluido com sucesso');
-      return redirect()->route('arranjos.index');
+      return redirect()->route('Arranjos.create');
     }
 }

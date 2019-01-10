@@ -10,7 +10,7 @@
                 <div class="cm-flex">
                     <div class="nav-tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="{{route('Arranjos.index')}}">Cadastrar Arranjos</a></li>
+                            <li><a href="{{route('Arranjos.index')}}">Cadastrar Arranjos</a></li>
                             <li><a href="{{route('Arranjos.create')}}">Listar Arranjos</a></li>
                             <li><a href="{{route('Arranjos.show',1)}}">Listar Arranjos Apagados</a></li>
 
@@ -42,14 +42,15 @@
 
                        <div class="main-login main-center" id="divform">
 
-                         <form id="formulario" class="" method="post" action="{{route('Arranjos.store')}}">
+                         <form id="formulario" class="" method="post" action="{{route('Arranjos.update', $Arranjos->id) }}">
                            @csrf
+                           @method('PATCH')
                             <div class="form-group">
                              <label for="name" class="cols-sm-2 control-label">Nome *</label>
                              <div class="cols-sm-10">
                                <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                 <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nomearranjo"  placeholder="Entre com o nome do Arranjo"/>
+                                 <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nomearranjo"  value="{{$Arranjos->nome}}"/>
                                </div>
                              </div>
                            </div>
@@ -60,7 +61,7 @@
                              <div class="input-group">
                                <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
                                  <select  name="categoria" class="form-control">
-                                   <option value="">Selecione</option>
+                                   <option value="{{$Arranjos->categoria}}">{{$Arranjos->categoria}}</option>
                                    <option value="ARRANJO MESA DE BOLO MAIOR"> ARRANJO MESA DE BOLO MAIOR</option>
                                    <option value="ARRANJO MESA DE BOLO MENOR"> ARRANJO MESA DE BOLO MENOR</option>
                                    <option value="ARRANJOS ALTOS"> ARRANJOS ALTOS</option>
@@ -85,14 +86,14 @@
                             <div class="cols-sm-10">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                <input type="file" name="foto" class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
+                                <input type="file" name="foto"  value="{{$Arranjos->foto}}"class="btn btn-success" id="foto" accept="image/png, image/jpeg"  multiple />
                               </div>
                             </div>
                           </div>
 
 
                            <div class="form-group ">
-                             <input target="_blank" type="submit"  value="Cadastrar Arranjo" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+                             <input target="_blank" type="submit"  value="Editar Arranjo" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                            </div>
                            <label>* Campos obrigatórios</label>
                          </form>

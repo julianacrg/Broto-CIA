@@ -14,7 +14,7 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        //
+        return view('cadastrarFornecedor');
     }
 
     /**
