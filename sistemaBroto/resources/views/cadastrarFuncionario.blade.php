@@ -11,10 +11,8 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li ><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
-                                <li><a href="{{ route('Arranjos.index') }}">Cadastrar Arranjos</a></li>
                                 <li class="active"><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
-                                <li><a href="{{ route('Fornecedores.index') }}">Cadastrar Fornecedor</a></li>
+                                <li><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
 
                                 </li>
                             </ul>

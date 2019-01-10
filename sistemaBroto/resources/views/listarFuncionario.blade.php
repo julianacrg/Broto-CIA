@@ -11,7 +11,8 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                              <li class="active"><a href="{{ route('Fornecedores.index') }}">Cadastrar Fornecedor</a></li>
+                                <li ><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
+                                <li class="active"><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
 
                                 </li>
                             </ul>
@@ -28,39 +29,45 @@
                          {{session()->get('mensagem')}}
                        </div>
                       @endif
-
                            <div class="main-login main-center" id="divform">
 
-                             <form id="formulario"  method="post" action="{{route('Fornecedores.store')}}">
-                               @csrf
-                                <div class="form-group">
-                                 <label for="name" class="cols-sm-2 control-label">Nome</label>
-                                 <div class="cols-sm-10">
-                                   <div class="input-group">
-                                     <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                     <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nomefuncionario"  placeholder="Entre com o nome"/>
-                                   </div>
-                                 </div>
-                               </div>
+                             <table class="table table-bordered table-striped table-hover table-responsive">
+                             <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Ação</th>
 
-                               <div class="form-group">
-                                 <label for="name" class="cols-sm-2 control-label">CNPJ</label>
-                                 <div class="cols-sm-10">
-                                   <div class="input-group">
-                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="cpffuncionario"  placeholder="xx.xxx.xxx/xxxx-xx
-"/>
-                                   </div>
-                                 </div>
-                               </div>
+                              </tr>
+                             </thead>
+                             <tbody>
 
-                             <div class="form-group ">
-                                 <input target="_blank" type="submit"  value="Cadastrar Fornecedor" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
-                               </div>
+                               @foreach( $Func as $o )
 
-                             </form>
 
+
+                              <tr>
+                                <td>{{ $o->id }} </td>
+                                <td>{{ $o->nome }} </td>
+                                <td>
+                                  <div class="">
+                                  <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
+                                  </form>
+                                  </div>
+                                </td>
+
+                              </tr>
+
+                              @endforeach
+
+                             </tbody>
+                             </table>
                            </div>
+
+
                        <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 
                    </div>
@@ -73,8 +80,8 @@
               function hide(){
               document.getElementById("tinme").style.display = "none";
               }
-           </script>
 
+           </script>
        </body>
 
 

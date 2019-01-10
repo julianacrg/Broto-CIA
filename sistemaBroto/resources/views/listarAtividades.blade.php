@@ -25,7 +25,7 @@
                     <table class="table table-bordered table-striped table-hover table-responsive">
                     <thead>
                      <tr>
-                       <th scope="col">#</th>
+                       <th scope="col">ID</th>
                        <th scope="col">Funcionario</th>
                        <th scope="col">Arranjo</th>
                        <th scope="col">Data</th>

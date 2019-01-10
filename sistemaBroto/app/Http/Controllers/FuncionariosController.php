@@ -26,7 +26,8 @@ class FuncionariosController extends Controller
      */
     public function create()
     {
-        return view ('cadastrarFuncionario');
+      $Func = Funcionarios::orderBy('nome')->paginate(10);
+        return view ('listarFuncionario', compact('Func'));
     }
 
     /**
@@ -88,8 +89,9 @@ class FuncionariosController extends Controller
      */
     public function destroy(Funcionarios $Funcionario)
     {
+      dd($Funcionario);
       $Funcionario->delete();
       session()->flash('mensagem','Funcionario excluido com sucesso');
-      return redirect()->route('Funcionarios.index');
+      return redirect()->route('Funcionarios.create');
     }
 }
