@@ -4,6 +4,13 @@
 
         <body class="cm-no-transition cm-2-navbar">
           <div id="global">
+            @if(session()->has('mensagem'))
+              <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                {{session()->get('mensagem')}}
+              </div>
+             @endif
               <div class="container-fluid">
                 <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                     <div class="cm-flex">
@@ -22,6 +29,7 @@
                 </nav>
 
                   <div class="panel panel-default">
+
                       <div class="panel-body">
                         <table class="table table-bordered table-striped table-hover table-responsive">
                             <thead>
