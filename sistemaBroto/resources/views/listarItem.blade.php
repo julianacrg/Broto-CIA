@@ -9,10 +9,9 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
-                                <li class="active"><a href="#">Listar Orçamento Apagados</a></li>
-
+                                <li><a href="{{route('Itens.index')}}">Cadastrar Item</a></li>
+                                <li class="active"><a href="{{route('Itens.create')}}">Listar Itens</a></li>
+                                <li><a href="{{route('Itens.show', 1)}}">Listar Itens Apagados</a></li>
 
 
                             </ul>
@@ -28,32 +27,32 @@
                             <thead>
                              <tr>
                                <th scope="col">ID</th>
-                               <th scope="col">Cliente</th>
-                               <th scope="col">Tipo de Evento</th>
-                               <th scope="col">Local</th>
-                               <th scope="col">Data</th>
+                               <th scope="col">Nome</th>
+                               <th scope="col">Tipo</th>
+                               <th scope="col">Categoria</th>
+                               <th scope="col">Preço</th>
                                <th scope="col">Ação</th>
 
                              </tr>
                             </thead>
 
                             <tbody>
-                              @foreach( $Orçamentos as $o )
+                              @foreach( $Itens as $o )
                              <tr>
                                <td>{{ $o->id }} </td>
-                               <td>{{ $o->cliente }} </td>
-                               <td>{{ $o->evento }} </td>
-                               <td>{{ $o->local }} </td>
-                               <td>{{ $o->data }} </td>
+                               <td>{{ $o->nome }} </td>
+                               <td>{{ $o->tipo }} </td>
+                               <td>{{ $o->categoria }} </td>
+                               <td>{{ $o->preco }} </td>
 
                                <td>
-                                 <a href="{{route('Orcamentos.edit', $o->id)}}" class="btn btn-warning">Edite</a>
+                                 <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Edite</a>
 
                                  <div class="">
-                                 <form method="post" onsubmit="return confirm('Confirmar Restauração ?');" action="{{ route('Orcamentos.destroy',[$o->id])}}">
+                                 <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Itens.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
-                                   <button class="btn btn-primary"type="submit" style="font-size:12px">Restaurar</button>
+                                   <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
                                  </form>
                                  </div>
                                </td>
@@ -65,8 +64,9 @@
                         </table>
                         </div>
                         <div align="center">
-                        {{$Orçamentos}}
+                        {{$Itens}}
                         </div>
+
                   </div>
                   <footer class="cm-footer"><span class="pull-left">Connectado como Admin</span><span class="pull-right">&copy; J2C Sistemas</span></footer>
 

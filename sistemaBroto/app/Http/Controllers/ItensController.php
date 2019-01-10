@@ -25,7 +25,9 @@ class ItensController extends Controller
      */
     public function create()
     {
-        //
+
+      $itens = Itens::where('itens.status', '=', 1)->orderBy('nome')->paginate(10);
+         return view('listarItem')->with('Itens',$itens);
     }
 
     /**
@@ -44,7 +46,7 @@ class ItensController extends Controller
         "preco" => "required",
         "tipo" => "required",
         "categoria" => "required",
-        
+
 
       ]);
       if($validacao->fails()){
@@ -67,7 +69,8 @@ class ItensController extends Controller
      */
     public function show(Itens $itens)
     {
-        //
+      $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
+          return view('listarItemApagados')->with('Itens',$itens);
     }
 
     /**
@@ -76,9 +79,12 @@ class ItensController extends Controller
      * @param  \App\Itens  $itens
      * @return \Illuminate\Http\Response
      */
-    public function edit(Itens $itens)
+    public function edit($id)
     {
-        //
+      $Orca= Itens::find($id);
+
+
+      return view('editarItem')->with('Itens', $Orca);
     }
 
     /**
@@ -88,9 +94,15 @@ class ItensController extends Controller
      * @param  \App\Itens  $itens
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Itens $itens)
+    public function update(Request $request, $itens)
     {
-        //
+
+
+        $itens = Itens::findOrFail($itens);
+        $itens->fill($request->all());
+        $itens->save();
+        session()->flash('mensagem', 'Item editado com sucesso!');
+        return redirect()->route('Itens.create');
     }
 
     /**
@@ -99,8 +111,19 @@ class ItensController extends Controller
      * @param  \App\Itens  $itens
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Itens $itens)
+    public function destroy($itens)
     {
-        //
+      $task = Itens::findOrFail($itens);
+      if ($task->status == 1) {
+        $task->status = 0;
+      }else {
+        $task->status = 1;
+      }
+
+
+      $task->save();
+
+      session()->flash('mensagem','Item excluido com sucesso');
+      return redirect()->route('Itens.create');
     }
 }

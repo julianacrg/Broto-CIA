@@ -38,15 +38,15 @@
                               <!-- contador é um elemento que ouve o clique do mouse -->
                               <li class="contador active"><a href="{{route('home')}}" class="sf-house">Home</a></li>
                               <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
-                              <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li>
+                              {{-- <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li> --}}
                               <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
                               <li class="contador"><a href="{{route('Atividades.index')}}" class="sf-post-it">Ativdades</a></li>
                               <li class="contador"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li>
                               <li class="contador"><a href="#" class="sf-pencil">Pedidos</a></li>
-                              <li class="contador"><a href="#" class="sf-layers">Itens</a></li>
-                              <li class="contador"><a href="#" class="sf-flower">Arranjos</a></li>
-                              <li class="contador"><a href="#" class="sf-profile-group">Funcionários</a></li>
-                              <li class="contador"><a href="#" class="sf-file-bookmark">Fornecedores</a></li>
+                              <li class="contador"><a href="{{route('Itens.index')}}" class="sf-layers">Itens</a></li>
+                              <li class="contador"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
+                              <li class="contador"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
+                              <li class="contador"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
                               <li class="contador"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li>
                               </div>
 

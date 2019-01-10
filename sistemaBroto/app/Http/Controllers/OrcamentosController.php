@@ -85,7 +85,7 @@ class OrcamentosController extends Controller
      */
     public function show(Orcamentos $orcamentos)
     {
-      $orcamentos = Orcamentos::where('orcamentos.status', '=', 0)->orderBy('evento')->get();
+      $orcamentos = Orcamentos::where('orcamentos.status', '=', 0)->orderBy('evento')->paginate(10);
           return view('listarOrcamentoApagados')->with('Orçamentos',$orcamentos);
     }
 
@@ -98,7 +98,7 @@ class OrcamentosController extends Controller
     public function edit($id)
     {
        $Orca= Orcamentos::find($id);
-       // dd($Orca);
+
        return view('editarOrcamento')->with('Orcamentos', $Orca);
     }
 
