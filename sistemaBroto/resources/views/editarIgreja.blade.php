@@ -28,7 +28,7 @@
                      <div class="cm-flex">
                          <div class="nav-tabs-container">
                              <ul class="nav nav-tabs">
-                                 <li class="active"><a href="{{route('Igrejas.index')}}">Cadastrar Igreja</a></li>
+                                 <li><a href="{{route('Igrejas.index')}}">Cadastrar Igreja</a></li>
                                  <li><a href="{{route('Igrejas.create')}}">Listar igrejas</a></li>
                              </ul>
                          </div>
@@ -41,16 +41,16 @@
                     <div class="panel panel-default">
                             <div class="main-login main-center" id="divform">
 
-                              <form id="formulario" class="" method="post" action="{{route('Igrejas.store') }}">
+                              <form id="formulario" class="" method="post" action="{{route('Igrejas.update', $Igrejas[0]->id_igrejas) }}">
                                 @csrf
-
+                                @method('PATCH')
                                 <div class="form-group">
                                  <label for="orcamentos_id" class="cols-sm-2 control-label">Orçamento *</label>
                                  <div class="cols-sm-10">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
                                      <select  name="orcamentos_id" class="form-control" style="max-width: 80%;">
-                                        <option value="">Selecione o orçamento</option>
+                                        <option value="{{$Igrejas[0]->orcamentos_id}}">Selecione o orçamento</option>
                                         @foreach ($orcamentos as $a)
                                         <option value="{{$a->id}}">{{$a->cliente}} - {{$a->evento}}</option>
                                         @endforeach
@@ -58,14 +58,14 @@
                                    </div>
                                  </div>
                                </div>
-
+                               <input type="hidden" name="id_igrejas" value="{{$Igrejas[0]->id_igrejas}}">
 
                                 <div class="form-group">
                                   <label for="nome" class="cols-sm-2 control-label">Nome *</label>
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nome"  placeholder="Entre com o nome da Igreja"/>
+                                      <input type="text" class="form-control" style="max-width: 80%;" name="nome" id="nome" value="{{$Igrejas[0]->nome}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -75,7 +75,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
-                                      <input type="text" class="form-control" style="max-width: 90%;" name="endereço" id="endereço"  placeholder="Entre com o Endereço"/>
+                                      <input type="text" class="form-control" style="max-width: 90%;" name="endereço" id="endereço"  value="{{$Igrejas[0]->endereço}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -85,7 +85,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                      <input type="date" class="form-control" style="max-width: 30%;" name="data" id="data"  placeholder="Entre com a data do Evento"/>
+                                      <input type="date" class="form-control" style="max-width: 30%;" name="data" id="data" value="{{$Igrejas[0]->data}}"/>
                                     </div>
                                   </div>
                                 </div>
@@ -95,7 +95,7 @@
                                   <div class="cols-sm-10">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="fa fa-clock-o fa" aria-hidden="true"></i></span>
-                                      <input type="time" class="form-control" style="max-width: 30%;" name="horario" id="horario"  placeholder="Entre com a hora do Evento"/>
+                                      <input type="time" class="form-control" style="max-width: 30%;" name="horario" id="horario" value="{{$Igrejas[0]->horario}}"/>
                                     </div>
                                   </div>
                                 </div>

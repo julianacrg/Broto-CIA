@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Igrejas;
 use App\Orcamentos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IgrejaController extends Controller
 {
@@ -26,7 +27,11 @@ class IgrejaController extends Controller
      */
     public function create()
     {
-        //
+      $Igreja = DB::table('igrejas')->join('orcamentos', 'orcamentos.id', '=', 'igrejas.orcamentos_id')
+      ->select('igrejas.*', 'orcamentos.cliente')->get();
+
+
+      return view('listarIgreja', compact('Igreja'));
     }
 
     /**
@@ -37,7 +42,24 @@ class IgrejaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "orcamentos_id" => "required",
+        "nome" => "required",
+        "endereço" => "required",
+        "data" => "required",
+        "horario" => "required",
+      ]);
+
+      if($validacao->fails()){
+        return redirect()->back()->withErrors($validacao)->withInput();
+      }else {
+        Igrejas::create($request->all());
+      }
+      session()->flash('mensagem','Igreja cadastrada com sucesso');
+
+      return redirect()->route('Igrejas.index');
     }
 
     /**
@@ -57,9 +79,14 @@ class IgrejaController extends Controller
      * @param  \App\Igrejas  $igrejas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Igrejas $igrejas)
+    public function edit($id)
     {
-        //
+      $Igrejas= Igrejas::where('id_igrejas', '=', $id)->get();
+
+      $orcamentos = Orcamentos:: orderBy('evento')->get();
+
+
+      return view('editarIgreja',compact('Igrejas','orcamentos'));
     }
 
     /**
@@ -69,9 +96,24 @@ class IgrejaController extends Controller
      * @param  \App\Igrejas  $igrejas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Igrejas $igrejas)
+    public function update(Request $request, $igrejas)
     {
-        //
+
+      DB::table('igrejas')->where('id_igrejas', '=', $request['id_igrejas'])
+      ->update([
+
+                'orcamentos_id' => $request['orcamentos_id'],
+                'nome' => $request['nome'],
+                'endereço' => $request['endereço'],
+                'data' => $request['data'],
+                'horario' => $request['horario']
+              ]);
+
+
+
+
+      session()->flash('mensagem', 'Igreja atualizado com sucesso!');
+      return redirect()->route('Igrejas.create');
     }
 
     /**
