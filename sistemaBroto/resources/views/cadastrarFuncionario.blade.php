@@ -58,7 +58,7 @@
                                  <div class="cols-sm-10">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                     <input type="text" class="form-control " name="cpf" placeholder="Ex.: 000.000.000-00" maxlength="14" autocomplete="off">
+                                     <input type="text" class="form-control" name="cpf" id="txtCpf" onkeypress="mascaraCpf()" placeholder="Ex.: 000.000.000-00" maxlength="14" autocomplete="off">
                                    </div>
                                  </div>
                                </div>
@@ -83,6 +83,19 @@
               function hide(){
               document.getElementById("tinme").style.display = "none";
               }
+
+              function mascaraCpf(){
+                  var cpf = document.getElementById('txtCpf').value;
+                   if(cpf.length==3){
+                    document.getElementById('txtCpf').value = cpf +'.';
+                }
+                   else if(cpf.length==7){
+                    document.getElementById('txtCpf').value = cpf +'.';
+                }
+                   else if (cpf.length==11){
+                    document.getElementById('txtCpf').value = cpf +'-';
+                }
+                }
 
            </script>
        </body>
