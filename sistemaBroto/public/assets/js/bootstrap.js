@@ -2313,5 +2313,10 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($spy, data)
     })
   })
-
+  function setTimeout(function () {
+       document.getElementById("time").style.display = "none";
+     }, 3000);
+     function hide(){
+     document.getElementById("tinme").style.display = "none";
+     }
 }(jQuery);

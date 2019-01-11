@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/small-n-flat.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/c3.min.css')}}">
-    <link rel="stylesheet" href={{asset("//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css")}} />
 
     <title>Broto & CIA</title>
     <!-- top Header -->
@@ -166,6 +165,7 @@
     <script src="{{ asset('assets/js/pushy.js') }}"></script>
     <script src="{{ asset('assets/js/pushy.min.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
 
 
 

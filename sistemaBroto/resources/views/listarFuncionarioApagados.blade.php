@@ -12,8 +12,8 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li ><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
-                                <li class="active"><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
-                                <li><a href="{{ route('Funcionarios.show', 1) }}">Listar Funcionários Apagados</a></li>
+                                <li><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
+                                <li class="active"><a href="#">Listar Funcionários Apagados</a></li>
 
                                 </li>
                             </ul>
@@ -51,13 +51,11 @@
                                 <td>{{ $o->id }} </td>
                                 <td>{{ $o->nome }} </td>
                                 <td>
-
-                                  <div class="row">
-                                    <a href="{{route('Funcionarios.edit', $o->id)}}" class="btn btn-warning">Edite</a>
+                                  <div class="">
                                   <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
+                                    <button class="btn btn-danger"type="submit" style="font-size:12px"> Restaurar</button>
                                   </form>
                                   </div>
                                 </td>

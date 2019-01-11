@@ -26,7 +26,7 @@ class FuncionariosController extends Controller
      */
     public function create()
     {
-      $Func = Funcionarios::orderBy('nome')->paginate(10);
+      $Func = Funcionarios::where('status', '=',1)->orderBy('nome')->paginate(10);
         return view ('listarFuncionario', compact('Func'));
     }
 
@@ -38,7 +38,20 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
-      Funcionarios::create($request->all());
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "nome" => "required",
+        "cpf" => "required",
+        ]);
+
+
+        if($validacao->fails()){
+          return redirect()->back()->withErrors($validacao)->withInput();
+        }else {
+          Funcionarios::create($request->all());
+        }
+
       session()->flash('mensagem', 'Funcionario cadastrado com sucesso!');
 
       return view('cadastrarFuncionario');
@@ -52,7 +65,8 @@ class FuncionariosController extends Controller
      */
     public function show(Funcionarios $funcionarios)
     {
-        //
+      $Func = Funcionarios::where('status', '=',0)->orderBy('nome')->paginate(10);
+        return view ('listarFuncionario', compact('Func'));
     }
 
     /**
@@ -61,9 +75,12 @@ class FuncionariosController extends Controller
      * @param  \App\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Funcionarios $funcionarios)
+    public function edit($id)
     {
-        //
+      $Func= Funcionarios::find($id);
+
+
+      return view('editarFuncionario',compact('Func'));
     }
 
     /**
@@ -73,12 +90,13 @@ class FuncionariosController extends Controller
      * @param  \App\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Funcionarios $Funcionario)
+    public function update(Request $request, $Funcionario)
     {
+      $Funcionario = Funcionarios::findOrFail($Funcionario);
       $Funcionario->fill($request->all());
       $Funcionario->save();
       $request->session()->flash('mensagem', 'Funcionario atualizado com sucesso!');
-      return redirect()->route('cadastrarFuncionario');
+      return redirect()->route('Funcionarios.create');
     }
 
     /**
@@ -87,10 +105,17 @@ class FuncionariosController extends Controller
      * @param  \App\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Funcionarios $Funcionario)
+    public function destroy($Funcionario)
     {
-      dd($Funcionario);
-      $Funcionario->delete();
+      $task = Funcionarios::findOrFail($Funcionario);
+      if ($task->status == 1) {
+        $task->status = 0;
+      }else {
+        $task->status = 1;
+      }
+
+
+      $task->save();
       session()->flash('mensagem','Funcionario excluido com sucesso');
       return redirect()->route('Funcionarios.create');
     }
