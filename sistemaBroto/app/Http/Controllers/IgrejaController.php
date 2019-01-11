@@ -28,7 +28,7 @@ class IgrejaController extends Controller
     public function create()
     {
       $Igreja = DB::table('igrejas')->join('orcamentos', 'orcamentos.id', '=', 'igrejas.orcamentos_id')
-      ->select('igrejas.*', 'orcamentos.cliente')->get();
+      ->select('igrejas.*', 'orcamentos.cliente')->paginate(10);
 
 
       return view('listarIgreja', compact('Igreja'));
