@@ -35,8 +35,9 @@ class AtividadesController extends Controller
     {
         $a= 0;
 
-        $func = Db::table('funcionarios')->join('atividades','atividades.funcionarios_id','=','funcionarios.id')
-        ->select('funcionarios.*')->get();
+        $func = Db::table('funcionarios')
+        ->join('atividades','atividades.funcionarios_id','=','funcionarios.id')
+        ->select('funcionarios.nome','atividades.*')->get();
 
         $atv = Atividades:: orderBy('id')->get();
 
@@ -44,6 +45,10 @@ class AtividadesController extends Controller
         ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
         ->orderBy('arranjos.id', 'ASC')
         ->select('arranjos.nome', 'arranjos.id')->get();
+
+
+
+
  // dd($arr);
         return view('listarAtividades',compact('arr','atv','a','func'));
 

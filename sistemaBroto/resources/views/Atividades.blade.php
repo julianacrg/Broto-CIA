@@ -83,35 +83,7 @@
                               </div>
                              <br>
 
-                           <!-- <table class="table">
-                             <thead>
-                               <tr>
-                                 <th scope="col">#</th>
-                                 <th scope="col">Item</th>
-                                 <th scope="col">Quantidade</th>
-
-                               </tr>
-                             </thead>
-                             <tbody>
-                               <tr>
-                                 <th scope="row">1</th>
-                                 <td>Rosas Brancas </td>
-                                 <td>10</td>
-
-                               </tr>
-                               <tr>
-                                 <th scope="row">2</th>
-                                 <td>Rosas Vermelhas </td>
-                                 <td>7</td>
-
-                               </tr>
-
-                             </tbody>
-                           </table> -->
-
-
-
-
+              
                            <div class="form-group ">
                              <input target="_blank" type="submit"  value="Cadastrar Atividade" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                            </div>
