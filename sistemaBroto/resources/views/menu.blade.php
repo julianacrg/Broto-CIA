@@ -35,36 +35,19 @@
                             <div id="Myli">
 
                               <!-- contador é um elemento que ouve o clique do mouse -->
-                              <li class="contador active"><a href="{{route('home')}}" class="sf-house">Home</a></li>
-                              <li class="contador"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
+                              <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{route('home')}}" class="sf-house">Home</a></li>
+                              <li class="{{ request()->is('Orcamentos/*',"Orcamentos") ? 'active' : '' }}"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               {{-- <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li> --}}
-                              <li class="contador"><a href="#" class="sf-brick">Peças</a></li>
-                              <li class="contador"><a href="{{route('Atividades.index')}}" class="sf-post-it">Ativdades</a></li>
-                              <li class="contador"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li>
-                              <li class="contador"><a href="#" class="sf-pencil">Pedidos</a></li>
-                              <li class="contador"><a href="{{route('Itens.index')}}" class="sf-layers">Itens</a></li>
-                              <li class="contador"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
-                              <li class="contador"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
-                              <li class="contador"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
-                              <li class="contador"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li>
+                              <li class="{{ request()->is('#') ? 'active' : '' }}"><a href="#" class="sf-brick">Peças</a></li>
+                              <li class="{{ request()->is('Atividades/*',"Atividades") ? 'active' : '' }}"><a href="{{route('Atividades.index')}}" class="sf-post-it">Ativdades</a></li>
+                              <li class="{{ request()->is('Igrejas/*',"Igrejas") ? 'active' : '' }}"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li>
+                              <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-pencil">Pedidos</a></li>
+                              <li class="{{ request()->is('Itens/*',"Itens") ? 'active' : '' }}"><a href="{{route('Itens.index')}}" class="sf-layers">Itens</a></li>
+                              <li class="{{ request()->is('Arranjos/*',"Arranjos") ? 'active' : '' }}"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
+                              <li class="{{ request()->is('Funcionarios/*',"Funcionarios") ? 'active' : '' }}"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
+                              <li class="{{ request()->is('Fornecedores/*',"Fornecedores") ? 'active' : '' }}"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
+                              <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li>
                               </div>
-
-                              <script type="text/javascript">
-                              // Capturar os elementos li dento da div Myli
-                              var liContainer = document.getElementById("Myli");
-                              // Capturar todos os li com a class="contador" que estiver dentro da div
-                              var li = liContainer.getElementsByClassName("contador");
-
-                              //passar por todos os li e adicionar o active na class que foi clicada por ultimo
-                              for (var i = 0; i < li.length; i++) {
-                                li[i].addEventListener("click", function() {
-                                  var current = document.getElementsByClassName("active");
-                                  current[0].className = current[0].className.replace(" active", "");
-                                  this.className += " active";
-                                });
-                              }
-
-                              </script>
 
                           </ul>
                       </div>
@@ -166,33 +149,6 @@
     <script src="{{ asset('assets/js/pushy.min.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
-
-
-
-
-
-
-
-
-    <script type="text/javascript">
-
-    // Get the container element
-    var liContainer = document.getElementById("Myli");
-    // Get all buttons with class="btn" inside the container
-    var li = liContainer.getElementsByClassName("contador");
-
-    // Loop through the buttons and add the active class to the current/clicked button
-    for (var i = 0; i < li.length; i++) {
-      li[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-
-
-    }
-
-    </script>
 
   </body>
 

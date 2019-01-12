@@ -20,9 +20,12 @@
                 <div class="cols-sm-2"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
                           <div class="cols-sm-2"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
             </nav>
-               <div id="time" class="panel panel-default">
+               <div class="panel panel-default">
                  @if(Session::has('mensagem'))
-                   <div class="alert alert-success">
+
+                   <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
                      {{Session::get('mensagem')}}
                    </div>
                  @endif
