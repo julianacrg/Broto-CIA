@@ -19,8 +19,8 @@ class AtividadesController extends Controller
     public function index()
     {
       $funcionario = Funcionarios:: orderBy('nome')->get();
-      $arr = DB::table('arranjos')
-      ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
+      $arr = DB::table('arranjos_Orcamentos')
+      ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
       ->select('arranjos.nome', 'arranjos.id')->get();
          return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arr);
 
@@ -35,22 +35,21 @@ class AtividadesController extends Controller
     {
         $a= 0;
 
-        $func = Db::table('funcionarios')
-        ->join('atividades','atividades.funcionarios_id','=','funcionarios.id')
-        ->select('funcionarios.nome','atividades.*')->get();
+        $atv = Db::table('atividades')
+        ->join('funcionarios','atividades.funcionarios_id','=','funcionarios.id')
+        ->select('atividades.*','funcionarios.nome')->get();
 
-        $atv = Atividades:: orderBy('id')->get();
 
         $arr = DB::table('arranjos')
         ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
-        ->orderBy('arranjos.id', 'ASC')
-        ->select('arranjos.nome', 'arranjos.id')->get();
+        ->orderBy('arranjos.id', 'DESC')
+        ->select('arranjos.nome', 'arranjos.id','arranjos_Orcamentos.orcamentos_id')->get();
 
 
 
 
  // dd($arr);
-        return view('listarAtividades',compact('arr','atv','a','func'));
+        return view('listarAtividades',compact('arr','atv'));
 
     }
 
