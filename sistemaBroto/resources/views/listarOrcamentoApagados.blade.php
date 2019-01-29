@@ -10,8 +10,8 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
-                                <li class="active"><a href="#">Listar Orçamento Apagados</a></li>
+                                <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento Fechados</a></li>
+                                <li class="active"><a href="#">Listar Orçamento Em Aberto</a></li>
 
 
 
@@ -47,13 +47,13 @@
                                <td>{{ $o->data }} </td>
 
                                <td>
-                                 <a href="{{route('Orcamentos.edit', $o->id)}}" class="btn btn-warning">Edite</a>
+                                 <a href="{{route('Orcamentos.edit', $o->id)}}" class="btn btn-warning">Editar</a>
 
                                  <div class="">
                                  <form method="post" onsubmit="return confirm('Confirmar Restauração ?');" action="{{ route('Orcamentos.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
-                                   <button class="btn btn-primary"type="submit" style="font-size:12px">Restaurar</button>
+                                   <button class="btn btn-primary"type="submit" style="font-size:12px">Fechar</button>
                                  </form>
                                  </div>
                                </td>

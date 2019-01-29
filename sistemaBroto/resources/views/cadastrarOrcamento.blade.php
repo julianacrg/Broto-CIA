@@ -29,8 +29,8 @@
                          <div class="nav-tabs-container">
                              <ul class="nav nav-tabs">
                                  <li class="active"><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                 <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento</a></li>
-                                 <li><a href="{{route('Orcamentos.show',1)}}">LISTAR ORÇAMENTO APAGADOS</a></li>
+                                 <li><a href="{{route('Orcamentos.create')}}">Listar Orçamento Fechados</a></li>
+                                 <li><a href="{{route('Orcamentos.show',1)}}">Listar Orçamento Em Aberto</a></li>
 
 
 
@@ -140,7 +140,7 @@
                                 <label>* Campos Obrigatórios</label>
 
                                 <div class="form-group ">
-                                  <input target="_blank" type="submit" id="button" value= "Cadastrar Orçamento(1/3)->" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
+                                  <input target="_blank" type="submit" id="button" value= "Próximo->" name="btnIncluir" class="btn btn-primary btn-lg btn-block login-button"></input>
                                 </div>
 
                               </form>

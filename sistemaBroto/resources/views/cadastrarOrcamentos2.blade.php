@@ -121,7 +121,7 @@
 
                                </div>
                                <div class="form-group ">
-                                   <a  type="button" href="{{route('ArranjosOrcamentos.index')}}" class="btn btn-primary btn-lg btn-block login-button">Adiciona Arranjo(2/3)</a>
+                                   <a  type="button" href="{{route('ArranjosOrcamentos.index')}}" class="btn btn-primary btn-lg btn-block login-button">Próximo</a>
                                  </div>
                        </div>
                    </div>
