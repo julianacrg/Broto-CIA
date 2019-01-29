@@ -21,7 +21,7 @@
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
                                     <li><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                    <li><a href="{{route('Itens.show',1)}}">Listar Itens Apagados</a></li>
+                                    <li><a href="{{route('Itens.show',1)}}">Listar Itens Desativados</a></li>
 
                                 </ul>
 

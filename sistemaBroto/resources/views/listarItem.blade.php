@@ -18,7 +18,7 @@
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Itens.index')}}">Cadastrar Item</a></li>
                                 <li class="active"><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                <li><a href="{{route('Itens.show', 1)}}">Listar Itens Apagados</a></li>
+                                <li><a href="{{route('Itens.show', 1)}}">Listar Itens Desativados</a></li>
 
 
                             </ul>
@@ -54,13 +54,13 @@
                                <td>{{ $o->preco }} </td>
 
                                <td>
-                                 <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Edite</a>
+                                 <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Editar</a>
 
                                  <div class="">
                                  <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Itens.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
-                                   <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
+                                   <button class="btn btn-danger"type="submit" style="font-size:12px">Desativar</button>
                                  </form>
                                  </div>
                                </td>
