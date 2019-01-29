@@ -42,8 +42,6 @@ class ItensOrcamentosController extends Controller
       $It = Itens:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
 
-      ItensOrcamentos::create($request->all());
-
       $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
       ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
       ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
@@ -58,6 +56,7 @@ class ItensOrcamentosController extends Controller
                         ->withInput();
         }
     }
+    ItensOrcamentos::create($request->all());
 
     /**
      * Display the specified resource.
