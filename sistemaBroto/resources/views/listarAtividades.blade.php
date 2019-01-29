@@ -36,23 +36,15 @@
                     <tbody>
 
                       @foreach( $atv as $o )
-                        @foreach ($arr as $k)
                      <tr>
                        <td>{{ $o->id }} </td>
-                       <td> {{$o->nome }}</td>
-                       <td>
-                          @if ($o->arranjos_orcamentos_id == $k->orcamentos_id)
-                                {{$k->nome}}
+                       <td> {{$o->funcionario }}</td>
+                       <td>{{$o->arranjo}} </td>
 
-                          @endif
-
-                        </td>
-                        @break
-                        @endforeach
                        <td>{{ $o->data }} </td>
 
                        <td>
-
+                         delete, edite
                        </td>
 
                      </tr>

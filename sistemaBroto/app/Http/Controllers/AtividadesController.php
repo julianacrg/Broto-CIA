@@ -37,8 +37,10 @@ class AtividadesController extends Controller
 
         $atv = Db::table('atividades')
         ->join('funcionarios','atividades.funcionarios_id','=','funcionarios.id')
-        ->select('atividades.*','funcionarios.nome')->get();
-
+        ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.id_arranjos_orcamentos', '=','arranjos_orcamentos_id')
+        ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
+        ->select('atividades.*','funcionarios.nome as funcionario','arranjos.nome as arranjo')->get();
+  dd($atv);
 
         $arr = DB::table('arranjos')
         ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
