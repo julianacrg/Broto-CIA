@@ -55,7 +55,6 @@ class ItensController extends Controller
         Itens::create($request->all());
       }
 
-      Itens::create($request->all());
       session()->flash('mensagem', 'Item cadastrado com sucesso!');
 
       return view('cadastrarItens');
