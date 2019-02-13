@@ -122,7 +122,7 @@ class ItensController extends Controller
 
       $task->save();
 
-      session()->flash('mensagem','Item excluido com sucesso');
+      session()->flash('mensagem','Item desativado com sucesso');
       return redirect()->route('Itens.create');
     }
 }
