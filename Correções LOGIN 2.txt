@@ -1,0 +1,17 @@
+Login
+
+Consigo fechar página e voltar logado, 
+ao sair do sistema deve-se solicitar login novamente
+
+Retirar o cabeçalho do registra-se,
+afinal já está na área de login
+
+Fazer logout
+
+Trabalhar permissões:
+No usuário adm exibir todos os menus
+Demais usuário não tem acesso 
+aos menus funcionários e fornecedores
+
+Login dos demais funcionários 
+será criado em cadastrar funcionário

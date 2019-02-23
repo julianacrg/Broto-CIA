@@ -46,7 +46,7 @@
                               <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-pencil">Pedidos</a></li>
                               <li class="{{ request()->is('Funcionarios/*',"Funcionarios") ? 'active' : '' }}"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
                               <li class="{{ request()->is('Fornecedores/*',"Fornecedores") ? 'active' : '' }}"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
-                              <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li>
+                              {{-- <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li> --}}
                               </div>
 
                           </ul>

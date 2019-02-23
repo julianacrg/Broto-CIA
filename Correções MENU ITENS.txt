@@ -1,0 +1,22 @@
+Itens
+
+Na listagem terá apenas, nome, 
+status (deve exibir disponível se 1 e indisponível se 0),
+qtd, valor;
+
+Descrição não está sendo recuperada na hora da edição;
+
+Modificar mensagem de recuperação de item;
+
+Ajustar botões de ações e rever cor;
+
+A barra verde não deve ir para cadastrar item
+qdo o item estiver sendo editado;
+
+Após editar itens desativados, recarregar a página
+de itens desativados, esta recarregando para listar itens
+
+
+Retirar icones que não estão sendo utilizados (de todos as páginas)
+
+Verificar responsividade
