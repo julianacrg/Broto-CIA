@@ -63,18 +63,18 @@
                     <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
                     <div class="cm-flex">
                         <h1></h1>
-                        <form id="cm-search" action="index.php" method="get">
+                        <form id="cm-search" action="#" method="get">
                             <input type="search" name="q" autocomplete="off" placeholder="Search...">
                         </form>
                     </div>
                     <div class="pull-right">
                         <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
                     </div>
-                    <div class="dropdown pull-right">
-                        <button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger">23</span> </button>
-                        <div class="popover cm-popover bottom">
-                            <div class="arrow"></div>
-                            <div class="popover-content">
+                    {{-- <div class="dropdown pull-right"> --}}
+                        {{-- <button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger"></span> </button> --}}
+                        {{-- <div class="popover cm-popover bottom">
+                            <div class="arrow"></div> --}}
+                            {{-- <div class="popover-content">
                                 <div class="list-group">
                                     <a href="#" class="list-group-item">
                                         <h4 class="list-group-item-heading text-overflow">
@@ -96,27 +96,34 @@
                                     </a>
                                 </div>
                                 <div style="padding:10px"><a class="btn btn-success btn-block" href="#">Show me more...</a></div>
-                            </div>
-                        </div>
-                    </div>
+                            </div> --}}
+                        {{-- </div>
+                    </div> --}}
                     <div class="dropdown pull-right">
                         <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
                         <ul class="dropdown-menu">
                             <li class="disabled text-center">
-                                <a style="cursor:default;"><strong>John Smith</strong></a>
+                                <a style="cursor:default;"><strong>@if ( Auth::check() )Logado como {{Auth::user()->name}}
+                                  @else Deslogado @endif</strong></a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                                <a href="#"><i class="fa fa-fw fa-cog"></i> Configurações</a>
                             </li>
-                            <li>  <form>
-                                <a action="{{ route('logout') }}"><i class="fa fa-fw fa-sign-out" method="POST"></i> Sign out</a>
+                            <li>
+                                <a  href="{{ route('logout') }}"
+                                 onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                               <i class="fa fa-fw fa-sign-out"></i>
+                                               {{ __('Logout') }}
+                                  </a>
 
-                                    @csrf
-                                </form>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  @csrf
+                              </form>
                             </li>
                         </ul>
                     </div>
