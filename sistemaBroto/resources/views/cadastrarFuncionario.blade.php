@@ -63,6 +63,40 @@
                                  </div>
                                </div>
 
+                               <div class="form-group">
+                                 <label for="email" class="cols-sm-2 control-label">E-mail</label>
+                                 <div class="cols-sm-10">
+                                   <div class="input-group">
+                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                     @if ($errors->has('email'))
+                                         <span class="invalid-feedback" role="alert">
+                                             <strong>{{ $errors->first('email') }}</strong>
+                                         </span>
+                                     @endif
+                                   </div>
+                                 </div>
+                               </div>
+
+                               <div class="form-group">
+                                 <label for="password" class="cols-sm-2 control-label">Senha</label>
+                                 <div class="cols-sm-10">
+                                   <div class="input-group">
+                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                     @if ($errors->has('password'))
+                                         <span class="invalid-feedback" role="alert">
+                                             <strong>{{ $errors->first('password') }}</strong>
+                                         </span>
+                                     @endif
+                                   </div>
+                                 </div>
+                               </div>
+
+
+
                              <div class="form-group ">
                                  <input target="_blank" type="submit"  value="Cadastrar Funcionário" name="btnIncluir" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
                                </div>

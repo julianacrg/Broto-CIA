@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Funcionarios;
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class FuncionariosController extends Controller
 {
@@ -43,6 +45,8 @@ class FuncionariosController extends Controller
       $validacao = \Validator::make($data,[
         "nome" => "required",
         "cpf" => "required",
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:6|',
         ]);
 
 
@@ -50,6 +54,12 @@ class FuncionariosController extends Controller
           return redirect()->back()->withErrors($validacao)->withInput();
         }else {
           Funcionarios::create($request->all());
+          User::create([
+              'name' => $data['nome'],
+              'email' => $data['email'],
+              'password' => Hash::make($data['password']),
+              'funcionario' => 'S',
+              ]);
         }
 
       session()->flash('mensagem', 'Funcionario cadastrado com sucesso!');

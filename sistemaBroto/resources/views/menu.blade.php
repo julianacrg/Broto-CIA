@@ -36,6 +36,7 @@
 
                               <!-- contador é um elemento que ouve o clique do mouse -->
                               <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{route('home')}}" class="sf-house">Home</a></li>
+
                               <li class="{{ request()->is('Orcamentos/*',"Orcamentos") ? 'active' : '' }}"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
                               <li class="{{ request()->is('Itens/*',"Itens") ? 'active' : '' }}"><a href="{{route('Itens.index')}}" class="sf-layers">Itens</a></li>
                               <li class="{{ request()->is('Arranjos/*',"Arranjos") ? 'active' : '' }}"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
