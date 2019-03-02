@@ -45,8 +45,13 @@
                               <li class="{{ request()->is('Atividades/*',"Atividades") ? 'active' : '' }}"><a href="{{route('Atividades.index')}}" class="sf-post-it">Atividades</a></li>
                               {{-- <li class="{{ request()->is('Igrejas/*',"Igrejas") ? 'active' : '' }}"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li> --}}
                               <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-pencil">Pedidos</a></li>
+                              @can ('admin')
+
+
                               <li class="{{ request()->is('Funcionarios/*',"Funcionarios") ? 'active' : '' }}"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
                               <li class="{{ request()->is('Fornecedores/*',"Fornecedores") ? 'active' : '' }}"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
+
+                              @endcan
                               {{-- <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li> --}}
                               </div>
 
@@ -158,6 +163,25 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
 
+    <script type="text/javascript">
+    function aoFecharJanela(){
+  alert("A janela foi fechada pelo usuário");
+}
+function abrirPopup(url, windowName, opts, callback) {
+    var popup = window.open(url, windowName, opts);
+    var intervalo = setInterval(function() {
+        try {
+            if (popup == null || popup.closed) {
+                window.clearInterval(intervalo);
+                callback(popup);
+            }
+        }
+        catch (e) { }
+    }, 2000);
+    return popup;
+}
+
+    </script>
   </body>
 
 <section>
