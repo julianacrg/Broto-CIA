@@ -1,7 +1,11 @@
 Login
 
+
 Consigo fechar página e voltar logado, 
-ao sair do sistema deve-se solicitar login novamente
+ao sair do sistema deve-se solicitar login novamente 
+--->nao da pra fazer isso. soluçoes possiveis gambiarra no lado do usuario junto com o navegador.front-end 
+
+OK ----------
 
 Retirar o cabeçalho do registra-se,
 afinal já está na área de login
@@ -15,3 +19,5 @@ aos menus funcionários e fornecedores
 
 Login dos demais funcionários 
 será criado em cadastrar funcionário
+
+OK-----------
