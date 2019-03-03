@@ -82,10 +82,10 @@ class ItensController extends Controller
      */
     public function edit($id)
     {
-      $Orca= Itens::find($id);
+      $it= Itens::find($id);
 
 
-      return view('editarItem')->with('Itens', $Orca);
+      return view('editarItem')->with('Itens', $it);
     }
 
     /**
@@ -103,7 +103,12 @@ class ItensController extends Controller
         $itens->fill($request->all());
         $itens->save();
         session()->flash('mensagem', 'Item editado com sucesso!');
-        return redirect()->route('Itens.create');
+        if ($itens->status == 0) {
+          return redirect()->route('Itens.show',1);
+        }
+        else {
+          return redirect()->route('Itens.create');        }
+
     }
 
     /**
