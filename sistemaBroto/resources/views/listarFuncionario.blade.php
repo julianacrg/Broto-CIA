@@ -37,6 +37,7 @@
                               <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nome</th>
+                                <th scope="col">Login</th>
                                 <th scope="col">Ação</th>
 
                               </tr>
@@ -44,17 +45,15 @@
                              <tbody>
 
                                @foreach( $Func as $o )
-
-
-
                               <tr>
                                 <td>{{ $o->id }} </td>
                                 <td>{{ $o->nome }} </td>
+                                <td>{{ $o->email }} </td>
                                 <td>
 
                                   <div class="row">
                                     <a href="{{route('Funcionarios.edit', $o->id)}}" class="btn btn-warning">Edite</a>
-                                  <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
+                                  <form method="post" onsubmit="return confirm('Mover usuário para lista de apagados?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>

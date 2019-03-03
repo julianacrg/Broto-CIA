@@ -37,6 +37,7 @@
                               <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nome</th>
+                                <th scope="col">Login</th>
                                 <th scope="col">Ação</th>
 
                               </tr>
@@ -50,9 +51,10 @@
                               <tr>
                                 <td>{{ $o->id }} </td>
                                 <td>{{ $o->nome }} </td>
+                                <td>{{ $o->email }} </td>
                                 <td>
                                   <div class="">
-                                  <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
+                                  <form method="post" onsubmit="return confirm('Restaurar Funcionário?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger"type="submit" style="font-size:12px"> Restaurar</button>

@@ -12,12 +12,8 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
-                                <li><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
-                                <li><a href="{{ route('Funcionarios.show', 1) }}">Listar Funcionários Apagados</a></li>
+                                <h4 align="center">Editando Funcionário: {{$Func->nome}}</h4>
 
-
-                                </li>
                             </ul>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFuncionarioTableUsers extends Migration
+class AddIdFuncTableUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddFuncionarioTableUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('funcionario',['S','N'])->default('N');
-            
+            $table->string('idFunc')->default('0');
         });
     }
 
@@ -27,7 +26,7 @@ class AddFuncionarioTableUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropdown('funcionario');
+            //
         });
     }
 }
