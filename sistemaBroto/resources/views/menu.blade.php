@@ -116,9 +116,12 @@
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
                             </li>
+                            @can ('admin')
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-cog"></i> Configurações</a>
+                              <a href="{{ route('register') }}"> <i class="fa fa-fw fa-cog"></i>Novo ADM</a>
+
                             </li>
+                          @endcan
                             <li>
                                 <a  href="{{ route('logout') }}"
                                  onclick="event.preventDefault();

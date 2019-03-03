@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class FuncionariosController extends Controller
 {
@@ -28,7 +29,9 @@ class FuncionariosController extends Controller
      */
     public function create()
     {
-      $Func = Funcionarios::where('status', '=',1)->orderBy('nome')->paginate(10);
+      $Func = DB::table('funcionarios')->join('users', 'users.idFunc', '=', 'funcionarios.cpf')
+      ->where('status', '=', '1')
+      ->select('funcionarios.*','users.email')->paginate(10);
         return view ('listarFuncionario', compact('Func'));
     }
 
@@ -44,7 +47,7 @@ class FuncionariosController extends Controller
 
       $validacao = \Validator::make($data,[
         "nome" => "required",
-        "cpf" => "required",
+        "cpf" => "required|unique:funcionarios",
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:6|',
         ]);
@@ -55,10 +58,11 @@ class FuncionariosController extends Controller
         }else {
           Funcionarios::create($request->all());
           User::create([
-              'name' => $data['nome'],
-              'email' => $data['email'],
-              'password' => Hash::make($data['password']),
+              'name'        => $data['nome'],
+              'email'       => $data['email'],
+              'password'    => Hash::make($data['password']),
               'funcionario' => 'S',
+              'idFunc'      =>$data['cpf']
               ]);
         }
 
@@ -75,8 +79,11 @@ class FuncionariosController extends Controller
      */
     public function show(Funcionarios $funcionarios)
     {
-      $Func = Funcionarios::where('status', '=',0)->orderBy('nome')->paginate(10);
-        return view ('listarFuncionario', compact('Func'));
+
+      $Func = DB::table('funcionarios')->join('users', 'users.idFunc', '=', 'funcionarios.cpf')
+      ->where('status', '=', '0')
+      ->select('funcionarios.*','users.email')->paginate(10);
+      return view ('listarFuncionarioApagados', compact('Func'));
     }
 
     /**
@@ -120,13 +127,15 @@ class FuncionariosController extends Controller
       $task = Funcionarios::findOrFail($Funcionario);
       if ($task->status == 1) {
         $task->status = 0;
+        session()->flash('mensagem','Funcionario removido com sucesso');
       }else {
         $task->status = 1;
+        session()->flash('mensagem','Funcionario restaurado com sucesso');
       }
 
 
       $task->save();
-      session()->flash('mensagem','Funcionario excluido com sucesso');
+
       return redirect()->route('Funcionarios.create');
     }
 }
