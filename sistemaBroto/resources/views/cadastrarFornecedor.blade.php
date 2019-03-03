@@ -48,8 +48,7 @@
                                  <div class="cols-sm-10">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="cpffuncionario"  placeholder="xx.xxx.xxx/xxxx-xx
-"/>
+                                     <input type="text" class="form-control" style="max-width: 40%;" name="cpf" id="txtCpf" onkeypress="mascaraCpf()" maxlength="18" autocomplete="off" placeholder="xx.xxx.xxx/xxxx-xx"/>
                                    </div>
                                  </div>
                                </div>
@@ -66,6 +65,7 @@
                    </div>
                </div>
            </div>
+
            <script type="text/javascript">
            setTimeout(function () {
                 document.getElementById("time").style.display = "none";
@@ -73,6 +73,24 @@
               function hide(){
               document.getElementById("tinme").style.display = "none";
               }
+
+              function mascaraCpf(){
+                  var cpf = document.getElementById('txtCpf').value;
+                   if(cpf.length==2){
+                    document.getElementById('txtCpf').value = cpf +'.';
+                }
+                   else if(cpf.length==6){
+                    document.getElementById('txtCpf').value = cpf +'.';
+                }
+                   else if (cpf.length==12){
+                    document.getElementById('txtCpf').value = cpf +'/';
+                }
+                else if (cpf.length==15){
+                 document.getElementById('txtCpf').value = cpf +'-';
+               }
+
+                }
+
            </script>
 
        </body>
