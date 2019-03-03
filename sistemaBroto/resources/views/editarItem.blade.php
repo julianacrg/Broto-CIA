@@ -12,9 +12,7 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
-                                    <li><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                    <li><a href="#">Listar Itens Desativados</a></li>
+                                      <h4 align="center">Editando Item {{$Itens->nome}}   </h4>
 
                                 </ul>
 
@@ -30,7 +28,7 @@
 
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{route('Itens.update', $Itens->id) }}">
+                                 <form id="formulario" class="" method="post" action="{{route('Itens.update', $Itens->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <div class="form-group">
@@ -113,7 +111,8 @@
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-bars fa" aria-hidden="true"></i></span>
-                                         <textarea type="text" class="form-control" style="max-width: 90%;" name="descricao" id="descricaoitem"  value="{{$Itens->descricao}}"/></textarea>
+
+                                         <textarea type="text" class="form-control" style="max-width: 90%;" name="descricao" id="descricaoitem"/>{{$Itens->descricao}}</textarea>
                                        </div>
                                      </div>
                                    </div>

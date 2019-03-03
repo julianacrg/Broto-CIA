@@ -28,8 +28,7 @@
                      <div class="cm-flex">
                          <div class="nav-tabs-container">
                              <ul class="nav nav-tabs">
-                                 <li><a href="{{route('Igrejas.index')}}">Cadastrar Igreja</a></li>
-                                 <li><a href="{{route('Igrejas.create')}}">Listar igrejas</a></li>
+                                 <h4 align="center">Editando Igreja {{$Igrejas->nome}}   </h4>
                              </ul>
                          </div>
                      </div>

@@ -44,7 +44,7 @@
 
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{ route('Itens.store') }}">
+                                 <form id="formulario" class="" method="post" action="{{ route('Itens.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Nome *</label>

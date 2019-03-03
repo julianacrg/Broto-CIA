@@ -26,10 +26,9 @@
                         <table class="table table-bordered table-striped table-hover table-responsive">
                             <thead>
                              <tr>
-                               <th scope="col">ID</th>
                                <th scope="col">Nome</th>
-                               <th scope="col">Tipo</th>
-                               <th scope="col">Categoria</th>
+                               <th scope="col">Status</th>
+                               <th scope="col">Quantidade</th>
                                <th scope="col">Preço</th>
                                <th scope="col">Ação</th>
 
@@ -39,17 +38,16 @@
                             <tbody>
                               @foreach( $Itens as $o )
                              <tr>
-                               <td>{{ $o->id }} </td>
                                <td>{{ $o->nome }} </td>
-                               <td>{{ $o->tipo }} </td>
-                               <td>{{ $o->categoria }} </td>
+                               <td>Indisponivel</td>
+                               <td>{{ $o->qtd }} </td>
                                <td>{{ $o->preco }} </td>
 
                                <td>
                                  <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Editar</a>
 
                                  <div class="">
-                                 <form method="post" onsubmit="return confirm('Confirmar exclusão ?');" action="{{ route('Itens.destroy',[$o->id])}}">
+                                 <form method="post" onsubmit="return confirm('Tornar Item Disponivel ?');" action="{{ route('Itens.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
                                    <button class="btn btn-danger"type="submit" style="font-size:12px"> Restaurar</button>

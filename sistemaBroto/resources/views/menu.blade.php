@@ -163,25 +163,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
 
-    <script type="text/javascript">
-    function aoFecharJanela(){
-  alert("A janela foi fechada pelo usuário");
-}
-function abrirPopup(url, windowName, opts, callback) {
-    var popup = window.open(url, windowName, opts);
-    var intervalo = setInterval(function() {
-        try {
-            if (popup == null || popup.closed) {
-                window.clearInterval(intervalo);
-                callback(popup);
-            }
-        }
-        catch (e) { }
-    }, 2000);
-    return popup;
-}
 
-    </script>
   </body>
 
 <section>

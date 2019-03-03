@@ -41,6 +41,8 @@ class ItensController extends Controller
 
       $data = $request->all();
 
+
+
       $validacao = \Validator::make($data,[
         "nome" => "required",
         "preco" => "required",
@@ -115,14 +117,14 @@ class ItensController extends Controller
       $task = Itens::findOrFail($itens);
       if ($task->status == 1) {
         $task->status = 0;
+        session()->flash('mensagem','Item Desativado com Sucesso');
       }else {
         $task->status = 1;
+        session()->flash('mensagem','Item Retornado com Sucesso');
       }
-
 
       $task->save();
 
-      session()->flash('mensagem','Item desativado com sucesso');
       return redirect()->route('Itens.create');
     }
 }
