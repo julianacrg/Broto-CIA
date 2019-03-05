@@ -50,14 +50,14 @@
                                  <div class="col-sm-5">
                                    <div class="input-group">
                                      <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                     <select type="text" class="form-control"  name="funcionarios_id"  />
-                                     <option value="">Selecione um Funcionarios </option>
+                                     <input  name="funcionarios_id" placeholder="Selecione um Funcionario" list="funcionario" class="form-control">
+                                     <datalist id="funcionario" type="text"   name="funcionarios_id"  />
                                      @foreach($Funcionario as $e)
 
                                      <option value="{{$e->id}}">{{ $e->nome }}</option>
 
                                      @endforeach
-                                     <select>
+                                     
                                    </div>
                                  </div>
                               </div>
@@ -69,14 +69,15 @@
 
                                <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                 <select  type="text"  name="arranjos_orcamentos_id" class="form-control">
-                                   <option value="">Selecione um Arranjos</option>
+                                 <input  name="arranjos_orcamentos_id" list="arranjo" placeholder="Selecione um Arranjos"  class="form-control">
+                                 <datalist id="arranjo" type="text"  name="arranjos_orcamentos_id">
+
                                    @foreach( $Arranjos as $a )
 
                                    <option value="{{$a->id}}"> {{$a->nome}}</option>
                                    @endforeach
 
-                                 </select>
+                                 </datalist>
                                </div>
                              </div>
                              </div>
