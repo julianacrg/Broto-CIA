@@ -31,6 +31,15 @@
                            <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                              {{Session::get('mensagem')}}
+                            {{Session::forget('mensagem')}}
+                           </div>
+
+                         @elseif (Session::has('erro'))
+                           <div id="time" class="alert alert-danger alert-dismissible text-center" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                             {{Session::get('erro')}}
+                             {{Session::forget('mensagem')}}
+
                            </div>
                          @endif
 
@@ -49,15 +58,13 @@
                                                <div class="input-group">
                                                  <span class="input-group-addon "><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
 
+                                                 <input list="arranjo" type="text" name="arranjos_id" placeholder="Selecione um Arranjo" class="form-control">
+                                                 <datalist  id="arranjo" name="arranjos_id" type="text" />
+                                                   @foreach($Arranjos as $e)
 
-                                                 <select class="meuselect" style="width: 80%" name="arranjos_id"  />
-                                                 <option>Selecione um Arranjo</option>
-                                                 @foreach($Arranjos as $e)
+                                                   <option value="{{$e->id}}">{{ $e->nome }}</option>
 
-                                                 <option value="{{$e->id}}">{{ $e->nome }}</option>
-
-                                                 @endforeach
-                                                 <select>
+                                                   @endforeach
 
                                                </div>
                                              </div>

@@ -39,6 +39,14 @@
                              <button  type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
                              {{Session::get('mensagem')}}
+                             {{Session::forget('mensagem')}}
+
+                           </div>
+                         @elseif (Session::has('erro'))
+                           <div id="time" class="alert alert-danger alert-dismissible text-center " role="alert">
+                             <button  type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                             {{Session::get('erro')}}
+                             {{Session::forget('mensagem')}}
                            </div>
                          @endif
 

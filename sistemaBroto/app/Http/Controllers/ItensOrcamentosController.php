@@ -43,21 +43,29 @@ class ItensOrcamentosController extends Controller
       $data = $request->all();
 
       $validacao = \Validator::make($data,[
+        "orcamentos_id"=>"required",
         "itens_id" => "required",
         "qtd_itens" => "required",
 
         ]);
 
 
-
       if ($validacao->fails()) {
 
+        $It = Itens:: orderBy('nome')->get();
+        $ultimo = Orcamentos:: all()->last();
+
+        $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
+        ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
+        ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+
+        session()->flash('erro', 'Campos requeridos não preenchidos');
+
         return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)
-                        ->with('ultItem', $ultItem)
-                        ->withErrors($validacao)
-                        ->withInput();
+                        ->with('ultItem', $ultItem);
         }
         else {
+          //necessario primeiro vir o create e depois fazer join
           ItensOrcamentos::create($request->all());
           $It = Itens:: orderBy('nome')->get();
           $ultimo = Orcamentos:: all()->last();

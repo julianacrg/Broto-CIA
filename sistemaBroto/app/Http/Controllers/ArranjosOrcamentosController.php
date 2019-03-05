@@ -51,16 +51,40 @@ class ArranjosOrcamentosController extends Controller
 
       $arranjos = Arranjos:: orderBy('nome')->get();
       $ultimo = Orcamentos:: all()->last();
+      $data = $request->all();
 
-      ArranjosOrcamentos::create($request->all());
+      $validacao = \Validator::make($data,[
 
-      $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')
-      ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
-      ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
+        "arranjos_id" => "required",
+        "qtd_arranjos" => "required",
+
+        ]);
+
+        if ($validacao->fails()) {
+          $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')
+          ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
+          ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
+
+          session()->flash('erro', 'Campos requeridos não preenchidos');
 
 
-      session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return view('cadastrarOrcamentos3')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('ultItem', $ultItem1);
+          return view('cadastrarOrcamentos3')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('ultItem', $ultItem1);
+
+
+          }
+          else {
+            //necessario primeiro vir o create e depois fazer join
+            ArranjosOrcamentos::create($request->all());
+
+            $ultItem1 = DB::table('arranjos')->join('arranjos_orcamentos', 'arranjos_orcamentos.arranjos_id', '=', 'arranjos.id')
+            ->where('arranjos_orcamentos.orcamentos_id','=', $ultimo->id)
+            ->select('arranjos.*', 'arranjos_orcamentos.id_arranjos_orcamentos','arranjos_orcamentos.qtd_arranjos')->get();
+
+            session()->flash('mensagem', 'Cadastrado com sucesso!');
+
+            return view('cadastrarOrcamentos3')->with('Orcamentos', $ultimo)->with('Arranjos', $arranjos)->with('ultItem', $ultItem1);
+          }
+
     }
 
     /**
