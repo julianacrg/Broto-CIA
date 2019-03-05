@@ -39,24 +39,41 @@ class ItensOrcamentosController extends Controller
      */
     public function store(Request $request)
     {
-      $It = Itens:: orderBy('nome')->get();
-      $ultimo = Orcamentos:: all()->last();
 
-      $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
-      ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
-      ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+      $data = $request->all();
 
-      session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)->with('ultItem', $ultItem);
+      $validacao = \Validator::make($data,[
+        "itens_id" => "required",
+        "qtd_itens" => "required",
 
-      if ($request->fails()) {
+        ]);
+
+
+
+      if ($validacao->fails()) {
+
         return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)
                         ->with('ultItem', $ultItem)
-                        ->withErrors($request)
+                        ->withErrors($validacao)
                         ->withInput();
         }
-    }
-    ItensOrcamentos::create($request->all());
+        else {
+          ItensOrcamentos::create($request->all());
+          $It = Itens:: orderBy('nome')->get();
+          $ultimo = Orcamentos:: all()->last();
+
+          $ultItem = DB::table('itens')->join('itens_orcamentos', 'itens_orcamentos.itens_id', '=', 'itens.id')
+          ->where('itens_orcamentos.orcamentos_id','=', $ultimo->id)
+          ->select('itens.*', 'itens_orcamentos.id_itens_orcamentos','itens_orcamentos.qtd_itens')->get();
+          session()->flash('mensagem', 'Cadastrado com sucesso!');
+
+          return view('cadastrarOrcamentos2')->with('Orcamentos', $ultimo)->with('Itens', $It)->with('ultItem', $ultItem);
+
+        }
+
+
+        }
+
 
     /**
      * Display the specified resource.

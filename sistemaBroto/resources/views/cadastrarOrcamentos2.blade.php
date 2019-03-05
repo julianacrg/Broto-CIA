@@ -6,7 +6,14 @@
         <body class="cm-no-transition cm-2-navbar">
 
                <div id="global">
-
+                 @if($errors->all())
+                   <div id="time" class="alert alert-danger alert-dismissible text-center" role="alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     @foreach ($errors->all() as $key => $value)
+                       <li><strong>{{$value}}</strong></li>
+                     @endforeach
+                   </div>
+                 @endif
                   <div class="container-fluid">
                     <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                         <div class="cm-flex">
@@ -50,14 +57,14 @@
                                        <div class="col-sm-5">
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select  class="meuselect" style="width: 80%"  name="itens_id" />
-                                           <option>Selecione um Item</option>
-                                           @foreach($Itens as $e)
+                                           <input list="item" type="text" name="itens_id" placeholder="Selecione um Item" class="form-control">
+                                           <datalist  id="item" name="itens_id" type="text" />
+                                             @foreach($Itens as $e)
 
-                                           <option value="{{$e->id}}">{{ $e->nome }}</option>
+                                             <option value="{{$e->id}}">{{ $e->nome }}</option>
 
-                                           @endforeach
-                                           <select>
+                                             @endforeach
+
 
                                          </div>
                                        </div>
@@ -91,6 +98,7 @@
                                        </thead>
 
                                              <tbody>
+
                                                {{-- @if ($ultItem ) --}}
                                                @foreach( $ultItem as $o )
                                               <tr>
