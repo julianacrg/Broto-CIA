@@ -56,7 +56,7 @@
 
                                      <option value="{{$e->id}}">{{ $e->nome }}</option>
 
-                                     @endforeach
+                                     @endforeach  
 
                                    </div>
                                  </div>

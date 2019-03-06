@@ -21,7 +21,7 @@ class AtividadesController extends Controller
       $funcionario = Funcionarios:: orderBy('nome')->get();
       $arr = DB::table('arranjos_Orcamentos')
       ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
-      ->select('arranjos.nome', 'arranjos.id')->get();
+      ->select ('arranjos.nome', 'arranjos.id')->distinct()->get();
          return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arr);
 
     }

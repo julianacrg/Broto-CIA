@@ -49,16 +49,18 @@
                                        <div class="col-sm-5">
                                          <div class="input-group">
                                            <span class="input-group-addon"><i class="fa fa-pagelines fa" aria-hidden="true"></i></span>
-                                           <select class="meuselect" style="width: 80%"  name="itens_id" v-model="itens_id" id="itensarranjo" />
+                                           <input  name="itens_id" list="itensarranjo" placeholder="Selecione Itens para Arranjo"  class="form-control">
+                                           <datalist type="text" name="itens_id" id="itensarranjo" />
                                            @foreach($Itens as $e)
 
                                            <option value="{{$e->id}}">{{ $e->nome }}</option>
 
                                            @endforeach
-                                           <select>
+                                         </datalist>
 
                                          </div>
                                        </div>
+                                     </div>
                                      <div class="col-sm-2">
                                           <div class="form-group">
 
@@ -73,7 +75,7 @@
                                        <button  class="btn btn-primary">Add</button>
                                      </div>
 
-                                   </div>
+
 
                                  {{-- <div class="form-group ">
                                      <input  type="submit" value="Adicionar Item" name="btnIncluir" id="button"  class="btn btn-primary btn-lg btn-block login-button"></input>
