@@ -63,12 +63,10 @@ class AtividadesController extends Controller
      */
     public function store(Request $request)
     {
-      $funcionario = Funcionarios:: orderBy('nome')->get();
-      $arranjos = Arranjos:: orderBy('nome')->get();
       Atividades::create($request->all());
       session()->flash('mensagem', 'Item cadastrado com sucesso!');
 
-      return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arranjos);
+      return redirect()->route("Atividades.index");
     }
 
     /**

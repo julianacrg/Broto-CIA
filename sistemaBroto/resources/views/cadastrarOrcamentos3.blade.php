@@ -128,18 +128,7 @@
                        </div>
                    </div>
                </div>
-               <script type="text/javascript">
-               $(document).ready(function() {
-                $(".meuselect").select2();
-               });
 
-               setTimeout(function () {
-                    document.getElementById("time").style.display = "none";
-                  }, 3000);
-                  function hide(){
-                  document.getElementById("tinme").style.display = "none";
-                  }
-               </script>
 
            </body>
 
