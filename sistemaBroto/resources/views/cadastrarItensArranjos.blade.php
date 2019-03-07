@@ -27,20 +27,29 @@
                     </nav>
                        <div class="panel panel-default">
 
-                         @if(session()->has('mensagem'))
-                           <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         @if(Session::has('mensagem'))
 
-                             {{session()->get('mensagem')}}
+                           <div id="time" class="alert alert-success alert-dismissible text-center " role="alert">
+                             <button  type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                             {{Session::get('mensagem')}}
+                             {{Session::forget('mensagem')}}
+
                            </div>
-                          @endif
+                         @elseif (Session::has('erro'))
+                           <div id="time" class="alert alert-danger alert-dismissible text-center " role="alert">
+                             <button  type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                             {{Session::get('erro')}}
+                             {{Session::forget('erro')}}
+                           </div>
+                         @endif
                                <div class="main-login main-center" id="divform" >
 
                                  <form id="formulario" class="" method="post" action="{{ route('ItensArranjos.store') }}">
                                     @csrf
                                     <div class="form-group">
                                       <div class="input-group">
-                                        <input type="hidden" name="arranjos_id" v-model="arranjos" value="{{$Arranjos->id}}"> </input>
+                                        <input type="hidden" name="arranjos_id" value="{{$Arranjos->id}}"> </input>
                                       </div>
 
                                     </div>
@@ -97,6 +106,7 @@
                                   </tr>
                                  </thead>
                                  <tbody>
+                              
                                    @foreach($Tb as $e)
                                   <tr>
 
@@ -105,6 +115,7 @@
                                     <td>{{$e->preco}} </td>
                                     <td>{{$e->qtd_itens}} </td>
                                     <td>
+
                                       <div class="">
                                       <form method="post" onsubmit="return confirm('Confirmar exclusão?');" action="{{ route('ItensArranjos.destroy',[$e->id_itens_arranjos])}}">
                                         @csrf

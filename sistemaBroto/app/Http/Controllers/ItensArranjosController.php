@@ -40,16 +40,40 @@ class ItensArranjosController extends Controller
      */
     public function store(Request $request)
     {
-      ItensArranjos::create($request->all());
-      session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
-      $ultimo = Arranjos:: all()->last();
-      $It = Itens:: orderBy('nome')->get();
+      $data = $request->all();
 
-      $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
-      ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
-      ->select('itens.*', 'itens_arranjos.id_itens_arranjos','itens_arranjos.qtd_itens')->get();
+      $validacao = \Validator::make($data,[
+        "itens_id" => "required",
+        "qtd_itens" => "required",
+        ]);
 
-      return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
+        if ($validacao->fails()) {
+          $ultimo = Arranjos:: all()->last();
+          $It = Itens:: orderBy('nome')->get();
+
+          $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
+          ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
+          ->select('itens.*', 'itens_arranjos.id_itens_arranjos','itens_arranjos.qtd_itens')->get();
+
+          session()->flash('erro', 'Campos requeridos não preenchidos');
+
+          return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
+
+          }
+          else {
+            //necessario primeiro vir o create e depois fazer join
+            ItensArranjos::create($request->all());
+
+            session()->flash('mensagem', 'Itens do arranjo cadastrado com sucesso!');
+
+            $ultimo = Arranjos:: all()->last();
+            $It = Itens:: orderBy('nome')->get();
+            $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
+            ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
+            ->select('itens.*', 'itens_arranjos.id_itens_arranjos','itens_arranjos.qtd_itens')->get();
+
+            return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
+          }
     }
 
     /**
@@ -100,13 +124,12 @@ class ItensArranjosController extends Controller
 
         $ultimo = Arranjos:: all()->last();
         $It = Itens:: orderBy('nome')->get();
-        // $ultimo1 = ItensArranjos:: all()->last();
-        session()->flash('mensagem', 'Itens do arranjo deletado com sucesso!');
-
 
         $itens = DB::table('itens')->join('itens_arranjos', 'itens_arranjos.itens_id', '=', 'itens.id')
         ->where('itens_arranjos.arranjos_id','=', $ultimo->id)
-        ->select('itens.*', 'itens_arranjos.id_itens_arranjos')->get();
+        ->select('itens.*', 'itens_arranjos.id_itens_arranjos','itens_arranjos.qtd_itens')->get();
+
+        session()->flash('mensagem', 'Itens do arranjo deletado com sucesso!');
         return view('cadastrarItensArranjos')->with('Arranjos', $ultimo)->with('Itens', $It)->with('Tb',$itens);
     }
 }
