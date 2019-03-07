@@ -52,7 +52,7 @@
                                 <td>
 
                                   <div class="row">
-                                    <a href="{{route('Funcionarios.edit', $o->id)}}" class="btn btn-warning">Edite</a>
+                                    <a href="{{route('Funcionarios.edit', $o->id)}}" class="btn btn-warning">Editar</a>
                                   <form method="post" onsubmit="return confirm('Mover usuário para lista de apagados?');" action="{{ route('Funcionarios.destroy',[$o->id])}}">
                                     @csrf
                                     @method('DELETE')

@@ -40,11 +40,17 @@
 
                        <td> {{$o->funcionario }}</td>
                        <td>{{$o->arranjo}} </td>
-
                        <td>{{ $o->data }} </td>
 
                        <td>
-                         delete, edite
+                         <div class="">
+                             <a href="{{route('Atividades.edit', $o->id)}}" class="btn btn-warning">Editar</a>
+                             <form method="post" onsubmit="return confirm('Apagar Atividade?');" action="{{ route('Atividades.destroy',[$o->id])}}">
+                               @csrf
+                               @method('DELETE')
+                               <button class="btn btn-danger"type="submit" style="font-size:12px"> Apagar</button>
+                             </form>
+                         </div>
                        </td>
 
                      </tr>

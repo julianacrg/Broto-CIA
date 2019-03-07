@@ -90,9 +90,16 @@ class AtividadesController extends Controller
      * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function edit(Atividades $atividades)
+    public function edit(Request $request, $atv)
     {
-        //
+      $atv= Atividades::find($atv);
+
+      $Funcionario = Funcionarios:: orderBy('nome')->get();
+      $Arranjos = DB::table('arranjos_Orcamentos')
+      ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
+      ->select ('arranjos.nome', 'arranjos.id')->distinct()->get();
+
+      return view('editarAtividade',compact('atv','Funcionario','Arranjos'));
     }
 
     /**
@@ -102,9 +109,13 @@ class AtividadesController extends Controller
      * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Atividades $atividades)
+    public function update(Request $request, $atividades)
     {
-        //
+      $atividades = Atividades::findOrFail($atividades);
+      $atividades->fill($request->all());
+      $atividades->save();
+      $request->session()->flash('mensagem', 'Atividade atualizado com sucesso!');
+      return redirect()->route('Atividades.create');
     }
 
     /**
@@ -113,8 +124,13 @@ class AtividadesController extends Controller
      * @param  \App\Atividades  $atividades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Atividades $atividades)
+    public function destroy($atividades)
     {
-        //
+
+      $atv = Atividades::find($atividades);
+      $atv->delete();
+      session()->flash('mensagem', 'Excluido com sucesso!');
+
+      return redirect()->route('Atividades.create');
     }
 }
