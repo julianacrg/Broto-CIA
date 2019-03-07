@@ -22,7 +22,8 @@ class AtividadesController extends Controller
       $arr = DB::table('arranjos_Orcamentos')
       ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
       ->select ('arranjos.nome', 'arranjos.id')->distinct()->get();
-         return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arr);
+
+       return view('Atividades')->with('Funcionario',$funcionario)->with('Arranjos',$arr);
 
     }
 
@@ -33,25 +34,13 @@ class AtividadesController extends Controller
      */
     public function create()
     {
-        $a= 0;
-
         $atv = Db::table('atividades')
         ->join('funcionarios','atividades.funcionarios_id','=','funcionarios.id')
         ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.id_arranjos_orcamentos', '=','arranjos_orcamentos_id')
         ->join('arranjos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
         ->select('atividades.*','funcionarios.nome as funcionario','arranjos.nome as arranjo')->get();
-  dd($atv);
 
-        $arr = DB::table('arranjos')
-        ->join('arranjos_Orcamentos', 'arranjos_Orcamentos.arranjos_id', '=','arranjos.id')
-        ->orderBy('arranjos.id', 'DESC')
-        ->select('arranjos.nome', 'arranjos.id','arranjos_Orcamentos.orcamentos_id')->get();
-
-
-
-
- // dd($arr);
-        return view('listarAtividades',compact('arr','atv'));
+        return view('listarAtividades',compact('atv'));
 
     }
 
@@ -63,10 +52,25 @@ class AtividadesController extends Controller
      */
     public function store(Request $request)
     {
-      Atividades::create($request->all());
-      session()->flash('mensagem', 'Item cadastrado com sucesso!');
+      $data = $request->all();
 
-      return redirect()->route("Atividades.index");
+      $validacao = \Validator::make($data,[
+
+        "data" => "required",
+        "funcionarios_id" => "required",
+        "arranjos_orcamentos_id" => "required",
+
+      ]);
+
+      if($validacao->fails()){
+        return redirect()->back()->withErrors($validacao)->withInput();
+      }else {
+        session()->flash('mensagem', 'Atividade cadastrada com sucesso!');
+        Atividades::create($request->all());
+        return redirect()->route("Atividades.index");
+      }
+
+
     }
 
     /**

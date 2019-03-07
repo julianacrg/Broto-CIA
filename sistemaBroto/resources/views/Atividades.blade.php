@@ -5,6 +5,14 @@
 
 
        <div id="global">
+         @if($errors->all())
+           <div id="time" class="alert alert-danger alert-dismissible text-center" role="alert">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             @foreach ($errors->all() as $key => $value)
+               <li><strong>{{$value}}</strong></li>
+             @endforeach
+           </div>
+         @endif
           <div class="container-fluid">
             <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                 <div class="cm-flex">
@@ -56,7 +64,7 @@
 
                                      <option value="{{$e->id}}">{{ $e->nome }}</option>
 
-                                     @endforeach  
+                                     @endforeach
 
                                    </div>
                                  </div>

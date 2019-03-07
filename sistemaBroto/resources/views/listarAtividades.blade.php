@@ -10,7 +10,7 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Atividades.index')}}">Nova Atividade</a></li>
-                                <li class="active"><a href="{{route('Atividades.create')}}">Listar Orçamento</a></li>
+                                <li class="active"><a href="{{route('Atividades.create')}}">Listar Atividade</a></li>
 
 
                             </ul>
@@ -25,7 +25,7 @@
                     <table class="table table-bordered table-striped table-hover table-responsive">
                     <thead>
                      <tr>
-                       <th scope="col">ID</th>
+
                        <th scope="col">Funcionario</th>
                        <th scope="col">Arranjo</th>
                        <th scope="col">Data</th>
@@ -37,7 +37,7 @@
 
                       @foreach( $atv as $o )
                      <tr>
-                       <td>{{ $o->id }} </td>
+
                        <td> {{$o->funcionario }}</td>
                        <td>{{$o->arranjo}} </td>
 

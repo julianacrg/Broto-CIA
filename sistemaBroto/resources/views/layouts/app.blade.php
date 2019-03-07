@@ -48,7 +48,8 @@
                             </li>
 
                             {{-- Registar novos ADMS no site deve descomentrar o codigo abaixo --}}
-                            <li class="nav-item">
+
+                           <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registre-se') }}</a>
                             </li>
                         @else
