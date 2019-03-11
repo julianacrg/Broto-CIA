@@ -1,0 +1,20 @@
+Cadastrar Orçamento
+
+- Quando inicio o cadastro de um orçamento
+e volto para edita-lo
+não tem a opção de terminar o cadastro.
+
+- Deve ser adicionado uma nova tela depois 
+de add arranjos com adicionais, que podem ser valores 
+avulsos add pelo dona como transporte, por exemplo.
+Adicionais tem um nome e um valor, a tabela já existe
+BD e esta relacionada com orçamento como as demais.
+
+- Falta a opção do cadastro da igreja quando estou 
+criando o orçamento.
+
+- Orçamentos gerados devem ir para aba de orçamento 
+em aberto, e não para orçamentos fechados.
+
+- Opção de editar só me permite
+editar as primeiras informações.
