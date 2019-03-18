@@ -10,8 +10,8 @@
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
                                 <li><a href="{{route('Orcamentos.index')}}">Novo Orçamento</a></li>
-                                <li class="active"><a href="{{route('Orcamentos.create')}}">Listar Orçamento Fechados</a></li>
-                                <li><a href="{{route('Orcamentos.show',1)}}">Listar Orçamento Em Aberto</a></li>
+                                <li class="active"><a href="{{route('Orcamentos.create')}}">Listar Orçamento Abertos</a></li>
+                                <li><a href="{{route('Orcamentos.show',1)}}">Listar Orçamento Fechados</a></li>
 
 
                             </ul>

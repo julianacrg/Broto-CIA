@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fornecedores extends Model
 {
+  public function getDateFormat()
+    {
+      return 'Y-m-d H:i:s.u';
+    }
   protected $fillable = [ 'id', 'nome', 'cpf'];
 }

@@ -56,7 +56,6 @@
                                  </div>
                                </div>
 
-
                                 <div class="form-group">
                                   <label for="nome" class="cols-sm-2 control-label">Nome *</label>
                                   <div class="cols-sm-10">

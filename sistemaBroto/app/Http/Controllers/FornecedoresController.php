@@ -65,6 +65,7 @@ class FornecedoresController extends Controller
     {
       $forn = Fornecedores::where('status', '=', '0')->paginate(10);
         return view ('listarFornecedoresApagados', compact('forn'));
+        
     }
 
     /**
