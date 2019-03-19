@@ -36,20 +36,32 @@
 
                               <!-- contador é um elemento que ouve o clique do mouse -->
                               <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{route('home')}}" class="sf-house">Home</a></li>
-
+                              <!--
                               <li class="{{ request()->is('Orcamentos/*',"Orcamentos") ? 'active' : '' }}"><a href="{{route('Orcamentos.index')}}" class="sf-money">Orçamentos</a></li>
+                              -->
                               <li class="{{ request()->is('Itens/*',"Itens") ? 'active' : '' }}"><a href="{{route('Itens.index')}}" class="sf-layers">Itens</a></li>
+                              <!--
                               <li class="{{ request()->is('Arranjos/*',"Arranjos") ? 'active' : '' }}"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
+                            -->
+
                               {{-- <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li> --}}
+
+                              <!--
                               <li class="{{ request()->is('#') ? 'active' : '' }}"><a href="#" class="sf-brick">Peças</a></li>
+                            
                               <li class="{{ request()->is('Atividades/*',"Atividades") ? 'active' : '' }}"><a href="{{route('Atividades.index')}}" class="sf-post-it">Atividades</a></li>
+                              -->
                               {{-- <li class="{{ request()->is('Igrejas/*',"Igrejas") ? 'active' : '' }}"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li> --}}
+                              <!--
                               <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-pencil">Pedidos</a></li>
                               @can ('admin')
+                            -->
 
 
                               <li class="{{ request()->is('Funcionarios/*',"Funcionarios") ? 'active' : '' }}"><a href="{{route('Funcionarios.index')}}" class="sf-profile-group">Funcionários</a></li>
+                              <!--
                               <li class="{{ request()->is('Fornecedores/*',"Fornecedores") ? 'active' : '' }}"><a href="{{route('Fornecedores.index')}}" class="sf-file-bookmark">Fornecedores</a></li>
+                            -->
 
                               @endcan
                               {{-- <li class="{{ request()->is('#',"#") ? 'active' : '' }}"><a href="#" class="sf-wrench-screwdriver">Configurações</a></li> --}}
