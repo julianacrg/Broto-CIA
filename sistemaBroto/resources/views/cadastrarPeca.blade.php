@@ -19,9 +19,9 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="{{ route('Itens.index') }}">Cadastrar Itens</a></li>
-                                    <li><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                    <li><a href="{{route('Itens.show',1)}}">Listar Itens Desativados</a></li>
+                                    <li class="active"><a href="{{ route('Pecas.index') }}">Cadastrar Peças</a></li>
+                                    <li><a href="{{route('Pecas.create')}}">Listar Peças</a></li>
+                                    <li><a href="{{route('Pecas.show',1)}}">Listar Peças Desativados</a></li>
 
                                 </ul>
 
@@ -53,63 +53,16 @@
                                      </div>
                                    </div>
 
-                                   <div class="form-group">
-                                    <label for="unidade" class="cols-sm-2 control-label">Unidade *</label>
-                                    <div class="cols-sm-10">
-                                      <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-database fa" aria-hidden="true"></i></span>
-                                        <select  name="unidade" class="form-control" style="max-width: 40%;">
-                                       <option >Selecione uma unidade: </option>
-                                       <option value="Peça">Unidade</option>
-                                       <option value="Flor">Dúzia</option>
-                                       <option value="Folhagem" >Pacote</option>
-                                     </select>
-                                      </div>
-                                    </div>
-                                  </div>
 
-                                       <div class="form-group">
+                                      <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Preço *</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-dollar fa" aria-hidden="true"></i></span>
-                                         <input type="number" step="any"  min="0.00" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o preço da unidade declarada."/>
+                                         <input type="number" step="any"  min="0.00" class="form-control" style="max-width: 40%;" name="preco" id="precoitem"  placeholder="Entre com o preço"/>
                                        </div>
                                      </div>
                                    </div>
-
-                                      <div class="form-group">
-                                    <label for="tipo" class="cols-sm-2 control-label">Tipo *</label>
-                                    <div class="cols-sm-10">
-                                      <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-bank fa" aria-hidden="true"></i></span>
-                                        <select  name="tipo" class="form-control" style="max-width: 40%;">
-                                       <option >Selecione um tipo: </option>
-                                       <option value="Flor">Flor</option>
-                                       <option value="Folhagem" >Folhagem</option>
-                                       <option value="Floral">Floral</option>
-                                     </select>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                <!--
-                                 <div class="form-group">
-                                    <label for="foto" class="cols-sm-2 control-label">Categoria *</label>
-                                    <div class="cols-sm-10">
-                                      <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-database fa" aria-hidden="true"></i></span>
-                                        <select  name="categoria" class="form-control" style="max-width: 40%">
-                                           <option>Selecione</option>
-                                           <option value="Venda">Venda</option>
-                                           <option value="Aluguel"> Aluguel</option>
-
-
-                                         </select>
-                                      </div>
-                                    </div>
-                                  </div>
-
 
                                    <div class="form-group">
                                      <label for="email" class="cols-sm-2 control-label">Quantidade</label>
@@ -122,8 +75,6 @@
                                    </div>
 
 
-
-
                                    <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                                     <div class="cols-sm-10">
@@ -133,9 +84,6 @@
                                       </div>
                                     </div>
                                   </div>
-
-                                -->
-
 
                                     <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Descrição</label>

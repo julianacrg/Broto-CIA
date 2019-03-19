@@ -16,9 +16,9 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a href="{{route('Itens.index')}}">Cadastrar Item</a></li>
-                                <li class="active"><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                <li><a href="{{route('Itens.show', 1)}}">Listar Itens Desativados</a></li>
+                                <li><a href="{{route('Pecas.index')}}">Cadastrar Peças</a></li>
+                                <li class="active"><a href="{{route('Pecas.create')}}">Listar Peças</a></li>
+                                <li><a href="{{route('Pecas.show', 1)}}">Listar Peças Desativados</a></li>
 
 
                             </ul>
@@ -35,7 +35,8 @@
                              <tr>
 
                                <th scope="col">Nome</th>
-                               <th scope="col">Unidade</th>
+                               <th scope="col">Status</th>
+                               <th scope="col">Quantidade</th>
                                <th scope="col">Preço</th>
                                <th scope="col">Ação</th>
 
@@ -54,7 +55,7 @@
                                  <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Editar</a>
 
                                  <div class="">
-                                 <form method="post" onsubmit="return confirm('Tornar Item Indisponivel ?');" action="{{ route('Itens.destroy',[$o->id])}}">
+                                 <form method="post" onsubmit="return confirm('Tornar Peça Indisponivel ?');" action="{{ route('Itens.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
                                    <button class="btn btn-danger"type="submit" style="font-size:12px">Desativar</button>

@@ -44,11 +44,10 @@
                               <li class="{{ request()->is('Arranjos/*',"Arranjos") ? 'active' : '' }}"><a href="{{route('Arranjos.index')}}" class="sf-flower">Arranjos</a></li>
                             -->
 
-                              {{-- <li class="contador"><a href="cadastrarItens" class="sf-notepad">Cadastrar</a></li> --}}
-
-                              <!--
+                              
                               <li class="{{ request()->is('#') ? 'active' : '' }}"><a href="#" class="sf-brick">Peças</a></li>
-                            
+                              
+                            <!--
                               <li class="{{ request()->is('Atividades/*',"Atividades") ? 'active' : '' }}"><a href="{{route('Atividades.index')}}" class="sf-post-it">Atividades</a></li>
                               -->
                               {{-- <li class="{{ request()->is('Igrejas/*',"Igrejas") ? 'active' : '' }}"><a href="{{route('Igrejas.index')}}" class="sf-institution">Igrejas</a></li> --}}
