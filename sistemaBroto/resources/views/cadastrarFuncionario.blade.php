@@ -21,7 +21,7 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="{{ route('Funcionarios.index') }}">Cadastrar Funcionários</a>
                                 <li><a href="{{ route('Funcionarios.create') }}">Listar Funcionários</a></li>
-                                <li><a href="{{ route('Funcionarios.show', 1) }}">Listar Funcionários Apagados</a></li>
+                                <li><a href="{{ route('Funcionarios.show', 1) }}">Listar Funcionários Desativados</a></li>
 
 
                                 </li>
