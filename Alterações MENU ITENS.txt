@@ -1,0 +1,22 @@
+Itens
+
+Não será realizado o cadastro de peça no mesmo menu do item:
+
+Alterações:
+
+Item passa a ter o campo unidade;
+
+Deixa de ter o campo quantidade;
+
+Campo tipo não terá mais a opção peça;
+
+Categoria será setada no código como venda;
+
+Demais campos não são obrigatório então podem ficar em branco;
+
+Na listagem de itens exibir apenas:
+
+Nome, Unidade, Valor
+
+Colocar opção de visualizar o item,
+nessa visualização todos os campos devem ser exibidos 
