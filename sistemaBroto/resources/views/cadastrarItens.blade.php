@@ -60,9 +60,9 @@
                                         <span class="input-group-addon"><i class="fa fa-database fa" aria-hidden="true"></i></span>
                                         <select  name="unidade" class="form-control" style="max-width: 40%;">
                                        <option >Selecione uma unidade: </option>
-                                       <option value="Peça">Unidade</option>
-                                       <option value="Flor">Dúzia</option>
-                                       <option value="Folhagem" >Pacote</option>
+                                       <option value="Unidade">Unidade</option>
+                                       <option value="Dúzia">Dúzia</option>
+                                       <option value="Pacote" >Pacote</option>
                                      </select>
                                       </div>
                                     </div>
@@ -92,7 +92,8 @@
                                       </div>
                                     </div>
                                   </div>
-
+                                    <input type="hidden" name="categoria" value="venda">
+                                    <input type="hidden" name="quantidade" value=0>
                                 <!--
                                  <div class="form-group">
                                     <label for="foto" class="cols-sm-2 control-label">Categoria *</label>

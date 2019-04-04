@@ -19,9 +19,9 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="{{ route('Pecas.index') }}">Cadastrar Peças</a></li>
-                                    <li><a href="{{route('Pecas.create')}}">Listar Peças</a></li>
-                                    <li><a href="{{route('Pecas.show',1)}}">Listar Peças Desativados</a></li>
+                                    <li class="active"><a href="Peca">Cadastrar Peças</a></li>
+                                    <li><a href="listarPecas">Listar Peças</a></li>
+                                    <li><a href="#">Listar Peças Desativados</a></li>
 
                                 </ul>
 
@@ -41,18 +41,21 @@
 
                                <div class="main-login main-center" id="divform">
 
-                                 <form id="formulario" class="" method="post" action="{{ route('Itens.store') }}" enctype="multipart/form-data">
+                                 <form id="formulario" class="" method="post" action="cadastrarPeca" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Nome *</label>
                                      <div class="cols-sm-10">
                                        <div class="input-group">
                                          <span class="input-group-addon"><i class="fa fa-edit fa" aria-hidden="true"></i></span>
-                                         <input type="text" class="form-control" style="max-width: 40%;" name="nome" id="nomeitem"  placeholder="Entre com o nome do Item"/>
+                                         <input type="text" class="form-control" style="max-width: 40%;" name="nome" id="nomeitem"  placeholder="Entre com o nome do Peça"/>
                                        </div>
                                      </div>
                                    </div>
 
+                                   {{-- itens defaults --}}
+                                    <input type="hidden" name="categoria" value="aluguel">
+                                    <input type="hidden" name="tipo" value="peça">
 
                                       <div class="form-group">
                                      <label for="name" class="cols-sm-2 control-label">Preço *</label>

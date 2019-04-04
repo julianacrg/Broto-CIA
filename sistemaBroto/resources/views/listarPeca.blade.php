@@ -4,14 +4,21 @@
 
         <body class="cm-no-transition cm-2-navbar">
           <div id="global">
+            @if(session()->has('mensagem'))
+              <div id="time" class="alert alert-success alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                {{session()->get('mensagem')}}
+              </div>
+             @endif
               <div class="container-fluid">
                 <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a href="{{route('Itens.index')}}">Cadastrar Item</a></li>
-                                <li><a href="{{route('Itens.create')}}">Listar Itens</a></li>
-                                <li class="active"><a href="#">Listar Itens Desativados</a></li>
+                                <li><a href="Pecas">Cadastrar Peça</a></li>
+                                <li class="active"><a href="listarPecas">Listar Peça</a></li>
+                                <li><a href="{{route('Itens.show', 1)}}">Listar Peças Desativados</a></li>
 
 
                             </ul>
@@ -21,12 +28,14 @@
                 </nav>
 
                   <div class="panel panel-default">
+
                       <div class="panel-body">
                         <table class="table table-bordered table-striped table-hover table-responsive">
                             <thead>
                              <tr>
+
                                <th scope="col">Nome</th>
-                               <th scope="col">Status</th>
+                               <th scope="col">Esqtoque</th>
                                <th scope="col">Preço</th>
                                <th scope="col">Ação</th>
 
@@ -37,17 +46,17 @@
                               @foreach( $Itens as $o )
                              <tr>
                                <td>{{ $o->nome }} </td>
-                               <td>Indisponivel</td>
+                               <td>Disponivel</td>
                                <td>{{ $o->preco }} </td>
 
                                <td>
                                  <a href="{{route('Itens.edit', $o->id)}}" class="btn btn-warning">Editar</a>
 
                                  <div class="">
-                                 <form method="post" onsubmit="return confirm('Tornar Item Disponivel ?');" action="{{ route('Itens.destroy',[$o->id])}}">
+                                 <form method="post" onsubmit="return confirm('Tornar Item Indisponivel ?');" action="{{ route('Itens.destroy',[$o->id])}}">
                                    @csrf
                                    @method('DELETE')
-                                   <button class="btn btn-danger"type="submit" style="font-size:12px"> Restaurar</button>
+                                   <button class="btn btn-danger"type="submit" style="font-size:12px">Desativar</button>
                                  </form>
                                  </div>
                                </td>
@@ -67,5 +76,14 @@
 
               </div>
           </div>
+          <script type="text/javascript">
+          setTimeout(function () {
+               document.getElementById("time").style.display = "none";
+             }, 3000);
+             function hide(){
+             document.getElementById("tinme").style.display = "none";
+             }
+
+          </script>
      </body>
 @endsection('conteudo')

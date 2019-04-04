@@ -36,6 +36,10 @@ Route::resource('/Orcamentos', 'OrcamentosController');
 Route::resource('/ArranjosOrcamentos', 'ArranjosOrcamentosController');
 Route::resource('/ItensOrcamentos', 'ItensOrcamentosController');
 Route::resource('/Igrejas', 'IgrejaController');
+Route::post('/cadastrarPeca', 'ItensController@pecaStore');
+Route::view('/Pecas', 'cadastrarPeca');
+Route::get('/listarPecas', 'ItensController@pecaList');
+
 
 });
 

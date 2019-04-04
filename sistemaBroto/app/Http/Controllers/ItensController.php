@@ -7,41 +7,23 @@ use Illuminate\Http\Request;
 
 class ItensController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
       $It = Itens:: orderBy('nome')->get();
          return view('cadastrarItens')->with('Itens',$It);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-
       $itens = Itens::where('itens.status', '=', 1)->orderBy('nome')->paginate(10);
          return view('listarItem')->with('Itens',$itens);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
       $data = $request->all();
-
-
 
       $validacao = \Validator::make($data,[
         "nome" => "required",
@@ -49,11 +31,12 @@ class ItensController extends Controller
         "tipo" => "required",
         "categoria" => "required",
 
-
       ]);
+
       if($validacao->fails()){
         return redirect()->back()->withErrors($validacao)->withInput();
-      }else {
+      }
+      else {
         Itens::create($request->all());
       }
 
@@ -62,24 +45,12 @@ class ItensController extends Controller
       return view('cadastrarItens');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Itens  $itens
-     * @return \Illuminate\Http\Response
-     */
     public function show(Itens $itens)
     {
       $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
           return view('listarItemApagados')->with('Itens',$itens);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Itens  $itens
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
       $it= Itens::find($id);
@@ -88,13 +59,6 @@ class ItensController extends Controller
       return view('editarItem')->with('Itens', $it);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Itens  $itens
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $itens)
     {
 
@@ -111,12 +75,6 @@ class ItensController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Itens  $itens
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($itens)
     {
       $task = Itens::findOrFail($itens);
@@ -131,5 +89,30 @@ class ItensController extends Controller
       $task->save();
 
       return redirect()->route('Itens.create');
+    }
+
+     public function pecaStore(Request $request)
+    {
+      $data = $request->all();
+
+      $validacao = \Validator::make($data,[
+        "nome" => "required",
+        "preco" => "required",
+      ]);
+
+      if($validacao->fails()){
+        return redirect()->back()->withErrors($validacao)->withInput();
+      }
+      else {
+        session()->flash('mensagem', 'Item cadastrado com sucesso!');
+        Itens::create($request->all());
+      }
+      return view('cadastrarPeca');
+    }
+
+    public function pecaList()
+    {
+     $itens = Itens::where([['itens.status', '=', 1], ['itens.tipo','peça']])->orderBy('nome')->paginate(10);
+         return view('listarPeca')->with('Itens',$itens); 
     }
 }

@@ -47,7 +47,6 @@
                              <tr>
                                <td>{{ $o->nome }} </td>
                                <td>Disponivel</td>
-                               <td>{{ $o->qtd }} </td>
                                <td>{{ $o->preco }} </td>
 
                                <td>
