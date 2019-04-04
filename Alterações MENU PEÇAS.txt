@@ -1,0 +1,20 @@
+Peças
+
+O cadastro de peças será realizado no menu peças
+Alteração será apenas visual, 
+Estrutura do banco será mantida
+
+No cadastro haverá Nome, Valor, Quantidade, Imagem e Descrição
+
+Categoria será setada no código como aluguel;
+
+Tipo será setada no código como peça;
+
+Demais campos não são obrigatório então podem ficar em branco;
+
+Na listagem de peças exibir apenas:
+
+Nome, Valor, Quantidade
+
+Colocar opção de visualizar a peça,
+nessa visualização todos os campos devem ser exibidos 
