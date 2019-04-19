@@ -39,6 +39,7 @@ Route::resource('/Igrejas', 'IgrejaController');
 Route::post('/cadastrarPeca', 'ItensController@pecaStore');
 Route::view('/Pecas', 'cadastrarPeca');
 Route::get('/listarPecas', 'ItensController@pecaList');
+Route::get('/listarPecaApagadas', 'ItensController@showPeca');
 
 
 });
