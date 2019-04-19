@@ -18,7 +18,7 @@
                             <ul class="nav nav-tabs">
                                 <li><a href="Pecas">Cadastrar Peça</a></li>
                                 <li class="active"><a href="listarPecas">Listar Peça</a></li>
-                                <li><a href="{{route('Itens.show', 1)}}">Listar Peças Desativados</a></li>
+                                <li><a href="listarPecaApagadas">Listar Peças Desativados</a></li>
 
 
                             </ul>
