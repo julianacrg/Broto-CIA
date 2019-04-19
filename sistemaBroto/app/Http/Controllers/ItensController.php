@@ -16,7 +16,10 @@ class ItensController extends Controller
 
     public function create()
     {
-      $itens = Itens::where('itens.status', '=', 1)->orderBy('nome')->paginate(10);
+      $itens = Itens::where('itens.status', '=', 1)->where('itens.tipo', '=', 'Folhagem')
+      ->orWhere('itens.tipo', '=', 'Flor')
+      ->orWhere('itens.tipo', '=', 'Floral')
+      ->orderBy('nome')->paginate(10);
          return view('listarItem')->with('Itens',$itens);
     }
 
@@ -47,8 +50,18 @@ class ItensController extends Controller
 
     public function show(Itens $itens)
     {
+      if($itens->tipo == 'peça'){
+        $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
+        return view('listarPecaApagados')->with('Itens', $itens);
+      }
       $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
           return view('listarItemApagados')->with('Itens',$itens);
+    }
+
+    public function showPeca(Itens $itens)
+    {
+      $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
+      return view('listarPecaApagados')->with('Itens', $itens);
     }
 
     public function edit($id)
