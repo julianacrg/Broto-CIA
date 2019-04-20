@@ -19,9 +19,9 @@
                         <div class="cm-flex">
                             <div class="nav-tabs-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="Peca">Cadastrar Peças</a></li>
-                                    <li><a href="listarPecas">Listar Peças</a></li>
-                                    <li><a href="listarPecaApagadas">Listar Peças Desativados</a></li>
+                                    <li class="active"><a href="{{route('Peca')}}">Cadastrar Peças</a></li>
+                                    <li><a href="{{route('listarPeca')}}">Listar Peças</a></li>
+                                    <li><a href="{{route('listarPecasApagadas')}}">Listar Peças Desativados</a></li>
 
                                 </ul>
 

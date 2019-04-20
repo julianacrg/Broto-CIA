@@ -45,7 +45,7 @@
                             -->
 
                               
-                              <li class="{{ request()->is('Pecas/*',"Pecas") ? 'active' : '' }}"><a href="Pecas" class="sf-brick">Peças</a></li>
+                              <li class="{{ request()->is('Pecas/*',"Pecas") ? 'active' : '' }}"><a href="{{route('Peca')}}" class="sf-brick">Peças</a></li>
                               
                             <!--
                               <li class="{{ request()->is('Atividades/*',"Atividades") ? 'active' : '' }}"><a href="{{route('Atividades.index')}}" class="sf-post-it">Atividades</a></li>

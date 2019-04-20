@@ -9,8 +9,8 @@
                     <div class="cm-flex">
                         <div class="nav-tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a href="Pecas">Cadastrar Peça</a></li>
-                                <li><a href="listarPecas">Listar Peça</a></li>
+                                <li><a href="{{route('Peca')}}">Cadastrar Peça</a></li>
+                                <li><a href="{{route('listarPeca')}}">Listar Peça</a></li>
                                 <li class="active"><a href="#">Listar Peças Desativados</a></li>
 
 

@@ -37,9 +37,9 @@ Route::resource('/ArranjosOrcamentos', 'ArranjosOrcamentosController');
 Route::resource('/ItensOrcamentos', 'ItensOrcamentosController');
 Route::resource('/Igrejas', 'IgrejaController');
 Route::post('/cadastrarPeca', 'ItensController@pecaStore');
-Route::view('/Pecas', 'cadastrarPeca');
-Route::get('/listarPecas', 'ItensController@pecaList');
-Route::get('/listarPecaApagadas', 'ItensController@showPeca');
+Route::view('/Pecas', 'cadastrarPeca')->name('Peca');
+Route::get('/Pecas/listar', 'ItensController@pecaList')->name('listarPeca');
+Route::get('/Pecas/listarApagados', 'ItensController@showPeca')->name('listarPecasApagadas');
 
 
 });

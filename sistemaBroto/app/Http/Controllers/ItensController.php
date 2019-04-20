@@ -15,10 +15,8 @@ class ItensController extends Controller
     }
 
     public function create()
-    {
-      $itens = Itens::where('itens.status', '=', 1)->where('itens.tipo', '=', 'Folhagem')
-      ->orWhere('itens.tipo', '=', 'Flor')
-      ->orWhere('itens.tipo', '=', 'Floral')
+    { 
+      $itens = Itens::where('itens.status', 1)->where('itens.tipo', '!=', 'peça')
       ->orderBy('nome')->paginate(10);
          return view('listarItem')->with('Itens',$itens);
     }
@@ -50,17 +48,15 @@ class ItensController extends Controller
 
     public function show(Itens $itens)
     {
-      if($itens->tipo == 'peça'){
-        $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
-        return view('listarPecaApagados')->with('Itens', $itens);
-      }
-      $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
+      
+      $itens = Itens::where('itens.status', '=', 0)->where('itens.tipo', '!=', 'peça')
+      ->orderBy('nome')->paginate(10);
           return view('listarItemApagados')->with('Itens',$itens);
     }
 
     public function showPeca(Itens $itens)
     {
-      $itens = Itens::where('itens.status', '=', 0)->orderBy('nome')->paginate(10);
+      $itens = Itens::where('itens.status', '=', 0)->where('itens.tipo', '=', 'peça')->orderBy('nome')->paginate(10);
       return view('listarPecaApagados')->with('Itens', $itens);
     }
 
@@ -74,34 +70,56 @@ class ItensController extends Controller
 
     public function update(Request $request, $itens)
     {
-
-
-        $itens = Itens::findOrFail($itens);
-        $itens->fill($request->all());
-        $itens->save();
+      $itens = Itens::findOrFail($itens);
+      $itens->fill($request->all());
+      $itens->save();
+        
+      if ($itens->status == 0 && $itens->tipo == 'peça' ) {
+        session()->flash('mensagem', 'Peça editada com sucesso!');
+        return redirect()->route( 'listarPecasApagadas',1);
+      }
+      elseif ($itens->status == 0 && $itens->tipo != 'peça') {
         session()->flash('mensagem', 'Item editado com sucesso!');
-        if ($itens->status == 0) {
-          return redirect()->route('Itens.show',1);
-        }
-        else {
-          return redirect()->route('Itens.create');        }
-
+        return redirect()->route('Itens.show', 1);
+      } 
+      elseif ($itens->status == 1 && $itens->tipo == 'peça') {
+          session()->flash('mensagem', 'Peça editada com sucesso!');
+          return redirect()->route('listarPeca', 1);
+      } 
+      elseif ($itens->status == 1 && $itens->tipo != 'peça') {
+          session()->flash('mensagem', 'Item editado com sucesso!');
+          return redirect()->route('Itens.create');
+      }
     }
 
     public function destroy($itens)
     {
       $task = Itens::findOrFail($itens);
-      if ($task->status == 1) {
+      if ($task->status == 1 && $task->tipo != 'peça') {
         $task->status = 0;
         session()->flash('mensagem','Item Desativado com Sucesso');
-      }else {
-        $task->status = 1;
-        session()->flash('mensagem','Item Retornado com Sucesso');
+        $task->save();
+        return redirect()->route('Itens.show',1);
       }
-
+      elseif( $task->status == 0 && $task->tipo != 'peça'){
+        $task->status = 1;
+        session()->flash('mensagem', 'Item Restaurado com Sucesso');
+        $task->save();
+        return redirect()->route('Itens.create');
+      }
+      elseif($task->status == 1 && $task->tipo == 'peça') {
+        $task->status = 0;
+        session()->flash('mensagem', 'Peça Desativada com Sucesso');
+        $task->save();
+        return redirect()->route('listarPecasApagadas', 1);
+      } 
+      elseif ($task->status == 0 && $task->tipo == 'peça') {
+      $task->status = 1;
+      session()->flash('mensagem', 'Peça Restaurada com Sucesso');
       $task->save();
+      return redirect()->route('listarPeca');
+    }
 
-      return redirect()->route('Itens.create');
     }
 
      public function pecaStore(Request $request)
@@ -117,7 +135,7 @@ class ItensController extends Controller
         return redirect()->back()->withErrors($validacao)->withInput();
       }
       else {
-        session()->flash('mensagem', 'Item cadastrado com sucesso!');
+        session()->flash('mensagem', 'Peça cadastrada com sucesso!');
         Itens::create($request->all());
       }
       return view('cadastrarPeca');
