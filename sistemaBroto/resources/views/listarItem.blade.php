@@ -46,7 +46,7 @@
                               @foreach( $Itens as $o )
                              <tr>
                                <td>{{ $o->nome }} </td>
-                               <td>Disponivel</td>
+                               <td>{{$o->unidade}}</td>
                                <td>{{ $o->preco }} </td>
 
                                <td>

@@ -35,7 +35,7 @@
                              <tr>
 
                                <th scope="col">Nome</th>
-                               <th scope="col">Esqtoque</th>
+                               <th scope="col">Quantidade</th>
                                <th scope="col">Preço</th>
                                <th scope="col">Ação</th>
 
@@ -46,7 +46,7 @@
                               @foreach( $Itens as $o )
                              <tr>
                                <td>{{ $o->nome }} </td>
-                               <td>Disponivel</td>
+                               <td>{{$o->qtd}}</td>
                                <td>{{ $o->preco }} </td>
 
                                <td>
